@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keanekaragaman Hayati (Flora & Anggrek) - TWA Punti Kayu Palembang</title>
+    
+    <!-- IMPORT FONT PLUS JAKARTA SANS & INTER -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS DASAR & RESET FONT */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f0f4f2;
+            color: #0f172a;
+            line-height: 1.6;
+            font-size: 14px;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #00a859;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        a:hover {
+            color: #007a40;
+            text-decoration: underline;
+        }
+
+        /* 1. TOP BAR RESPONSIVE */
+        .top-bar {
+            background-color: #081c10;
+            color: #ffffff;
+            padding: 6px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-align: left;
+        }
+
+        /* 2. HEADER MAIN RESPONSIVE */
+        .header-main {
+            background-color: #ffffff;
+            border-bottom: 3px solid #00a859;
+            padding: 14px 20px;
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-right: 18px;
+            flex-shrink: 0;
+        }
+
+        .header-logo {
+            width: auto;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .header-title h1 {
+            font-size: 16.5px;
+            font-weight: 800;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: -0.2px;
+            line-height: 1.25;
+        }
+
+        .header-title h2 {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #00a859;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .header-title p {
+            font-size: 11.5px;
+            color: #334155;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* 3. NAVIGASI UTAMA RESPONSIVE */
+        .nav-bar { 
+            background-color: #081c10; 
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: center; 
+        }
+
+        .nav-menu { 
+            list-style: none; 
+            display: flex; 
+            align-items: center; 
+            height: 48px; 
+            gap: 4px; 
+        }
+
+        .nav-menu li {
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-menu li a { 
+            display: flex;
+            align-items: center;
+            height: 48px;
+            color: #ffffff; 
+            background-color: #081c10;
+            padding: 0 16px; 
+            font-size: 13px; 
+            font-weight: 700; 
+            border-bottom: 3px solid transparent; 
+            transition: all 0.2s ease; 
+            cursor: pointer;
+        }
+
+        .nav-menu li a:hover, 
+        .nav-menu li.active > a { 
+            color: #ffffff; 
+            background-color: #00a859;
+            border-bottom: 3px solid #00ff88; 
+            text-decoration: none; 
+        }
+
+        /* STYLING DROPDOWN MENU PAS SELEBAR TOMBOL NAV INDUK */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            min-width: 100%;
+            background-color: #081c10;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            border-radius: 0 0 6px 6px;
+            border-top: 3px solid #00a859;
+            z-index: 1001;
+            list-style: none;
+            padding: 4px 0;
+        }
+
+        /* TAMPILKAN DROPDOWN SAAT DIKLIK (.SHOW) */
+        .dropdown.show .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li a {
+            height: auto !important;
+            padding: 8px 12px !important;
+            font-size: 12px !important;
+            font-weight: 600 !important;
+            color: #e2e8f0 !important;
+            background-color: #081c10 !important; /* Latar Awal Gelap */
+            border-bottom: none !important;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
+            white-space: normal !important;
+            line-height: 1.3 !important;
+        }
+
+        /* LATAR BERUBAH HIJAU KETIKA SUB-MENU DIKLIK/HOVER */
+        .dropdown-menu li a:hover,
+        .dropdown-menu li a:active {
+            background-color: #00a859 !important;
+            color: #ffffff !important;
+            border-left: 3px solid #00ff88 !important;
+        }
+
+        .nav-prs a {
+            height: 32px !important;
+            padding: 0 14px !important;
+            border: 1.5px solid #00a859 !important;
+            border-radius: 6px;
+            color: #ffffff !important;
+            font-size: 12.5px !important;
+            background-color: rgba(0, 168, 89, 0.15) !important;
+        }
+
+        .nav-prs a:hover {
+            background-color: #00a859 !important;
+            color: #ffffff !important;
+            border-color: #00a859 !important;
+        }
+
+        /* BANNER PAGE KEHATI */
+        .page-banner {
+            background: linear-gradient(rgba(8, 28, 16, 0.75), rgba(8, 28, 16, 0.9)), url('images/profil.png') center/cover no-repeat;
+            border-bottom: 4px solid #00a859;
+            padding: 35px 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .page-banner h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 4px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+            letter-spacing: -0.3px;
+        }
+
+        .page-banner p {
+            font-size: 13.5px;
+            color: #00ff88;
+            font-weight: 700;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+        }
+
+        /* SLIDER SHOWCASE */
+        .orchid-slider-container {
+            position: relative;
+            max-width: 1100px;
+            margin: 20px auto 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(8, 28, 16, 0.2);
+            border: 2px solid #00a859;
+            background-color: #081c10;
+        }
+
+        .slider-track {
+            display: flex;
+            width: 100%;
+            height: 320px;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .slide-item {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .slide-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .slide-overlay {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 20px 24px;
+            background: linear-gradient(to top, rgba(8, 28, 16, 0.95) 0%, rgba(8, 28, 16, 0.55) 60%, transparent 100%);
+            color: #ffffff;
+        }
+
+        .slide-badge {
+            display: inline-block;
+            background-color: #00a859;
+            color: #ffffff;
+            font-size: 10.5px;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .slide-title-group {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 2px;
+            flex-wrap: wrap;
+        }
+
+        .slide-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+        }
+
+        .slide-indo-name {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #00ff88;
+        }
+
+        .slide-latin {
+            font-size: 12.5px;
+            font-style: italic;
+            color: #cbd5e1;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .slide-desc {
+            font-size: 12px;
+            color: #e2e8f0;
+            max-width: 800px;
+            line-height: 1.45;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background-color: rgba(8, 28, 16, 0.65);
+            color: #ffffff;
+            border: 1.5px solid #00a859;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+        }
+
+        .slider-btn:hover {
+            background-color: #00a859;
+            color: #ffffff;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-btn.prev { left: 14px; }
+        .slider-btn.next { right: 14px; }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 10px;
+            right: 18px;
+            z-index: 10;
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.4);
+            border: 1px solid #00a859;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #00ff88;
+            width: 20px;
+            border-radius: 10px;
+        }
+
+        /* WADAH KONTEN UTAMA */
+        .main-container {
+            max-width: 1100px;
+            margin: 24px auto;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 24px;
+            display: flex;
+            gap: 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .content-area {
+            flex: 3;
+            min-width: 0;
+        }
+
+        .sidebar-area {
+            flex: 1;
+            border-left: 2px solid #e2e8f0;
+            padding-left: 20px;
+        }
+
+        .section-header {
+            background-color: #f0fdf4;
+            border-left: 5px solid #00a859;
+            padding: 10px 16px;
+            font-size: 14.5px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 18px;
+            margin-top: 26px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border-radius: 0 6px 6px 0;
+            border-top: 1px solid #dcfce7;
+            border-right: 1px solid #dcfce7;
+            border-bottom: 1px solid #dcfce7;
+        }
+
+        .section-header:first-of-type {
+            margin-top: 0;
+        }
+
+        .article-text {
+            font-size: 13.5px;
+            color: #1e293b;
+            margin-bottom: 16px;
+            text-align: justify;
+            font-weight: 500;
+            line-height: 1.65;
+        }
+
+        /* STYLING KOLASE GREEN HOUSE ANGGREK */
+        .orchid-greenhouse-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .orchid-header h3 {
+            font-size: 17px;
+            font-weight: 800;
+            color: #081c10;
+            text-transform: uppercase;
+            border-bottom: 3px solid #00a859;
+            display: inline-block;
+            padding-bottom: 4px;
+            margin-bottom: 6px;
+        }
+
+        .orchid-header p {
+            font-size: 12.5px;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .orchid-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .orchid-card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        .orchid-card:hover {
+            border-color: #00a859;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 168, 89, 0.18);
+        }
+
+        .orchid-img-box {
+            width: 100%;
+            height: 175px;
+            background-color: #f1f5f9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .orchid-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .orchid-card:hover .orchid-img-box img {
+            transform: scale(1.06);
+        }
+
+        .orchid-number-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background-color: #081c10;
+            color: #00ff88;
+            font-size: 10.5px;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid #00a859;
+            z-index: 2;
+        }
+
+        .orchid-info {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex-grow: 1;
+        }
+
+        .orchid-info h4 {
+            font-size: 13.5px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.3;
+        }
+
+        .orchid-info .indo-name-sub {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #00a859;
+        }
+
+        .orchid-info .latin-name {
+            font-size: 11px;
+            font-style: italic;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .orchid-info .type-badge {
+            display: inline-block;
+            align-self: flex-start;
+            background-color: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+            font-size: 9.5px;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .orchid-info .desc-preview {
+            font-size: 11px;
+            color: #475569;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-top: 4px;
+        }
+
+        .click-hint-text {
+            font-size: 11px;
+            font-weight: 800;
+            color: #00a859;
+            margin-top: 8px;
+            display: inline-block;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 6px;
+        }
+
+        /* STATISTIK KEHATI */
+        .kehati-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .kehati-stat-card {
+            background-color: #f8fafc;
+            border: 2px solid #cbd5e1;
+            border-top: 4px solid #00a859;
+            padding: 14px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .kehati-stat-number {
+            font-size: 24px;
+            font-weight: 800;
+            color: #00a859;
+            line-height: 1.2;
+        }
+
+        .kehati-stat-label {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        /* BARCODE SECTION */
+        .barcode-section-box {
+            background-color: #f0fdf4;
+            border: 2px dashed #00a859;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 22px 0 30px 0;
+        }
+
+        .barcode-section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 800;
+            color: #081c10;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .barcode-section-title span {
+            background-color: #00a859;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
+        .barcode-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .barcode-card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .barcode-card:hover {
+            border-color: #00a859;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 168, 89, 0.15);
+        }
+
+        .barcode-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 6px;
+            background-color: #ffffff;
+            margin-bottom: 8px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .barcode-card h5 {
+            font-size: 13px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+        }
+
+        .barcode-card p {
+            font-size: 11px;
+            color: #00a859;
+            font-weight: 700;
+        }
+
+        /* TABEL DATA */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            font-size: 13px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .data-table th {
+            background-color: #081c10;
+            color: #ffffff;
+            text-align: left;
+            padding: 11px 12px;
+            font-weight: 800;
+            border: 1px solid #081c10;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .data-table td {
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            color: #0f172a;
+            vertical-align: middle;
+            font-weight: 500;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .species-name {
+            font-weight: 800;
+            color: #081c10;
+            font-size: 13.5px;
+            display: block;
+        }
+
+        .species-latin {
+            font-style: italic;
+            color: #00a859;
+            font-weight: 700;
+            font-size: 12.5px;
+        }
+
+        .badge-status {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 10.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .badge-dominant {
+            background-color: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+
+        .species-img {
+            width: 95px;
+            height: 72px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            display: block;
+            background-color: #e2e8f0;
+            cursor: pointer;
+        }
+
+        /* SIDEBAR WIDGET */
+        .widget {
+            margin-bottom: 24px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 14px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .widget-title {
+            background-color: #081c10;
+            color: #ffffff;
+            padding: 8px 12px;
+            font-size: 12px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            letter-spacing: 0.4px;
+        }
+
+        .widget-list {
+            list-style: none;
+            font-size: 12.5px;
+        }
+
+        .widget-list li {
+            margin-bottom: 10px;
+            padding-left: 14px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .widget-list li::before {
+            content: "•";
+            color: #00a859;
+            font-weight: bold;
+            font-size: 16px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .widget-list li a {
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .widget-list li a:hover {
+            color: #00a859;
+        }
+
+        /* FOOTER RESMI */
+        .footer-main {
+            background-color: #081c10;
+            color: #ffffff;
+            border-top: 4px solid #00a859;
+            padding: 28px 0 14px 0;
+            margin-top: 40px;
+            font-size: 13px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-col {
+            flex: 1;
+        }
+
+        .footer-col h5 {
+            font-size: 13.5px;
+            font-weight: 800;
+            color: #00ff88;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .footer-col p {
+            color: #cbd5e1;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 22px auto 0 auto;
+            padding-top: 14px;
+            border-top: 1px solid #164229;
+            text-align: center;
+            font-size: 11.5px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        /* MODAL POPUP LIGHTBOX FOTO DETAIL */
+        .detail-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(8, 28, 16, 0.92);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .detail-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .detail-modal-card {
+            position: relative;
+            background-color: #ffffff;
+            max-width: 1100px;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+            border: 3px solid #00a859;
+            display: flex;
+            flex-direction: row;
+            height: 88vh;
+            max-height: 850px;
+        }
+
+        .detail-modal-img-box {
+            width: 50%;
+            background-color: #081c10;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .detail-modal-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .detail-modal-content {
+            width: 50%;
+            padding: 32px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .detail-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+            z-index: 10000;
+        }
+
+        .detail-modal-close:hover {
+            color: #00ff88;
+        }
+
+        .detail-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #081c10;
+            line-height: 1.25;
+        }
+
+        .detail-indo {
+            font-size: 15px;
+            font-weight: 700;
+            color: #00a859;
+        }
+
+        .detail-latin {
+            font-size: 14px;
+            font-style: italic;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .detail-info-list {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #334155;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .detail-info-item {
+            background-color: #f8fafc;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border-left: 4px solid #00a859;
+        }
+
+        .detail-info-item strong {
+            color: #0f172a;
+            display: block;
+            margin-bottom: 2px;
+            font-size: 13.5px;
+        }
+
+        /* MEDIA QUERIES MOBILE & TABLET */
+        @media screen and (max-width: 868px) {
+            .top-bar {
+                font-size: 11px;
+                text-align: center;
+                padding: 6px 12px;
+            }
+
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .header-logo-wrapper {
+                justify-content: center;
+                margin-right: 0;
+            }
+
+            .header-logo {
+                height: 48px;
+            }
+
+            .header-title h1 {
+                font-size: 14px;
+            }
+
+            .header-title h2 {
+                font-size: 12px;
+            }
+
+            .header-title p {
+                font-size: 10.5px;
+            }
+
+            .nav-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                justify-content: flex-start;
+            }
+
+            .nav-menu {
+                padding: 0 10px;
+                height: 44px;
+            }
+
+            .nav-menu li a {
+                height: 44px;
+                padding: 0 12px;
+                font-size: 12px;
+            }
+
+            .main-container {
+                flex-direction: column;
+                padding: 16px;
+                margin: 16px auto;
+            }
+
+            .sidebar-area {
+                border-left: none;
+                border-top: 2px solid #e2e8f0;
+                padding-left: 0;
+                padding-top: 20px;
+            }
+
+            .orchid-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .barcode-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .kehati-stats-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .detail-modal-card {
+                flex-direction: column;
+                height: 90vh;
+                max-height: none;
+                overflow-y: auto;
+            }
+
+            .detail-modal-img-box, .detail-modal-content {
+                width: 100%;
+            }
+
+            .detail-modal-img-box {
+                height: 260px;
+                flex-shrink: 0;
+            }
+
+            .detail-modal-content {
+                padding: 18px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 18px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .page-banner {
+                padding: 28px 15px;
+            }
+
+            .page-banner h2 {
+                font-size: 22px;
+            }
+
+            .barcode-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARIS ATAS -->
+    <div class="top-bar">
+        Kementerian Kehutanan Republik Indonesia — Direktorat Jenderal KSDAE
+    </div>
+
+    <!-- HEADER INSTANSI -->
+    <header class="header-main">
+        <div class="header-container">
+            <div class="header-logo-wrapper">
+                <img src="images/kemeteriankehutanan.png" alt="Logo Kementerian Kehutanan" class="header-logo" onerror="this.onerror=null; this.src='kemeteriankehutanan.png';">
+                <img src="images/logobksda.png" alt="Logo BKSDA" class="header-logo" onerror="this.onerror=null; this.src='logobksda.jpeg';">
+            </div>
+            <div class="header-title">
+                <h1>Balai Konservasi Sumber Daya Alam Sumatera Selatan</h1>
+                <h2>Sistem Informasi Taman Wisata Alam Punti Kayu Palembang</h2>
+                <p>Jl. Kolonel H. Burlian KM. 6 No. 79, Palembang, Sumatera Selatan | Email: bksdasumsel@kemenhut.go.id</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGASI UTAMA DENGAN DROPDOWN KLIK -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle">Profil TWA Punti Kayu &#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="profiltwa.html">Profil Kawasan</a></li>
+                        <li><a href="pejabat.html">Profil Pejabat</a></li>
+                        <li><a href="struktur.html">Struktur Organisasi</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown active">
+                    <a href="javascript:void(0)" class="dropdown-toggle">Keanekaragaman Hayati &#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="kehati.html">Flora</a></li>
+                        <li><a href="fauna.html">Fauna</a></li>
+                        <li><a href="poster.html">Poster Satwa Dilindungi</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="wisata.html">Objek wisata</a></li>
+
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle">Kegiatan &#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="insitu.html">Insitu</a></li>
+                        <li><a href="eksitu.html">Eksitu</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="kontak.html">Kontak</a></li>
+                <li class="nav-prs"><a href="prs.html">PRS Punti Kayu &rarr;</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- BANNER PAGE KEHATI -->
+    <div class="page-banner">
+        <h2>Keanekaragaman Flora & Koleksi Anggrek</h2>
+        <p>Katalog Tumbuhan & Spesies Anggrek Eksotik di Green House TWA Punti Kayu</p>
+    </div>
+
+    <!-- HERO SHOWCASE SLIDER -->
+    <div class="orchid-slider-container" id="heroSlider">
+        <div class="slider-track" id="sliderTrack">
+            <!-- SLIDE 1 -->
+            <div class="slide-item">
+                <img src="anggrek/DendrobiumSakdaBeauty.jpeg" alt="Anggrek Dendrobium Sakda Beauty">
+                <div class="slide-overlay">
+                    <span class="slide-badge">Koleksi Prioritas</span>
+                    <div class="slide-title-group">
+                        <h3 class="slide-title">Dendrobium Sakda Beauty</h3>
+                        <span class="slide-indo-name">(Anggrek Dendrobium Sakda Anggun)</span>
+                    </div>
+                    <p class="slide-latin">Dendrobium hybrid 'Sakda Beauty'</p>
+                    <p class="slide-desc">Perpaduan warna putih keunguan kontras yang anggun dengan ketahanan mekar yang lama, menjadi daya tarik utama koleksi Green House TWA Punti Kayu.</p>
+                </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="slide-item">
+                <img src="anggrek/DendrobiumSonia.jpeg" alt="Anggrek Dendrobium Sonia">
+                <div class="slide-overlay">
+                    <span class="slide-badge">Favorit Pengunjung</span>
+                    <div class="slide-title-group">
+                        <h3 class="slide-title">Dendrobium Sonia</h3>
+                        <span class="slide-indo-name">(Anggrek Dendrobium Sonia Ungu)</span>
+                    </div>
+                    <p class="slide-latin">Dendrobium Sonia 'Earsakul'</p>
+                    <p class="slide-desc">Salah satu varietas Dendrobium paling populer dengan kelopak warna fuchsia/magenta menyala dan batang kokoh simetris.</p>
+                </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="slide-item">
+                <img src="anggrek/OrchidVandaFreya Beauty.jpeg" alt="Anggrek Vanda Freya Beauty">
+                <div class="slide-overlay">
+                    <span class="slide-badge">Hibrida Unggulan</span>
+                    <div class="slide-title-group">
+                        <h3 class="slide-title">Orchid Vanda Freya Beauty</h3>
+                        <span class="slide-indo-name">(Anggrek Vanda Freya Cantik)</span>
+                    </div>
+                    <p class="slide-latin">Vanda Freya Beauty hybrid</p>
+                    <p class="slide-desc">Tumbuhan monopodial dengan kelopak lebar penuh corak bergaris eksotis dan sistem akar udara tebal penyerap kelembapan udara.</p>
+                </div>
+            </div>
+
+            <!-- SLIDE 4 -->
+            <div class="slide-item">
+                <img src="anggrek/PhalaenopsisBigLipHarlequin.jpeg" alt="Anggrek Bulan Bibir Besar Harlequin">
+                <div class="slide-overlay">
+                    <span class="slide-badge">Eksotik & Langka</span>
+                    <div class="slide-title-group">
+                        <h3 class="slide-title">Phalaenopsis Big Lip Harlequin</h3>
+                        <span class="slide-indo-name">(Anggrek Bulan Bibir Lebar Harlequin)</span>
+                    </div>
+                    <p class="slide-latin">Phalaenopsis hybrid var. Big Lip</p>
+                    <p class="slide-desc">Memiliki labellum (bibir) berukuran ekstra besar menyerupai kelopak utama dengan corak bintik Harlequin yang sangat artistik.</p>
+                </div>
+            </div>
+
+            <!-- SLIDE 5 -->
+            <div class="slide-item">
+                <img src="anggrek/VandachostylisCrownfoxMagic.jpeg" alt="Anggrek Vandachostylis Crownfox Magic">
+                <div class="slide-overlay">
+                    <span class="slide-badge">Spesies Unik</span>
+                    <div class="slide-title-group">
+                        <h3 class="slide-title">Vandachostylis Crownfox Magic</h3>
+                        <span class="slide-indo-name">(Anggrek Kerabat Ekor Tupai Keunguan)</span>
+                    </div>
+                    <p class="slide-latin">Vandachostylis Crownfox Magic</p>
+                    <p class="slide-desc">Hasil persilangan antar-genus (Vanda x Rhynchostylis) yang memancarkan gugusan bunga ungu kebiruan rapat beraroma harum manis.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-btn prev" id="slidePrev">&#10094;</div>
+        <div class="slider-btn next" id="slideNext">&#10095;</div>
+        <div class="slider-dots" id="sliderDots"></div>
+    </div>
+
+    <!-- WADAH KONTEN UTAMA -->
+    <div class="main-container">
+        
+        <div class="content-area">
+
+            <!-- STATISTIK SINGKAT KEHATI -->
+            <div class="kehati-stats-grid">
+                <div class="kehati-stat-card">
+                    <div class="kehati-stat-number">71 Jenis</div>
+                    <div class="kehati-stat-label">Flora & Pohon Teridentifikasi</div>
+                </div>
+                <div class="kehati-stat-card">
+                    <div class="kehati-stat-number">27 Famili</div>
+                    <div class="kehati-stat-label">Keanekaragaman Famili Tumbuhan</div>
+                </div>
+                <div class="kehati-stat-card">
+                    <div class="kehati-stat-number">9 Varietas</div>
+                    <div class="kehati-stat-label">Koleksi Anggrek Green House</div>
+                </div>
+            </div>
+
+            <!-- KOLASE FOTO ANGGREK -->
+            <div class="orchid-greenhouse-box">
+                <div class="orchid-header">
+                    <h3>Koleksi Flora Anggrek Green House TWA Punti Kayu</h3>
+                    <p>Klik pada salah satu kartu untuk melihat pratinjau gambar penuh beserta taksonomi dan spesifikasi lengkap tumbuhan.</p>
+                </div>
+
+                <div class="orchid-grid">
+                    
+                    <!-- ANGGREK 1 -->
+                    <div class="orchid-card" 
+                         data-title="Dendrobium Sakda Beauty"
+                         data-indo="Anggrek Dendrobium Sakda Anggun"
+                         data-latin="Dendrobium hybrid 'Sakda Beauty'"
+                         data-family="Orchidaceae (Suku anggrek-anggrekan)"
+                         data-growth="Sympodial (Tumbuh mengelompok dengan batang pseudobulb)"
+                         data-roots="Epifit (Akar menempel rapat pada media pakis/kulit kayu)"
+                         data-desc="Spesies hibrida peneduh dengan kelopak gradasi putih ungu yang sangat anggun. Tahan terhadap kelembapan tinggi kawasan hutan perkotaan TWA Punti Kayu."
+                         data-img="anggrek/DendrobiumSakdaBeauty.jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">01</span>
+                            <img src="anggrek/DendrobiumSakdaBeauty.jpeg" alt="Anggrek Dendrobium Sakda Beauty">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Dendrobium Sakda Beauty</h4>
+                            <span class="indo-name-sub">Anggrek Dendrobium Sakda Anggun</span>
+                            <span class="latin-name">Dendrobium hybrid</span>
+                            <span class="type-badge">Sympodial / Epifit</span>
+                            <p class="desc-preview">Kelopak keunguan anggun dengan daya tahan mekar lama.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                    <!-- ANGGREK 2 -->
+                    <div class="orchid-card" 
+                         data-title="Dendrobium Sonia"
+                         data-indo="Anggrek Dendrobium Sonia Ungu"
+                         data-latin="Dendrobium Sonia 'Earsakul'"
+                         data-family="Orchidaceae (Suku anggrek-anggrekan)"
+                         data-growth="Sympodial (Batang tegak beruas tebal penyimpan air)"
+                         data-roots="Epifit dengan sistem akar angin kuat"
+                         data-desc="Varietas potong legendaris berbunga warna ungu magenta pekat. Sangat mudah beradaptasi di lingkungan pencahayaan sedang hingga tinggi."
+                         data-img="anggrek/DendrobiumSonia.jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">02</span>
+                            <img src="anggrek/DendrobiumSonia.jpeg" alt="Anggrek Dendrobium Sonia">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Dendrobium Sonia</h4>
+                            <span class="indo-name-sub">Anggrek Dendrobium Sonia Ungu</span>
+                            <span class="latin-name">Dendrobium Sonia 'Earsakul'</span>
+                            <span class="type-badge">Sympodial / Epifit</span>
+                            <p class="desc-preview">Bunga magenta cerah dengan susunan tangkai simetris.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                    <!-- ANGGREK 3 -->
+                    <div class="orchid-card" 
+                         data-title="Orchid Vanda Freya Beauty"
+                         data-indo="Anggrek Vanda Freya Cantik"
+                         data-latin="Vanda Freya Beauty hybrid"
+                         data-family="Orchidaceae (Suku anggrek-anggrekan)"
+                         data-growth="Monopodial (Tumbuh lurus ke atas dari satu batang utama)"
+                         data-roots="Epifit (Sistem akar udara / aerial roots tebal menjalar)"
+                         data-desc="Daun berbentuk sabuk (strap-leaf) kaku dengan bunga bertotol unik. Membutuhkan sirkulasi udara yang baik dan penyiraman rutin pada akarnya."
+                         data-img="anggrek/OrchidVandaFreya Beauty.jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">03</span>
+                            <img src="anggrek/OrchidVandaFreya Beauty.jpeg" alt="Anggrek Vanda Freya Beauty">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Vanda Freya Beauty</h4>
+                            <span class="indo-name-sub">Anggrek Vanda Freya Cantik</span>
+                            <span class="latin-name">Vanda Freya Beauty</span>
+                            <span class="type-badge">Monopodial / Epifit</span>
+                            <p class="desc-preview">Bunga lebar corak eksotik dengan akar udara menjalar tebal.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                    <!-- ANGGREK 4 -->
+                    <div class="orchid-card" 
+                         data-title="Phalaenopsis Big Lip Harlequin"
+                         data-indo="Anggrek Bulan Bibir Lebar Harlequin"
+                         data-latin="Phalaenopsis hybrid var. Big Lip"
+                         data-family="Orchidaceae (Suku anggrek-anggrekan)"
+                         data-growth="Monopodial (Batang pendek berdaun tebal berdaging)"
+                         data-roots="Epifit (Akar sukulen penyimpan cadangan air)"
+                         data-desc="Bunga berukuran besar dengan variasi labellum (bibir) melebar khas tipe Big Lip, dihiasi motif bercak Harlequin yang sangat artistik."
+                         data-img="anggrek/PhalaenopsisBigLipHarlequin.jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">04</span>
+                            <img src="anggrek/PhalaenopsisBigLipHarlequin.jpeg" alt="Anggrek Bulan Bibir Besar Harlequin">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Phal. Big Lip Harlequin</h4>
+                            <span class="indo-name-sub">Anggrek Bulan Bibir Lebar</span>
+                            <span class="latin-name">Phalaenopsis hybrid</span>
+                            <span class="type-badge">Big Lip / Epifit</span>
+                            <p class="desc-preview">Bibir melebar unik dengan corak bintik Harlequin eksotik.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                    <!-- ANGGREK 5 -->
+                    <div class="orchid-card" 
+                         data-title="Phalaenopsis Hybrid"
+                         data-indo="Anggrek Bulan Hibrida"
+                         data-latin="Phalaenopsis spp. Hybrid"
+                         data-family="Orchidaceae (Suku anggrek-anggrekan)"
+                         data-growth="Monopodial (Tumbuh lambat dengan ketahanan tinggi)"
+                         data-roots="Epifit (Sangat cocok pada media arang & sabut kelapa)"
+                         data-desc="Anggrek Bulan Hibrida dengan kelopak mekar membulat sempurna. Menjadi ikon estetika interior Green House TWA Punti Kayu."
+                         data-img="anggrek/Phalaenopsishybrid.jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">05</span>
+                            <img src="anggrek/Phalaenopsishybrid.jpeg" alt="Anggrek Bulan Hibrida">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Phalaenopsis Hybrid</h4>
+                            <span class="indo-name-sub">Anggrek Bulan Hibrida</span>
+                            <span class="latin-name">Phalaenopsis spp.</span>
+                            <span class="type-badge">Epifit / Anggrek Bulan</span>
+                            <p class="desc-preview">Kelopak membulat simetris elegan favorit pengunjung.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                    <!-- ANGGREK 6 -->
+                    <div class="orchid-card" 
+                         data-title="Phalaenopsis Miraflore"
+                         data-indo="Anggrek Bulan Miraflore Pastel"
+                         data-latin="Phalaenopsis 'Miraflore'"
+                         data-family="Orchidaceae (Suku anggrek-anggrekan)"
+                         data-growth="Monopodial (Tepi daun melengkung halus)"
+                         data-roots="Epifit (Sistem akar hijau fotosintetik)"
+                         data-desc="Varietas Phalaenopsis eropa berukuran medium dengan nuansa warna pastel yang lembut serta kuntum bunga yang sangat rapat."
+                         data-img="anggrek/PhalaenopsisMiraflore.jfif">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">06</span>
+                            <img src="anggrek/PhalaenopsisMiraflore.jfif" alt="Anggrek Bulan Miraflore Pastel">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Phalaenopsis Miraflore</h4>
+                            <span class="indo-name-sub">Anggrek Bulan Miraflore</span>
+                            <span class="latin-name">Phalaenopsis 'Miraflore'</span>
+                            <span class="type-badge">Monopodial / Epifit</span>
+                            <p class="desc-preview">Nuansa pastel lembut dengan tandan bunga rapat.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                    <!-- ANGGREK 7 -->
+                    <div class="orchid-card" 
+                         data-title="Vandachostylis Crownfox Magic"
+                         data-indo="Anggrek Kerabat Ekor Tupai Keunguan"
+                         data-latin="Vandachostylis Crownfox Magic"
+                         data-family="Orchidaceae (Suku anggrek-anggrekan)"
+                         data-growth="Monopodial (Tangkai tegak ramping)"
+                         data-roots="Epifit (Persilangan intergenerik Vanda x Rhynchostylis)"
+                         data-desc="Bunga berukuran padat beraroma wangi manis. Memiliki warna biru keunguan mendalam dengan corak bintik halus di sepanjang petal."
+                         data-img="anggrek/VandachostylisCrownfoxMagic.jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">07</span>
+                            <img src="anggrek/VandachostylisCrownfoxMagic.jpeg" alt="Anggrek Vandachostylis Crownfox Magic">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Vandachostylis Crownfox</h4>
+                            <span class="indo-name-sub">Anggrek Kerabat Ekor Tupai</span>
+                            <span class="latin-name">Vandachostylis hybrid</span>
+                            <span class="type-badge">Intergenerik / Epifit</span>
+                            <p class="desc-preview">Gugusan bunga ungu biru rapat beraroma harum manis.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                    <!-- ANGGREK 8 -->
+                    <div class="orchid-card" 
+                         data-title="Vanda Dr. Della Suantio Lee"
+                         data-indo="Anggrek Vanda Dr. Della Suantio Lee"
+                         data-latin="Vanda Dr. Della Suantio Lee"
+                         data-family="Orchidaceae (Suku anggrek-anggrekan)"
+                         data-growth="Monopodial (Tumbuh tinggi berdaun tebal)"
+                         data-roots="Epifit (Akar gantung besar menyerap kelembapan udara)"
+                         data-desc="Hibrida Vanda bernilai tinggi dengan kelopak lebar berkilau. Dinamai sebagai penghormatan tokoh hortikultura internasional."
+                         data-img="anggrek/VandaDrDellaSuantioLee.jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">08</span>
+                            <img src="anggrek/VandaDrDellaSuantioLee.jpeg" alt="Anggrek Vanda Dr Della Suantio Lee">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Vanda Dr. Della Suantio Lee</h4>
+                            <span class="indo-name-sub">Anggrek Vanda Dr. Della</span>
+                            <span class="latin-name">Vanda Dr. Della Suantio Lee</span>
+                            <span class="type-badge">Monopodial / Epifit</span>
+                            <p class="desc-preview">Hibrida bernilai tinggi dengan kelopak lebar mengkilat.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                    <!-- ANGGREK 9 -->
+                    <div class="orchid-card" 
+                         data-title="Vanda Nopporn White Diamond 'Pink Lip'"
+                         data-indo="Anggrek Vanda Berlian Putih Bibir Merah Muda"
+                         data-latin="Vanda Nopporn White Diamond 'Pink Lip'"
+                         data-family="Orchidaceae (Suku anggrek-anggrekan)"
+                         data-growth="Monopodial (Struktur daun vanda strap-leaf)"
+                         data-roots="Epifit (Akar gantung tebal berperekat alami)"
+                         data-desc="Varietas kontras langka berlatar belakang kelopak putih kristal bersih dengan aksen labellum merah muda (pink lip) yang sangat mencolok."
+                         data-img="anggrek/VandaNoppornWhiteDiamond'PinkLip'.jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">09</span>
+                            <img src="anggrek/VandaNoppornWhiteDiamond'PinkLip'.jpeg" alt="Anggrek Vanda Nopporn White Diamond Pink Lip">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Vanda Nopporn White Diamond</h4>
+                            <span class="indo-name-sub">Anggrek Vanda Berlian Putih</span>
+                            <span class="latin-name">Vanda Nopporn White Diamond</span>
+                            <span class="type-badge">Monopodial / Epifit</span>
+                            <p class="desc-preview">Kelopak putih kristal dengan bibir merah muda kontras.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- FITUR BARCODE INFORMASI POHON INTERAKTIF -->
+            <div class="barcode-section-box">
+                <div class="barcode-section-title">
+                     Barcode Interaktif Pohon <span>Edukasi Digital</span>
+                </div>
+                <p class="article-text" style="margin-bottom: 8px;">
+                    Setiap pohon terpilih di kawasan TWA Punti Kayu dilengkapi dengan plang QR Code informasi resmi BKSDA Sumatera Selatan. Pengunjung dapat memindai barcode berikut menggunakan kamera ponsel untuk mengakses deskripsi singkat, manfaat ekologis, dan klasifikasi ilmiah spesies secara langsung di lapangan:
+                </p>
+
+                <div class="barcode-grid">
+                    <div class="barcode-card">
+                        <img src="images/beringin.jpg" alt="Barcode Pohon Beringin">
+                        <h5>Beringin</h5>
+                        <p><em>Ficus benjamina</em></p>
+                    </div>
+                    <div class="barcode-card">
+                        <img src="images/bintangur.jpg" alt="Barcode Pohon Bintangur">
+                        <h5>Bintangur</h5>
+                        <p><em>Calophyllum inophyllum</em></p>
+                    </div>
+                    <div class="barcode-card">
+                        <img src="images/buahroda.jpg" alt="Barcode Pohon Buah Roda">
+                        <h5>Buah Roda</h5>
+                        <p><em>Hura crepitans</em></p>
+                    </div>
+                    <div class="barcode-card">
+                        <img src="images/jengkol.jpg" alt="Barcode Pohon Jengkol">
+                        <h5>Jengkol</h5>
+                        <p><em>Archidendron pauciflorum</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLORA -->
+            <div class="section-header">Keanekaragaman Flora Kawasan</div>
+            <p class="article-text">
+                Berdasarkan data inventarisasi resmi Balai Konservasi Sumber Daya Alam (BKSDA) Sumatera Selatan, kawasan TWA Punti Kayu menyimpan kekayaan flora sebanyak <strong>71 jenis pohon yang terbagi dalam 27 famili</strong>[cite: 23]. Vegetasi utama kawasan didominasi oleh tegakan <strong>Hutan Pinus (<em>Pinus merkusii</em>)</strong> yang membentuk bentang alam hijau khas di tengah Kota Palembang[cite: 23]. Famili flora dominan yang tumbuh subur di kawasan ini meliputi <strong>Fabaceae (6 jenis), Myrtaceae (6 jenis), Euphorbiaceae (3 jenis), Verbenaceae (3 jenis), dan Sapindaceae (3 jenis)</strong>[cite: 23].
+            </p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 6%;">No</th>
+                        <th style="width: 18%;">Dokumentasi</th>
+                        <th style="width: 28%;">Spesies & Nama Ilmiah</th>
+                        <th style="width: 48%;">Status & Spesifikasi Ekologis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center; font-weight: 800;">1</td>
+                        <td><img src="images/pinus.png" alt="Pinus Sumatera" class="species-img"></td>
+                        <td>
+                            <span class="species-name">Pinus Sumatera</span>
+                            <span class="species-latin">Pinus merkusii</span>
+                        </td>
+                        <td>
+                            <span class="badge-status badge-dominant">Vegetasi Utama (Dominan)</span><br>
+                            Spesies peneduh utama yang membentuk bentang kanopi lanskap TWA Punti Kayu serta penyerap karbon dioksida utama kota[cite: 23].
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; font-weight: 800;">2</td>
+                        <td><img src="images/profil.png" alt="Mahoni" class="species-img"></td>
+                        <td>
+                            <span class="species-name">Mahoni</span>
+                            <span class="species-latin">Swietenia mahagoni</span>
+                        </td>
+                        <td>
+                            <span class="badge-status badge-dominant">Tanaman Pelindung Utama</span><br>
+                            Tumbuhan kayu keras yang tumbuh rapat di sekitar zona pembatas kawasan dan jalur treking[cite: 23].
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="sidebar-area">
+            <div class="widget">
+                <div class="widget-title">NAVIGASI KEHATI</div>
+                <ul class="widget-list">
+                    <li><a href="kehati.html">Flora & Anggrek</a></li>
+                    <li><a href="fauna.html">Fauna Kawasan</a></li>
+                    <li><a href="poster.html">Poster Satwa Dilindungi</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <div class="widget-title">PEMANTAUAN EKOSISTEM</div>
+                <p style="font-size: 12px; color: #334155; line-height: 1.55; font-weight: 600;">
+                    Keanekaragaman hayati dan konservasi anggrek TWA Punti Kayu dipantau secara berkala oleh tim Pengendali Ekosistem Hutan (PEH) BKSDA Sumsel[cite: 23].
+                </p>
+            </div>
+
+            <div class="widget">
+                <div class="widget-title">TAUTAN TERKAIT</div>
+                <ul class="widget-list">
+                    <li><a href="https://www.menlhk.go.id" target="_blank">Kementerian Kehutanan RI</a></li>
+                    <li><a href="http://ksdae.menlhk.go.id" target="_blank">Ditjen KSDAE</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER RESMI -->
+    <footer class="footer-main">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h5>BKSDA Sumatera Selatan</h5>
+                <p>Balai Konservasi Sumber Daya Alam Sumatera Selatan bertugas mengelola kawasan konservasi dan keanekaragaman hayati di wilayah Sumatera Selatan[cite: 23].</p>
+            </div>
+            <div class="footer-col">
+                <h5>Alamat Kantor</h5>
+                <p>Jl. Kolonel H. Burlian KM. 6 No. 79, Kota Palembang, Sumatera Selatan<br>Telepon/Fax: (0711) 410948[cite: 23]</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            Hak Cipta &copy; 2026 Balai Konservasi Sumber Daya Alam (BKSDA) Sumatera Selatan — Pengelola Kawasan TWA Punti Kayu[cite: 23]
+        </div>
+    </footer>
+
+    <!-- MODAL POPUP PREVIEW LIGHTBOX FOTO DETAIL -->
+    <div id="detailModal" class="detail-modal" onclick="tutupModalOuter(event)">
+        <span id="closeDetailModal" class="detail-modal-close">&times;</span>
+        
+        <div class="detail-modal-card">
+            <div class="detail-modal-img-box">
+                <img id="detailModalImg" src="" alt="Pratinjau Anggrek">
+            </div>
+            <div class="detail-modal-content">
+                <h3 id="detailTitle" class="detail-title">Nama Anggrek</h3>
+                <p id="detailIndo" class="detail-indo">Nama Indonesia</p>
+                <p id="detailLatin" class="detail-latin">Nama Ilmiah</p>
+                <div class="detail-info-list">
+                    <div class="detail-info-item">
+                        <strong>Famili Taksonomi</strong>
+                        <span id="detailFamily">Orchidaceae</span>
+                    </div>
+                    <div class="detail-info-item">
+                        <strong>Tipe Pertumbuhan</strong>
+                        <span id="detailGrowth">-</span>
+                    </div>
+                    <div class="detail-info-item">
+                        <strong>Karakteristik Akar & Media</strong>
+                        <span id="detailRoots">-</span>
+                    </div>
+                    <div class="detail-info-item">
+                        <strong>Deskripsi & Keunikan Ekologis</strong>
+                        <p id="detailDesc" style="margin-top: 4px; line-height: 1.5; color: #334155;">-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT UTAMA: DROPDOWN KLIK, SLIDER & MODAL INTERAKTIF -->
+    <script>
+        function tutupModalOuter(e) {
+            const modal = document.getElementById("detailModal");
+            if (e.target === modal || e.target.id === "closeDetailModal") {
+                modal.classList.remove("show");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            // --- 1. KONTROL DROPDOWN KETIKA DIKLIK (ON-CLICK) ---
+            const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+            dropdownToggles.forEach(function (toggle) {
+                toggle.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const parentLi = this.parentElement;
+
+                    // Tutup dropdown lain yang terbuka
+                    document.querySelectorAll(".dropdown").forEach(function (dropdown) {
+                        if (dropdown !== parentLi) {
+                            dropdown.classList.remove("show");
+                        }
+                    });
+
+                    // Buka atau tutup dropdown yang diklik
+                    parentLi.classList.toggle("show");
+                });
+            });
+
+            // Tutup dropdown saat klik luar area navigasi
+            document.addEventListener("click", function (e) {
+                if (!e.target.closest(".nav-bar")) {
+                    document.querySelectorAll(".dropdown").forEach(function (dropdown) {
+                        dropdown.classList.remove("show");
+                    });
+                }
+            });
+
+
+            // --- 2. JAVASCRIPT SLIDER SHOWCASE ---
+            const sliderTrack = document.getElementById("sliderTrack");
+            const slides = document.querySelectorAll(".slide-item");
+            const prevBtn = document.getElementById("slidePrev");
+            const nextBtn = document.getElementById("slideNext");
+            const dotsContainer = document.getElementById("sliderDots");
+            const heroSlider = document.getElementById("heroSlider");
+            
+            let currentIndex = 0;
+            let slideInterval;
+            const totalSlides = slides.length;
+
+            slides.forEach((_, index) => {
+                const dot = document.createElement("div");
+                dot.classList.add("dot");
+                if (index === 0) dot.classList.add("active");
+                dot.addEventListener("click", () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll(".dot");
+
+            function updateSliderPosition() {
+                sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle("active", idx === currentIndex);
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSliderPosition();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateSliderPosition();
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSliderPosition();
+            }
+
+            if (nextBtn) nextBtn.addEventListener("click", nextSlide);
+            if (prevBtn) prevBtn.addEventListener("click", prevSlide);
+
+            function startAutoplay() {
+                slideInterval = setInterval(nextSlide, 4000);
+            }
+
+            function stopAutoplay() {
+                clearInterval(slideInterval);
+            }
+
+            startAutoplay();
+
+            if (heroSlider) {
+                heroSlider.addEventListener("mouseenter", stopAutoplay);
+                heroSlider.addEventListener("mouseleave", startAutoplay);
+            }
+
+
+            // --- 3. JAVASCRIPT MODAL DETAIL POP-UP ---
+            const modal = document.getElementById("detailModal");
+            const modalImg = document.getElementById("detailModalImg");
+            const modalTitle = document.getElementById("detailTitle");
+            const modalIndo = document.getElementById("detailIndo");
+            const modalLatin = document.getElementById("detailLatin");
+            const modalFamily = document.getElementById("detailFamily");
+            const modalGrowth = document.getElementById("detailGrowth");
+            const modalRoots = document.getElementById("detailRoots");
+            const modalDesc = document.getElementById("detailDesc");
+            const closeModalBtn = document.getElementById("closeDetailModal");
+
+            const orchidCards = document.querySelectorAll(".orchid-card");
+
+            orchidCards.forEach(card => {
+                card.addEventListener("click", function () {
+                    modalImg.src = this.getAttribute("data-img");
+                    modalTitle.textContent = this.getAttribute("data-title");
+                    modalIndo.textContent = this.getAttribute("data-indo");
+                    modalLatin.textContent = this.getAttribute("data-latin");
+                    modalFamily.textContent = this.getAttribute("data-family");
+                    modalGrowth.textContent = this.getAttribute("data-growth");
+                    modalRoots.textContent = this.getAttribute("data-roots");
+                    modalDesc.textContent = this.getAttribute("data-desc");
+
+                    modal.classList.add("show");
+                });
+            });
+
+            const otherImages = document.querySelectorAll(".barcode-card, .species-img");
+            otherImages.forEach(item => {
+                item.addEventListener("click", function () {
+                    const img = this.querySelector("img") || this;
+                    const name = this.querySelector("h5") || this.alt || "Dokumentasi Flora";
+
+                    modalImg.src = img.src;
+                    modalTitle.textContent = typeof name === 'string' ? name : name.textContent;
+                    modalIndo.textContent = "Flora Teridentifikasi TWA Punti Kayu";
+                    modalLatin.textContent = "Dokumentasi BKSDA Sumatera Selatan";
+                    modalFamily.textContent = "Tumbuhan / Flora Kawasan";
+                    modalGrowth.textContent = "Area Konservasi Hayati";
+                    modalRoots.textContent = "Sistem Perakaran Terawat";
+                    modalDesc.textContent = "Spesies tumbuhan terdaftar dalam inventarisasi keanekaragaman hayati Balai KSDA Sumatera Selatan.";
+
+                    modal.classList.add("show");
+                });
+            });
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener("click", function () {
+                    modal.classList.remove("show");
+                });
+            }
+
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape" && modal.classList.contains("show")) {
+                    modal.classList.remove("show");
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
