@@ -210,7 +210,7 @@
 
         /* BANNER PAGE */
         .page-banner {
-            background: linear-gradient(rgba(8, 28, 16, 0.75), rgba(8, 28, 16, 0.9)), url('tsl.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(8, 28, 16, 0.75), rgba(8, 28, 16, 0.9)), url('images/tsl.jpg') center/cover no-repeat;
             border-bottom: 4px solid #00a859;
             padding: 45px 20px;
             color: #ffffff;
@@ -517,6 +517,16 @@
             text-align: justify;
         }
 
+        /* DETAIL KRONOLOGI POPUP / BOX */
+        .kronologi-list {
+            margin-top: 8px;
+            font-size: 12.5px;
+            color: #334155;
+            line-height: 1.5;
+            list-style: disc;
+            padding-left: 18px;
+        }
+
         /* SIDEBAR WIDGET */
         .widget {
             margin-bottom: 24px;
@@ -569,7 +579,7 @@
             color: #00a859;
         }
 
-        /* MODAL POPUP LIGHTBOX FOTO DENGAN SLIDER FULL */
+        /* MODAL POPUP LIGHTBOX FOTO DENGAN OBJECT-FIT CONTAIN (TIDAK TERPOTONG) */
         .detail-modal {
             display: none;
             position: fixed;
@@ -578,8 +588,8 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(8, 28, 16, 0.92);
-            backdrop-filter: blur(5px);
+            background-color: rgba(8, 28, 16, 0.94);
+            backdrop-filter: blur(6px);
             align-items: center;
             justify-content: center;
             padding: 16px;
@@ -607,9 +617,10 @@
             max-height: 800px;
         }
 
+        /* DIBUAT OBJECT-FIT CONTAIN AGAR FOTO TAMPIL UTUH PENUH TANPA TERPOTONG */
         .detail-modal-img-box {
-            width: 55%;
-            background-color: #081c10;
+            width: 58%;
+            background-color: #040e08;
             position: relative;
             display: flex;
             align-items: center;
@@ -627,17 +638,18 @@
         .modal-slider-track img {
             min-width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* PENTING: AGAR FOTO DITAMPILKAN UTUH TANPA TERPOTONG */
+            background-color: #040e08;
         }
 
         .modal-arrow {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(8, 28, 16, 0.75);
+            background-color: rgba(8, 28, 16, 0.85);
             color: #ffffff;
-            width: 36px;
-            height: 36px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -684,7 +696,7 @@
         }
 
         .detail-modal-content {
-            width: 45%;
+            width: 42%;
             padding: 24px;
             overflow-y: auto;
             display: flex;
@@ -710,7 +722,7 @@
         }
 
         .detail-title {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 800;
             color: #081c10;
             line-height: 1.3;
@@ -872,7 +884,7 @@
 
             .detail-modal-img-box {
                 width: 100%;
-                height: 260px;
+                height: 280px;
                 flex-shrink: 0;
             }
 
@@ -901,7 +913,7 @@
             }
 
             .detail-modal-img-box {
-                height: 200px;
+                height: 220px;
             }
         }
     </style>
@@ -928,7 +940,7 @@
         </div>
     </header>
 
-    <!-- NAVIGASI UTAMA (LANGSUNG MENGARAH KE HALAMAN PERTAMA DARI MASING-MASING KATEGORI) -->
+    <!-- NAVIGASI UTAMA -->
     <nav class="nav-bar">
         <div class="nav-container">
             <ul class="nav-menu">
@@ -970,7 +982,7 @@
 
     <!-- BANNER PAGE -->
     <div class="page-banner">
-        <h2>Kegiatan Patroli Eksitu</h2>
+        <h2>Kegiatan Patroli & Evakuasi Eksitu</h2>
     </div>
 
     <!-- WADAH KONTEN UTAMA -->
@@ -983,16 +995,12 @@
             <div class="mobile-header-bar">
                 <span class="mobile-header-title">Menu Kegiatan</span>
                 <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu(event)">
-                    <!-- IKON GARIS 3 -->
                     <svg viewBox="0 0 24 24">
                         <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
                     </svg>
                 </button>
 
-                <!-- DROPDOWN SUB-MENU LENGKAP KHUSUS HP -->
                 <ul class="mobile-dropdown-menu" id="mobileDropdown">
-                    
-
                     <div class="menu-category">Kegiatan</div>
                     <li><a href="insitu.html">Insitu</a></li>
                     <li><a href="eksitu.html">Eksitu</a></li>
@@ -1001,7 +1009,40 @@
 
             <div class="section-header">Laporan Operasional Eksitu Luar Kawasan</div>
 
-            <!-- KEGIATAN 1: PATROLI TSL BERSAMA MITRA -->
+            <!-- KEGIATAN BARU 1: SERAHAN SATWA TRENGGILING (LENGKAP SLIDER 3 FOTO) -->
+            <div id="eksitu-trenggiling" class="news-card">
+                <div class="news-img-box" id="trenggilingCardBox">
+                    <div class="card-slider-track" id="trenggilingTrack">
+                        <img src="images/trenggiling.jpeg" alt="Evakuasi Trenggiling 1" onclick="klikBukaModalTrenggiling()" onerror="this.onerror=null; this.src='images/profil.png';">
+                        <img src="images/trenggiling1.jpeg" alt="Evakuasi Trenggiling 2" onclick="klikBukaModalTrenggiling()" onerror="this.onerror=null; this.src='images/profil.png';">
+                        <img src="images/trenggiling2.jpeg" alt="Evakuasi Trenggiling 3" onclick="klikBukaModalTrenggiling()" onerror="this.onerror=null; this.src='images/profil.png';">
+                    </div>
+                    <div class="slider-arrow prev" onclick="event.stopPropagation(); prevTrenggilingSlide()">&#10094;</div>
+                    <div class="slider-arrow next" onclick="event.stopPropagation(); nextTrenggilingSlide()">&#10095;</div>
+                    <div class="slider-dots-mini">
+                        <span class="dot-mini dot-tr active" onclick="event.stopPropagation(); setTrenggilingSlide(0)"></span>
+                        <span class="dot-mini dot-tr" onclick="event.stopPropagation(); setTrenggilingSlide(1)"></span>
+                        <span class="dot-mini dot-tr" onclick="event.stopPropagation(); setTrenggilingSlide(2)"></span>
+                    </div>
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="news-st">Laporan Serahan Satwa</span>
+                        <span class="news-category">Evakuasi Trenggiling</span>
+                        <span class="news-date">8 Oktober 2026</span>
+                    </div>
+                    <h3 class="news-title">Penyelamatan & Evakuasi 1 Ekor Trenggiling (Manis javanica) di Tanjung Api-Api</h3>
+                    <p class="news-desc">
+                        Tim Resor BKSDA Sumsel bersama mahasiswa magang Polsri menindaklanjuti laporan serahan satwa dilindungi dari warga (Bpk. Jefri) di kawasan Tanjung Api-Api. 
+                    </p>
+                    <ul class="kronologi-list">
+                        <li><strong>Kronologis:</strong> Pada 7 Oktober 2026 pukul 23.00 WIB, pelapor mendengar anjing peliharaannya menggonggong berkali-kali di belakang rumah. Saat diperiksa, ditemukan 1 ekor trenggiling dalam kondisi digigit anjing. Pelapor segera menghubungi <em>Call Center BKSDA</em>.</li>
+                        <li><strong>Hasil Kegiatan:</strong> Satwa berhasil dievakuasi ke PRS Punti Kayu. Kondisi fisik luar mengalami luka di bagian punggung dekat ekor. Satwa saat ini menjalani perawatan medis intensif dan durasi karantina sebelum dilepasliarkan kembali ke habitat alaminya.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- KEGIATAN 2: PATROLI TSL BERSAMA MITRA -->
             <div id="eksitu-tsl" class="news-card">
                 <div class="news-img-box" onclick="bukaModalFoto(['images/patrolitsl.jpg'], 'Patroli Peredaran Tumbuhan dan Satwa liar di Kota Palembang', 'ST. 315 • Patroli TSL & Pasar Burung', 'Tim Satgas POLHUT BKSDA Sumsel bersama mitra NGO FLIGHT Protecting Birds melakukan sosialisasi dan pemeriksaan rutin terhadap pedagang burung serta pasar hewan guna mencegah perdagangan satwa liar yang dilindungi secara ilegal.')">
                     <img src="images/patrolitsl.jpg" alt="Patroli TSL ke Pedagang Burung" onerror="this.onerror=null; this.src='images/profil.png';">
@@ -1017,18 +1058,18 @@
                 </div>
             </div>
 
-            <!-- KEGIATAN 2: EVAKUASI SATWA KUKANG -->
+            <!-- KEGIATAN 3: EVAKUASI SATWA KUKANG -->
             <div id="eksitu-evakuasi" class="news-card">
                 <div class="news-img-box" id="kukangCardBox">
                     <div class="card-slider-track" id="kukangTrack">
-                        <img src="images/kukang1.jpeg" alt="Evakuasi Satwa Kukang 1" onclick="klikBukaModalKukang()">
-                        <img src="images/kukang.jpeg" alt="Evakuasi Satwa Kukang 2" onclick="klikBukaModalKukang()" onerror="this.onerror=null; this.src='images/kukang1.jpeg';">
+                        <img src="images/kukang1.jpeg" alt="Evakuasi Satwa Kukang 1" onclick="klikBukaModalKukang()" onerror="this.onerror=null; this.src='images/profil.png';">
+                        <img src="images/kukang.jpeg" alt="Evakuasi Satwa Kukang 2" onclick="klikBukaModalKukang()" onerror="this.onerror=null; this.src='images/profil.png';">
                     </div>
                     <div class="slider-arrow prev" onclick="event.stopPropagation(); prevCardSlide()">&#10094;</div>
                     <div class="slider-arrow next" onclick="event.stopPropagation(); nextCardSlide()">&#10095;</div>
                     <div class="slider-dots-mini">
-                        <span class="dot-mini active" onclick="event.stopPropagation(); setCardSlide(0)"></span>
-                        <span class="dot-mini" onclick="event.stopPropagation(); setCardSlide(1)"></span>
+                        <span class="dot-mini dot-kk active" onclick="event.stopPropagation(); setCardSlide(0)"></span>
+                        <span class="dot-mini dot-kk" onclick="event.stopPropagation(); setCardSlide(1)"></span>
                     </div>
                 </div>
                 <div class="news-content">
@@ -1049,8 +1090,9 @@
             <div class="widget">
                 <div class="widget-title">KATEGORI LAPORAN EKSITU</div>
                 <ul class="widget-list">
+                    <li><a href="#eksitu-trenggiling">Serahan Satwa Trenggiling</a></li>
                     <li><a href="#eksitu-tsl">Patroli TSL & Pasar Burung</a></li>
-                    <li><a href="#eksitu-evakuasi">Evakuasi Aduan Masyarakat</a></li>
+                    <li><a href="#eksitu-evakuasi">Evakuasi Kukang</a></li>
                 </ul>
             </div>
 
@@ -1072,7 +1114,7 @@
 
     </div>
 
-    <!-- MODAL POPUP PREVIEW FOTO EKSITU -->
+    <!-- MODAL POPUP PREVIEW FOTO EKSITU (TIDAK TERPOTONG DENGAN OBJECT-FIT CONTAIN) -->
     <div id="detailModal" class="detail-modal" onclick="tutupModalOuter(event)">
         <span id="closeDetailModal" class="detail-modal-close">&times;</span>
         <div class="detail-modal-card">
@@ -1125,18 +1167,46 @@
         }
     });
 
-    // --- SCRIPT SLIDER KARTU KUKANG (MINI) ---
+    // --- SCRIPT SLIDER KARTU TRENGGILING ---
+    let currentTrenggilingIndex = 0;
+    const trenggilingImagesCount = 3;
+
+    function updateTrenggilingSlider() {
+        const track = document.getElementById('trenggilingTrack');
+        if (track) {
+            track.style.transform = `translateX(-${currentTrenggilingIndex * 100}%)`;
+        }
+        const dots = document.querySelectorAll('.dot-tr');
+        dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === currentTrenggilingIndex);
+        });
+    }
+
+    function nextTrenggilingSlide() {
+        currentTrenggilingIndex = (currentTrenggilingIndex + 1) % trenggilingImagesCount;
+        updateTrenggilingSlider();
+    }
+
+    function prevTrenggilingSlide() {
+        currentTrenggilingIndex = (currentTrenggilingIndex - 1 + trenggilingImagesCount) % trenggilingImagesCount;
+        updateTrenggilingSlider();
+    }
+
+    function setTrenggilingSlide(index) {
+        currentTrenggilingIndex = index;
+        updateTrenggilingSlider();
+    }
+
+    // --- SCRIPT SLIDER KARTU KUKANG ---
     let currentCardIndex = 0;
     const cardImagesCount = 2;
-    let cardInterval;
 
     function updateCardSlider() {
         const track = document.getElementById('kukangTrack');
         if (track) {
             track.style.transform = `translateX(-${currentCardIndex * 100}%)`;
         }
-        
-        const dots = document.querySelectorAll('.slider-dots-mini .dot-mini');
+        const dots = document.querySelectorAll('.dot-kk');
         dots.forEach((dot, idx) => {
             dot.classList.toggle('active', idx === currentCardIndex);
         });
@@ -1155,20 +1225,6 @@
     function setCardSlide(index) {
         currentCardIndex = index;
         updateCardSlider();
-    }
-
-    function startCardAutoplay() {
-        cardInterval = setInterval(nextCardSlide, 4000);
-    }
-    function stopCardAutoplay() {
-        clearInterval(cardInterval);
-    }
-    startCardAutoplay();
-
-    const cardBox = document.getElementById('kukangCardBox');
-    if (cardBox) {
-        cardBox.addEventListener('mouseenter', stopCardAutoplay);
-        cardBox.addEventListener('mouseleave', startCardAutoplay);
     }
 
     // --- SCRIPT MODAL POPUP LIGHTBOX ---
@@ -1191,7 +1247,7 @@
             const img = document.createElement('img');
             img.src = src;
             img.alt = judul;
-            img.onerror = function() { this.src = 'images/kukang1.jpeg'; };
+            img.onerror = function() { this.src = 'images/profil.png'; };
             track.appendChild(img);
         });
 
@@ -1214,10 +1270,20 @@
 
         document.getElementById('detailTitle').textContent = judul;
         document.getElementById('detailMetaTag').textContent = meta;
-        document.getElementById('detailDesc').textContent = deskripsi;
+        document.getElementById('detailDesc').innerHTML = deskripsi;
 
         updateModalSliderPosition();
         document.getElementById('detailModal').classList.add('show');
+    }
+
+    function klikBukaModalTrenggiling() {
+        bukaModalFoto(
+            ['images/trenggiling.jpeg', 'images/trenggiling1.jpeg', 'images/trenggiling2.jpeg'],
+            'Penyelamatan & Evakuasi 1 Ekor Trenggiling di Tanjung Api-Api',
+            'Laporan Serahan Satwa • Tanjung Api-Api',
+            '<strong>Pelaksana:</strong> Tim Resor BKSDA Sumsel & Anak Magang Polsri<br><strong>Pelapor:</strong> Jefri<br><strong>Lokasi:</strong> Tanjung Api-Api<br><br><strong>Kronologis:</strong> Pada 7 Oktober 2026 pukul 23.00 WIB, pelapor mendengar gonggongan anjing di belakang rumah. Setelah diperiksa, ditemukan 1 ekor Trenggiling dalam kondisi digigit anjing. Pelapor menghubungi Call Center BKSDA Sumsel.<br><br><strong>Hasil Kegiatan:</strong> Satwa berhasil dievakuasi ke PRS Punti Kayu. Fisik luar mengalami luka di bagian punggung dekat ekor sehingga perlu perawatan medis lebih lanjut sebelum siap dilepasliarkan.',
+            currentTrenggilingIndex
+        );
     }
 
     function klikBukaModalKukang() {
