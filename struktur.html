@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil TWA Punti Kayu - BKSDA Sumatera Selatan</title>
+    <title>Struktur Organisasi - BKSDA Sumatera Selatan</title>
     
     <!-- IMPORT FONT PLUS JAKARTA SANS & INTER -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,30 +11,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS DASAR & RESET FONT */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
         }
 
         html {
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #f0f4f2;
-            color: #0f172a;
-            line-height: 1.6;
-            font-size: 14px;
+        body { 
+            font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background-color: #f0f4f2; 
+            color: #0f172a; 
+            line-height: 1.6; 
+            font-size: 14px; 
             overflow-x: hidden;
         }
 
-        a {
-            color: #00a859;
-            text-decoration: none;
-            font-weight: 600;
+        a { 
+            color: #00a859; 
+            text-decoration: none; 
+            font-weight: 600; 
         }
 
         a:hover {
@@ -43,28 +42,28 @@
         }
 
         /* 1. TOP BAR RESPONSIVE */
-        .top-bar {
-            background-color: #081c10;
-            color: #ffffff;
-            padding: 6px 20px;
-            font-size: 12px;
-            font-weight: 600;
+        .top-bar { 
+            background-color: #081c10; 
+            color: #ffffff; 
+            padding: 6px 20px; 
+            font-size: 12px; 
+            font-weight: 600; 
             letter-spacing: 0.3px;
             text-align: left;
         }
 
         /* 2. HEADER MAIN RESPONSIVE */
-        .header-main {
-            background-color: #ffffff;
-            border-bottom: 3px solid #00a859;
-            padding: 14px 20px;
+        .header-main { 
+            background-color: #ffffff; 
+            border-bottom: 3px solid #00a859; 
+            padding: 14px 20px; 
         }
 
-        .header-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
+        .header-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            align-items: center; 
             gap: 16px;
         }
 
@@ -75,43 +74,43 @@
             flex-shrink: 0;
         }
 
-        .header-logo {
-            width: auto;
-            height: 55px;
-            object-fit: contain;
+        .header-logo { 
+            width: auto; 
+            height: 55px; 
+            object-fit: contain; 
         }
 
-        .header-title h1 {
-            font-size: 16.5px;
-            font-weight: 800;
-            color: #0f172a;
-            text-transform: uppercase;
+        .header-title h1 { 
+            font-size: 16.5px; 
+            font-weight: 800; 
+            color: #0f172a; 
+            text-transform: uppercase; 
             letter-spacing: -0.2px;
             line-height: 1.25;
         }
 
-        .header-title h2 {
-            font-size: 13.5px;
-            font-weight: 700;
-            color: #00a859;
-            text-transform: uppercase;
+        .header-title h2 { 
+            font-size: 13.5px; 
+            font-weight: 700; 
+            color: #00a859; 
+            text-transform: uppercase; 
             margin-top: 2px;
         }
 
-        .header-title p {
-            font-size: 11.5px;
-            color: #334155;
-            font-weight: 600;
+        .header-title p { 
+            font-size: 11.5px; 
+            color: #334155; 
+            font-weight: 600; 
             margin-top: 2px;
         }
 
-        /* 3. NAVIGASI UTAMA */
+        /* 3. NAVIGASI UTAMA RESPONSIVE */
         .nav-bar { 
             background-color: #081c10; 
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
         }
 
         .nav-container { 
@@ -129,22 +128,22 @@
             gap: 4px; 
         }
 
-        .nav-menu li {
-            position: relative;
+        .nav-menu li { 
+            position: relative; 
             white-space: nowrap;
         }
 
         .nav-menu li a { 
-            display: flex;
-            align-items: center;
-            height: 48px;
+            display: flex; 
+            align-items: center; 
+            height: 48px; 
             color: #ffffff; 
             background-color: #081c10;
             padding: 0 16px; 
             font-size: 13px; 
             font-weight: 700; 
             border-bottom: 3px solid transparent; 
-            transition: all 0.2s ease; 
+            transition: all 0.2s ease;
             cursor: pointer;
         }
 
@@ -152,39 +151,40 @@
         .nav-menu li:hover > a,
         .nav-menu li.active > a { 
             color: #ffffff; 
-            background-color: #00a859;
+            background-color: #00a859; 
             border-bottom: 3px solid #00ff88; 
             text-decoration: none; 
         }
 
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
+        /* STYLING DROPDOWN HOVER DESKTOP */
+        .dropdown-menu { 
+            display: none; 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
             width: 100%;
             min-width: 100%;
-            background-color: #081c10;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-            border-radius: 0 0 6px 6px;
-            border-top: 3px solid #00a859;
-            z-index: 1001;
-            list-style: none;
-            padding: 4px 0;
+            background-color: #081c10; 
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3); 
+            border-radius: 0 0 6px 6px; 
+            border-top: 3px solid #00a859; 
+            z-index: 1001; 
+            list-style: none; 
+            padding: 4px 0; 
         }
 
-        .dropdown:hover .dropdown-menu {
-            display: block;
+        .dropdown:hover .dropdown-menu { 
+            display: block; 
         }
 
-        .dropdown-menu li a {
-            height: auto !important;
-            padding: 8px 12px !important;
-            font-size: 12px !important;
-            font-weight: 600 !important;
-            color: #e2e8f0 !important;
+        .dropdown-menu li a { 
+            height: auto !important; 
+            padding: 8px 12px !important; 
+            font-size: 12px !important; 
+            font-weight: 600 !important; 
+            color: #e2e8f0 !important; 
             background-color: #081c10 !important;
-            border-bottom: none !important;
+            border-bottom: none !important; 
             border-left: 3px solid transparent;
             transition: all 0.2s ease;
             white-space: normal !important;
@@ -192,20 +192,20 @@
         }
 
         .dropdown-menu li a:hover,
-        .dropdown-menu li a:active {
-            background-color: #00a859 !important;
-            color: #ffffff !important;
+        .dropdown-menu li a:active { 
+            background-color: #00a859 !important; 
+            color: #ffffff !important; 
             border-left: 3px solid #00ff88 !important;
         }
 
-        .nav-prs a {
-            height: 32px !important;
-            padding: 0 14px !important;
-            border: 1.5px solid #00a859 !important;
-            border-radius: 6px;
-            color: #ffffff !important;
-            font-size: 12.5px !important;
-            background-color: rgba(0, 168, 89, 0.15) !important;
+        .nav-prs a { 
+            height: 32px !important; 
+            padding: 0 14px !important; 
+            border: 1.5px solid #00a859 !important; 
+            border-radius: 6px; 
+            color: #ffffff !important; 
+            font-size: 12.5px !important; 
+            background-color: rgba(0, 168, 89, 0.15) !important; 
         }
 
         .nav-prs a:hover {
@@ -214,52 +214,29 @@
             border-color: #00a859 !important;
         }
 
-        /* BANNER PAGE PROFIL */
-        .page-banner {
-            background: linear-gradient(rgba(8, 28, 16, 0.65), rgba(8, 28, 16, 0.85)), url('images/puntikayu.JPG') center/cover no-repeat;
-            border-bottom: 4px solid #00a859;
-            padding: 50px 20px;
-            color: #ffffff;
-            text-align: center;
+        /* BANNER PAGE */
+        .page-banner { 
+            background: linear-gradient(rgba(8, 28, 16, 0.75), rgba(8, 28, 16, 0.9)), url('images/profil.png') center/cover no-repeat; 
+            border-bottom: 4px solid #00a859; 
+            padding: 50px 20px; 
+            color: #ffffff; 
+            text-align: center; 
         }
 
-        .page-banner h2 {
-            font-size: 30px;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 8px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-        }
-
-        .page-banner p {
-            font-size: 14.5px;
-            color: #00ff88;
-            font-weight: 600;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+        .page-banner h2 { 
+            font-size: 32px; 
+            font-weight: 800; 
         }
 
         /* WADAH KONTEN UTAMA */
-        .main-container {
-            max-width: 1100px;
-            margin: 28px auto;
-            background-color: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-radius: 10px;
-            padding: 26px;
-            display: flex;
-            gap: 26px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-        }
-
-        .content-area {
-            flex: 3;
-            min-width: 0;
-        }
-
-        .sidebar-area {
-            flex: 1;
-            border-left: 2px solid #e2e8f0;
-            padding-left: 22px;
+        .main-container { 
+            max-width: 1100px; 
+            margin: 30px auto; 
+            background-color: #ffffff; 
+            border: 1px solid #cbd5e1; 
+            border-radius: 10px; 
+            padding: 30px; 
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); 
         }
 
         /* FITUR TOMBOL GARIS 3 (HAMBURGER) UNTUK MODE HP */
@@ -268,7 +245,7 @@
             background-color: #081c10;
             border-radius: 8px;
             padding: 10px 14px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             align-items: center;
             justify-content: space-between;
             position: relative;
@@ -295,14 +272,12 @@
             outline: none;
         }
 
-        /* IKON GARIS 3 SVG */
         .mobile-menu-btn svg {
             width: 22px;
             height: 22px;
             fill: #ffffff;
         }
 
-        /* POPUP SUB-MENU GARIS 3 MODE HP */
         .mobile-dropdown-menu {
             display: none;
             position: absolute;
@@ -351,355 +326,97 @@
             color: #ffffff;
         }
 
-        /* SECTION HEADER DENGAN AKSEN KEMENHUT */
-        .section-header {
-            background-color: #f0fdf4;
-            border-left: 5px solid #00a859;
-            padding: 10px 16px;
-            font-size: 14.5px;
-            font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 16px;
-            margin-top: 26px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            border-radius: 0 6px 6px 0;
-            border-top: 1px solid #dcfce7;
-            border-right: 1px solid #dcfce7;
-            border-bottom: 1px solid #dcfce7;
-            scroll-margin-top: 70px;
-        }
-
-        .section-header:first-of-type {
-            margin-top: 0;
-        }
-
-        .article-text {
-            font-size: 13.5px;
-            color: #1e293b;
-            margin-bottom: 14px;
-            text-align: justify;
-            font-weight: 500;
-            line-height: 1.65;
-        }
-
-        /* TIMELINE SEJARAH */
-        .timeline {
-            border-left: 3px solid #00a859;
-            margin: 16px 0 24px 12px;
-            padding-left: 18px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 16px;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -24px;
-            top: 4px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #00a859;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 0 2px #00a859;
-        }
-
-        .timeline-date {
-            font-weight: 800;
-            color: #00a859;
-            font-size: 12.5px;
-            text-transform: uppercase;
-        }
-
-        .timeline-desc {
-            font-size: 13px;
-            color: #0f172a;
-            font-weight: 500;
-        }
-
-        /* GAMBAR DOKUMENTASI */
-        .content-image-box {
-            margin: 18px 0;
-            border-radius: 8px;
-            overflow: hidden;
+        /* BOX BAGAN STRUKTUR PENGELOLAAN */
+        .org-banner-box { 
+            background-color: #f8fafc; 
             border: 1px solid #cbd5e1;
-            background-color: #f8fafc;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            border-radius: 12px; 
+            padding: 24px; 
+            text-align: center; 
+            margin-bottom: 24px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04); 
         }
 
-        .content-image-box img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            display: block;
+        .org-banner-box img { 
+            width: 100%; 
+            max-width: 1000px; 
+            height: auto; 
+            border-radius: 8px; 
+            display: block; 
+            margin: 0 auto; 
         }
 
-        .content-image-box .caption {
-            padding: 10px 14px;
-            font-size: 12px;
-            color: #334155;
-            font-weight: 600;
-            background-color: #f1f5f9;
-            border-top: 1px solid #cbd5e1;
+        .tugas-section h3 { 
+            font-size: 16px; 
+            font-weight: 800; 
+            color: #0f172a; 
+            margin-bottom: 14px; 
+            border-left: 5px solid #00a859; 
+            padding-left: 12px; 
+            text-transform: uppercase; 
         }
 
-        /* INFO GRID CARDS */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            margin-bottom: 18px;
+        .tugas-list { 
+            list-style: none; 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 14px; 
         }
 
-        .info-card {
-            background-color: #ffffff;
-            border: 1px solid #cbd5e1;
-            padding: 14px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        .tugas-card { 
+            background-color: #f8fafc; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 8px; 
+            padding: 16px; 
             transition: border-color 0.2s ease;
         }
 
-        .info-card:hover {
+        .tugas-card:hover {
             border-color: #00a859;
         }
 
-        .info-card h4 {
-            color: #00a859;
-            font-size: 13px;
-            font-weight: 800;
-            margin-bottom: 6px;
-            text-transform: uppercase;
+        .tugas-card h4 { 
+            font-size: 13.5px; 
+            font-weight: 800; 
+            color: #00a859; 
+            margin-bottom: 6px; 
         }
 
-        .info-card p {
-            font-size: 12.5px;
-            color: #0f172a;
-            font-weight: 600;
-        }
-
-        /* CARD FAKTA EKOLOGIS */
-        .eco-fact-box {
-            background: linear-gradient(135deg, #081c10 0%, #00a859 100%);
-            color: #ffffff;
-            padding: 18px 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 5px solid #00ff88;
-            box-shadow: 0 4px 12px rgba(0,168,89,0.15);
-        }
-
-        .eco-fact-box h4 {
-            color: #00ff88;
-            font-size: 14px;
-            font-weight: 800;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-        }
-
-        .eco-fact-box p {
-            font-size: 13px;
-            color: #f8fafc;
-            line-height: 1.55;
+        .tugas-card p { 
+            font-size: 12.5px; 
+            color: #334155; 
+            line-height: 1.55; 
             font-weight: 500;
-        }
-
-        /* GALERI FOTO GRID */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            margin-top: 14px;
-            margin-bottom: 22px;
-        }
-
-        .gallery-item {
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: #ffffff;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 130px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.06);
-        }
-
-        .gallery-item span {
-            display: block;
-            padding: 8px;
-            font-size: 11.5px;
-            font-weight: 700;
-            color: #0f172a;
-            text-align: center;
-            background-color: #ffffff;
-            border-top: 1px solid #f1f5f9;
-        }
-
-        /* TABEL SPESIFIKASI FORMAL */
-        table.data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 12px;
-            margin-bottom: 20px;
-            font-size: 13px;
-        }
-
-        table.data-table th {
-            background-color: #081c10;
-            color: #ffffff;
-            padding: 11px 12px;
-            text-align: left;
-            font-weight: 700;
-            border: 1px solid #081c10;
-        }
-
-        table.data-table td {
-            padding: 10px 12px;
-            border: 1px solid #cbd5e1;
-            color: #0f172a;
-            font-weight: 500;
-        }
-
-        table.data-table tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
-
-        /* LIST TRANSPORTASI */
-        .transport-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin: 12px 0 18px 0;
-        }
-
-        .transport-item {
-            background-color: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 10px 12px;
-            font-size: 12.5px;
-            font-weight: 600;
-            color: #0f172a;
-        }
-
-        .transport-item strong {
-            color: #00a859;
-            display: block;
-            font-size: 11px;
-            text-transform: uppercase;
-        }
-
-        /* PETA GOOGLE EMBED */
-        .map-box {
-            width: 100%;
-            height: 340px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-top: 12px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-        }
-
-        .map-box iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* SIDEBAR WIDGET */
-        .widget {
-            margin-bottom: 24px;
-            background-color: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 14px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-        }
-
-        .widget-title {
-            background-color: #081c10;
-            color: #ffffff;
-            padding: 8px 12px;
-            font-size: 12px;
-            font-weight: 800;
-            margin-bottom: 12px;
-            border-radius: 5px;
-            letter-spacing: 0.4px;
-        }
-
-        .widget-list {
-            list-style: none;
-            font-size: 12.5px;
-        }
-
-        .widget-list li {
-            margin-bottom: 10px;
-            padding-left: 14px;
-            position: relative;
-            line-height: 1.4;
-        }
-
-        .widget-list li::before {
-            content: "•";
-            color: #00a859;
-            font-weight: bold;
-            font-size: 16px;
-            position: absolute;
-            left: 0;
-            top: -2px;
-        }
-
-        .widget-list li a {
-            color: #1e293b;
-            font-weight: 600;
-        }
-
-        .widget-list li a:hover {
-            color: #00a859;
         }
 
         /* FOOTER RESMI */
-        .footer-main {
-            background-color: #081c10;
-            color: #ffffff;
-            border-top: 4px solid #00a859;
-            padding: 28px 0 14px 0;
-            margin-top: 40px;
-            font-size: 13px;
+        .footer-main { 
+            background-color: #081c10; 
+            color: #ffffff; 
+            border-top: 4px solid #00a859; 
+            padding: 28px 0 14px 0; 
+            margin-top: 40px; 
+            font-size: 13px; 
         }
 
-        .footer-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
+        .footer-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+            display: flex; 
+            justify-content: space-between; 
             gap: 20px;
         }
 
-        .footer-col {
-            flex: 1;
+        .footer-col { 
+            flex: 1; 
         }
 
-        .footer-col h5 {
-            font-size: 13.5px;
-            font-weight: 800;
-            color: #00ff88;
-            margin-bottom: 10px;
+        .footer-col h5 { 
+            font-size: 13.5px; 
+            font-weight: 800; 
+            color: #00ff88; 
+            margin-bottom: 10px; 
             text-transform: uppercase;
         }
 
@@ -709,18 +426,18 @@
             line-height: 1.6;
         }
 
-        .footer-bottom {
-            max-width: 1100px;
-            margin: 22px auto 0 auto;
-            padding-top: 14px;
-            border-top: 1px solid #164229;
-            text-align: center;
-            font-size: 11.5px;
-            color: #94a3b8;
+        .footer-bottom { 
+            max-width: 1100px; 
+            margin: 22px auto 0 auto; 
+            padding-top: 14px; 
+            border-top: 1px solid #164229; 
+            text-align: center; 
+            font-size: 11.5px; 
+            color: #94a3b8; 
             font-weight: 500;
         }
 
-        /* MEDIA QUERIES PENYESUAIAN TAMPILAN UNTUK HP / TABLET */
+        /* MEDIA QUERIES MOBILE & TABLET */
         @media screen and (max-width: 868px) {
             .mobile-header-bar {
                 display: flex !important;
@@ -776,28 +493,16 @@
             }
 
             .main-container {
-                flex-direction: column;
-                padding: 16px;
+                padding: 20px 16px;
                 margin: 16px auto;
             }
 
-            .sidebar-area {
-                border-left: none;
-                border-top: 2px solid #e2e8f0;
-                padding-left: 0;
-                padding-top: 20px;
-            }
-
-            .info-grid, .gallery-grid {
+            .tugas-list {
                 grid-template-columns: repeat(1, 1fr);
             }
 
-            .transport-list {
-                grid-template-columns: repeat(1, 1fr);
-            }
-
-            .content-image-box img {
-                height: 220px;
+            .org-banner-box {
+                padding: 12px;
             }
 
             .footer-container {
@@ -814,27 +519,13 @@
             .page-banner h2 {
                 font-size: 22px;
             }
-
-            .page-banner p {
-                font-size: 12.5px;
-            }
-
-            table.data-table {
-                font-size: 11.5px;
-            }
-
-            table.data-table th, table.data-table td {
-                padding: 8px;
-            }
         }
     </style>
 </head>
 <body>
 
     <!-- BARIS ATAS -->
-    <div class="top-bar">
-        Kementerian Kehutanan Republik Indonesia — Direktorat Jenderal KSDAE
-    </div>
+    <div class="top-bar">Kementerian Kehutanan Republik Indonesia — Direktorat Jenderal KSDAE</div>
 
     <!-- HEADER INSTANSI -->
     <header class="header-main">
@@ -851,7 +542,7 @@
         </div>
     </header>
 
-    <!-- NAVIGASI UTAMA DENGAN HOVER DESKTOP -->
+    <!-- NAVIGASI UTAMA DENGAN DESKTOP HOVER -->
     <nav class="nav-bar">
         <div class="nav-container">
             <ul class="nav-menu">
@@ -891,19 +582,15 @@
         </div>
     </nav>
 
-    <!-- BANNER PAGE PROFIL -->
+    <!-- BANNER PAGE -->
     <div class="page-banner">
-        <h2>Profil Kawasan TWA Punti Kayu</h2>
-        <p>Hutan Wisata Pinus Alami & Paru-Paru Hijau Kota Palembang</p>
+        <h2>Struktur Organisasi</h2>
     </div>
 
     <!-- WADAH KONTEN UTAMA -->
     <div class="main-container">
-        
-        <!-- AREA KONTEN KIRI -->
-        <div class="content-area">
 
-            <!-- BAR SUB-MENU GARIS 3 HANYA MUNCUL DI HP -->
+         <!-- BAR SUB-MENU GARIS 3 HANYA MUNCUL DI HP -->
             <div class="mobile-header-bar">
                 <span class="mobile-header-title">Menu Profil</span>
                 <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu(event)">
@@ -922,207 +609,32 @@
                 </ul>
             </div>
 
-            <!-- 1. PROFIL TWA PUNTI KAYU -->
-            <div id="profil" class="section-header">Profil Umum Kawasan</div>
-            <p class="article-text">
-                Taman Wisata Alam (TWA) Punti Kayu Palembang merupakan kawasan hutan konservasi seluas <strong>50 Hektar</strong> yang berlokasi sangat strategis di tengah wilayah perkotaan Kota Palembang, Sumatera Selatan. Pengelolaan kawasan ini secara teknis dan operasional berada di bawah naungan Balai Konservasi Sumber Daya Alam (BKSDA) Sumatera Selatan melalui Seksi Konservasi Wilayah I (SKW I).
-            </p>
-            <p class="article-text">
-                Selain sebagai paru-paru hijau pencipta udara bersih bagi kota, TWA Punti Kayu berfungsi sebagai benteng konservasi keanekaragaman hayati, sarana rekreasi alam terjangkau, edukasi lingkungan hidup, serta area penelitian ilmiah bagi akademisi dan masyarakat luas.
-            </p>
-
-            <div class="content-image-box">
-                <img src="images/profil.png" alt="Panorama Hutan Pinus TWA Punti Kayu Palembang" onerror="this.onerror=null; this.src='images/puntikayu.JPG';">
-                <div class="caption">Dokumentasi Resmi: Keasrian bentang alam tegakan Hutan Pinus (<em>Pinus merkusii</em>) di TWA Punti Kayu Palembang.</div>
-            </div>
-
-            <!-- 2. SEJARAH KAWASAN & LEGALITAS SK -->
-            <div id="sejarah" class="section-header">Sejarah Kawasan & Kronologi Legalitas SK</div>
-            <p class="article-text">
-                Kawasan Punti Kayu memiliki rekam jejak sejarah penetapan hukum kawasan konservasi yang panjang dan bertahap:
-            </p>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">13 Februari 1937</div>
-                    <div class="timeline-desc">Pertama kali ditetapkan sebagai kawasan hutan konservasi register 51 <em>aangewezen bosch</em> seluas <strong>98 Hektar</strong> pada masa pemerintahan Hindia Belanda.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">26 April 1980 & 29 Januari 1982</div>
-                    <div class="timeline-desc">Sebagian kawasan seluas 48 Hektar dikeluarkan melalui Surat Persetujuan Direktur Jenderal Kehutanan, Departemen Pertanian No. 1377/DJ/I/1980 dan disahkan lewat Berita Acara Tata Batas (BATB) tanggal 29 Januari 1982.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">26 Mei 1982</div>
-                    <div class="timeline-desc">Pengesahan tata batas baru kawasan oleh Direktur Jenderal Kehutanan Departemen Pertanian sehingga menetapkan luas definitif TWA Punti Kayu menjadi <strong>50 Hektar</strong>.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">7 Oktober 2002</div>
-                    <div class="timeline-desc">Dikukuhkan secara legal-formal melalui Keputusan Menteri Kehutanan Nomor <strong>9273/Kpts-II/2002</strong> tentang Penetapan Taman Wisata Alam Punti Kayu seluas 50 Hektar di Kota Palembang, Provinsi Sumatera Selatan.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Tahun 2016 - 2017</div>
-                    <div class="timeline-desc">Penyusunan Rencana Pengelolaan Jangka Panjang (RPJP 2016–2025) lewat SK No. 337/KSDAE/SET/KSA.1/2016, dilanjutkan rekonstruksi batas kawasan pada tahun 2017 guna mengantisipasi pemukiman dan pembangunan perkotaan.</div>
-                </div>
-            </div>
-
-            <!-- 3. INFORMASI SPESIFIKASI & BATAS -->
-            <div id="informasi" class="section-header">Letak Geografis, Batas & Daerah Penyangga</div>
-            <p class="article-text">
-                Secara astronomis, TWA Punti Kayu terletak pada posisi <strong>104° 43' 20" BT – 104° 40' 50" BT</strong> dan <strong>2° 56' 30" LS – 2° 57' 00" LS</strong>.
-            </p>
-
-            <div class="info-grid">
-                <div class="info-card">
-                    <h4>Luas Resmi</h4>
-                    <p>50 Hektar (SK 9273/2002)</p>
-                </div>
-                <div class="info-card">
-                    <h4>Flora Dominan</h4>
-                    <p>Pinus (<em>Pinus merkusii</em>)</p>
-                </div>
-                <div class="info-card">
-                    <h4>Pengelola Utama</h4>
-                    <p>BKSDA Sumsel (SKW I)</p>
-                </div>
-            </div>
-
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Arah Mata Angin</th>
-                        <th>Batas Fisik Kawasan Langsung</th>
-                        <th>Keterangan / Fasilitas</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Utara</strong></td>
-                        <td>Jalan Raya Utama (Jl. Kolonel H. Burlian)</td>
-                        <td>Fasilitas umum: SPBU, Hotel, Rumah Sakit, & Akses Lorong</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Barat</strong></td>
-                        <td>Daerah Rawa-Rawa Talang Buruk</td>
-                        <td>Ekosistem Rawa / Lahan Basah</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Selatan</strong></td>
-                        <td>Tanah milik Kementan, KLHK, & Pemprov Sumsel</td>
-                        <td>Kawasan Perkantoran Instansi Pemerintah</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Timur</strong></td>
-                        <td>Perumahan Penduduk / Pemukiman Warga</td>
-                        <td>Kelurahan Srijaya & Kelurahan Karya Baru</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="eco-fact-box">
-                <h4>Status Daerah Penyangga (Buffer Zone)</h4>
-                <p>
-                    Daerah penyangga TWA Punti Kayu mencakup area Kelurahan Srijaya dan Kelurahan Karya Baru (Kecamatan Sukarami/Alang-Alang Lebar). Sisi timur-utara berbatasan langsung dengan fasilitas umum vital jalan raya, Stasiun Pengisian Bahan Bakar (POM Bensin), jaringan perhotelan, rumah sakit, serta pemukiman warga padat penduduk.
-                </p>
-            </div>
-
-            <!-- 4. POTENSI KEANEKARAGAMAN HAYATI -->
-            <div id="kehati-summary" class="section-header">Ringkasan Keanekaragaman Hayati Kawasan</div>
-            <p class="article-text">
-                Meskipun berada di tengah dinamika perkotaan, TWA Punti Kayu memiliki kekayaan ekosistem alami yang sangat kaya:
-            </p>
-            <ul style="padding-left: 20px; margin-bottom: 18px; color: #0f172a; font-weight: 600;">
-                <li style="margin-bottom: 8px;"><strong>Potensi Flora:</strong> Teridentifikasi sebanyak <strong>71 jenis pohon dari 27 famili</strong>. Famili dominan antara lain <em>Fabaceae</em> (6 jenis), <em>Myrtaceae</em> (6 jenis), <em>Euphorbiaceae</em> (3 jenis), <em>Verbenaceae</em> (3 jenis), <em>Sapindaceae</em> (3 jenis), serta <em>Pinaceae</em>.</li>
-                <li style="margin-bottom: 8px;"><strong>Potensi Fauna & Herpetofauna:</strong> Habitat mamalia Monyet Ekor Panjang (<em>Macaca fascicularis</em>), Babi Hutan, Herpetofauna (Ular Hijau, Ular Kobra, Ular Sanca, Biawak, Kadal, Kodok), serta burung berstatus dilindungi seperti Elang Bondol (<em>Haliastur indus</em>) dan Elang Brontok (<em>Spizaetus cirrhatus</em>).</li>
-                <li style="margin-bottom: 8px;"><strong>Spesies Langka Spesial:</strong> Ditemukan serangga langka Capung Jarum (<em>Podolestes coomansi</em>) yang masuk dalam <strong>IUCN Red List (Status: Data Deficient)</strong>, di mana spesies ini sebelumnya terakhir kali dicatat di Sumatera pada tahun 1930.</li>
-            </ul>
-
-            <!-- GALERI FOTO KHAS PUNTI KAYU -->
-            <div class="section-header">Dokumentasi Visual Kawasan</div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/puntikayu.JPG" alt="Tegakan Hutan Pinus">
-                    <span>Hutan Pinus Utama</span>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/pinus.png" alt="Pohon Pinus Merkusii">
-                    <span><em>Pinus merkusii</em></span>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/profil.png" alt="Area Rekreasi Hijau">
-                    <span>Area Rekreasi Hijau</span>
-                </div>
-            </div>
-
-            <!-- 5. LOKASI, AKSESIBILITAS & PETA -->
-            <div id="lokasi" class="section-header">Lokasi & Aksesibilitas Transportasi</div>
-            <p class="article-text">
-                TWA Punti Kayu terletak di Jalan Lintas Palembang-Jambi (Jl. Kolonel H. Burlian KM. 6, Palembang). Kawasan ini sangat mudah dijangkau dari berbagai titik Kota Palembang menggunakan ragam moda transportasi publik maupun pribadi:
-            </p>
-
-            <div class="transport-list">
-                <div class="transport-item">
-                    <strong>Angkutan Kota (Angkot)</strong>
-                    Rute Way Hitam – Talang Betutu
-                </div>
-                <div class="transport-item">
-                    <strong>Bus BRT Trans Musi</strong>
-                    Koridor Utama Lintas Jl. Kol. H. Burlian
-                </div>
-                <div class="transport-item">
-                    <strong>Bus Kota</strong>
-                    Rute Kertapati – KM 12 & Plaju – KM 12
-                </div>
-                <div class="transport-item">
-                    <strong>Transportasi Online & Taksi</strong>
-                    Gojek, Grab, Gocar, & Taksi Konvensional
-                </div>
-            </div>
-
-            <div class="map-box">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.537233857855!2d104.73145457497042!3d-2.948286997027964!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b75cfa7ab2a2b%3A0xb3ff76c023d8c1c!2sTaman%20Wisata%20Alam%20Punti%20Kayu!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-
+        <!-- GAMBAR BAGAN STRUKTUR ORGANISASI -->
+        <div class="org-banner-box">
+            <img src="images/struktur.png" alt="Bagan Struktur Organisasi BKSDA Sumatera Selatan" onerror="this.onerror=null; this.src='images/profil.png';">
         </div>
 
-        <!-- SIDEBAR KANAN -->
-        <div class="sidebar-area">
-            
-            <div class="widget">
-                <div class="widget-title">NAVIGASI PROFIL</div>
-                <ul class="widget-list">
-                    <li><a href="#profil">Profil Umum Kawasan</a></li>
-                    <li><a href="#sejarah">Sejarah & Kronologi SK</a></li>
-                    <li><a href="#informasi">Spesifikasi & Daerah Penyangga</a></li>
-                    <li><a href="#kehati-summary">Ringkasan Kehati</a></li>
-                    <li><a href="#lokasi">Aksesibilitas & Peta Google</a></li>
-                </ul>
+        <div class="tugas-section">
+            <h3>Tugas Pokok & Fungsi Pengelolaan Kawasan</h3>
+            <div class="tugas-list">
+                <div class="tugas-card">
+                    <h4>1. Pengamanan & Patroli Kawasan</h4>
+                    <p>Melaksanakan inventarisasi flora/fauna, batas kawasan konservasi, serta Smart Patrol rutin pengamanan hutan.</p>
+                </div>
+                <div class="tugas-card">
+                    <h4>2. Pengawetan TSL & Penanganan Konflik</h4>
+                    <p>Perlindungan spesies Tumbuhan dan Satwa Liar (TSL) yang dilindungi serta penanganan konflik satwa liar perkotaan.</p>
+                </div>
+                <div class="tugas-card">
+                    <h4>3. Pemanfaatan Jasa Lingkungan</h4>
+                    <p>Pengelolaan sarana eduwisata, pemberian izin kegiatan riset/SIMAKSI, dan pemeliharaan fasilitas umum.</p>
+                </div>
+                <div class="tugas-card">
+                    <h4>4. Edukasi & Kemitraan Masyarakat</h4>
+                    <p>Penyelenggaraan sosialisasi kesadaran lingkungan bersama instansi pendidikan, komunitas hijau, dan pihak swasta.</p>
+                </div>
             </div>
-
-            <div class="widget">
-                <div class="widget-title">PENGELOLAAN & IPPA</div>
-                <p style="font-size: 12px; color: #334155; line-height: 1.55; font-weight: 500;">
-                    Pemanfaatan jasa lingkungan wisata alam dikelola bersama mitra pihak ketiga melalui Izin Pengusahaan Pariwisata Alam (IPPA) oleh <strong>PT. Indosuma Putra Citra (PT. IPC)</strong> di bawah pengawasan BKSDA Sumsel.
-                </p>
-            </div>
-
-            <div class="widget">
-                <div class="widget-title">JAM OPERASIONAL</div>
-                <p style="font-size: 12.5px; color: #0f172a; padding: 4px 0; font-weight: 600;">
-                    Senin - Minggu<br>
-                    <strong style="color: #00a859; font-size: 14px;">08.00 - 17.00 WIB</strong>
-                </p>
-            </div>
-
-            <div class="widget">
-                <div class="widget-title">TAUTAN TERKAIT</div>
-                <ul class="widget-list">
-                    <li><a href="https://www.menlhk.go.id" target="_blank">Kementerian Kehutanan RI</a></li>
-                    <li><a href="http://ksdae.menlhk.go.id" target="_blank">Ditjen KSDAE</a></li>
-                </ul>
-            </div>
-
         </div>
-
     </div>
 
     <!-- FOOTER RESMI -->
@@ -1130,12 +642,13 @@
         <div class="footer-container">
             <div class="footer-col">
                 <h5>BKSDA Sumatera Selatan</h5>
-                <p>Balai Konservasi Sumber Daya Alam Sumatera Selatan bertugas mengelola kawasan konservasi dan keanekaragaman hayati di wilayah Sumatera Selatan</p>
+                <p>Balai Konservasi Sumber Daya Alam Sumatera Selatan bertugas mengelola kawasan konservasi dan keanekaragaman hayati di wilayah Sumatera Selatan.</p>
             </div>
             <div class="footer-col">
                 <h5>Alamat Kantor</h5>
                 <p>Jl. Kolonel H. Burlian KM. 6 No. 79, Kota Palembang, Sumatera Selatan<br>Telepon/Fax: (0711) 410948</p>
-            </div>        </div>
+            </div>
+        </div>
         <div class="footer-bottom">
             Hak Cipta &copy; 2026 Balai Konservasi Sumber Daya Alam (BKSDA) Sumatera Selatan — Pengelola Kawasan TWA Punti Kayu
         </div>
@@ -1149,7 +662,6 @@
         menu.classList.toggle("show");
     }
 
-    // Tutup dropdown mobile saat mengklik di luar area
     document.addEventListener("click", function (e) {
         const menu = document.getElementById("mobileDropdown");
         if (menu && !e.target.closest(".mobile-header-bar")) {
