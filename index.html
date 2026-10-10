@@ -105,7 +105,7 @@
             margin-top: 2px;
         }
 
-        /* 3. NAVIGASI UTAMA RESPONSIVE PERBAIKAN HP */
+        /* 3. NAVIGASI UTAMA */
         .nav-bar { 
             background-color: #081c10; 
             position: sticky;
@@ -146,7 +146,6 @@
             border-bottom: 3px solid transparent; 
             transition: all 0.2s ease; 
             cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
         }
 
         .nav-menu li a:hover, 
@@ -157,7 +156,7 @@
             text-decoration: none; 
         }
 
-        /* STYLING DROPDOWN MENU PAS SELEBAR TOMBOL NAV INDUK */
+        /* STYLING DROPDOWN HOVER UNTUK DESKTOP */
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -174,9 +173,8 @@
             padding: 4px 0;
         }
 
-        /* TAMPILKAN DROPDOWN SAAT DIKLIK (.SHOW) */
-        .dropdown.show .dropdown-menu {
-            display: block !important;
+        .dropdown:hover .dropdown-menu {
+            display: block;
         }
 
         .dropdown-menu li a {
@@ -193,8 +191,7 @@
             line-height: 1.3 !important;
         }
 
-        .dropdown-menu li a:hover,
-        .dropdown-menu li a:active {
+        .dropdown-menu li a:hover {
             background-color: #00a859 !important;
             color: #ffffff !important;
             border-left: 3px solid #00ff88 !important;
@@ -671,16 +668,10 @@
                 font-size: 10.5px;
             }
 
-            /* NAVIGASI SCROLLABLE DI HP (PERBAIKAN VISIBILITAS DROPDOWN) */
             .nav-container {
                 overflow-x: auto;
-                overflow-y: visible !important;
                 -webkit-overflow-scrolling: touch;
                 justify-content: flex-start;
-            }
-
-            .nav-bar {
-                overflow: visible !important;
             }
 
             .nav-menu {
@@ -777,14 +768,14 @@
         </div>
     </header>
 
-    <!-- NAVIGASI UTAMA DENGAN DROPDOWN KLIK LENGKAP -->
+    <!-- NAVIGASI UTAMA (TAUTAN PROFIL LANGSUNG MENGARAH KE PROFILTWA.HTML) -->
     <nav class="nav-bar">
         <div class="nav-container">
             <ul class="nav-menu">
                 <li class="active"><a href="index.html">Beranda</a></li>
                 
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Profil TWA Punti Kayu &#9662;</a>
+                    <a href="profiltwa.html">Profil TWA Punti Kayu &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="profiltwa.html">Profil Kawasan</a></li>
                         <li><a href="pejabat.html">Profil Pejabat</a></li>
@@ -793,7 +784,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Keanekaragaman Hayati &#9662;</a>
+                    <a href="kehati.html">Keanekaragaman Hayati &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="kehati.html">Flora</a></li>
                         <li><a href="fauna.html">Fauna</a></li>
@@ -804,7 +795,7 @@
                 <li><a href="wisata.html">Objek wisata</a></li>
 
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Kegiatan &#9662;</a>
+                    <a href="insitu.html">Kegiatan &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="insitu.html">Insitu</a></li>
                         <li><a href="eksitu.html">Eksitu</a></li>
@@ -995,10 +986,9 @@
         </div>
     </footer>
 
-    <!-- SCRIPT JAVASCRIPT UTAMA (MENDUKUNG MULTI-TOUCH HP/DESKTOP) -->
+    <!-- SCRIPT JAVASCRIPT ANIMASI SCROLL -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // 1. ANIMASI SCROLL REVEAL
             const reveals = document.querySelectorAll(".reveal");
 
             function revealOnScroll() {
@@ -1015,40 +1005,6 @@
 
             window.addEventListener("scroll", revealOnScroll);
             revealOnScroll();
-
-            // 2. KONTROL DROPDOWN KETIKA DIKLIK / DI-TAP DI HP & DESKTOP
-            const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-
-            dropdownToggles.forEach(function (toggle) {
-                // Event listener gabungan click & touchend untuk kompatibilitas layar HP
-                function handleDropdownToggle(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    const parentLi = toggle.parentElement;
-
-                    // Tutup dropdown lain yang sedang terbuka
-                    document.querySelectorAll(".dropdown").forEach(function (dropdown) {
-                        if (dropdown !== parentLi) {
-                            dropdown.classList.remove("show");
-                        }
-                    });
-
-                    // Buka atau tutup dropdown yang diklik/di-tap
-                    parentLi.classList.toggle("show");
-                }
-
-                toggle.addEventListener("click", handleDropdownToggle);
-            });
-
-            // Tutup dropdown saat pengguna mengklik/mengetuk di luar area navigasi
-            document.addEventListener("click", function (e) {
-                if (!e.target.closest(".nav-bar")) {
-                    document.querySelectorAll(".dropdown").forEach(function (dropdown) {
-                        dropdown.classList.remove("show");
-                    });
-                }
-            });
         });
     </script>
 </body>
