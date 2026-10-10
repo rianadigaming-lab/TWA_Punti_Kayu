@@ -156,7 +156,7 @@
             text-decoration: none; 
         }
 
-        /* STYLING DROPDOWN MENU PAS SELEBAR TOMBOL NAV INDUK */
+        /* STYLING DROPDOWN MENU DESKTOP HOVER */
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -173,8 +173,7 @@
             padding: 4px 0;
         }
 
-        /* TAMPILKAN DROPDOWN SAAT DIKLIK (.SHOW) */
-        .dropdown.show .dropdown-menu {
+        .dropdown:hover .dropdown-menu {
             display: block;
         }
 
@@ -184,7 +183,7 @@
             font-size: 12px !important;
             font-weight: 600 !important;
             color: #e2e8f0 !important;
-            background-color: #081c10 !important; /* Latar Awal Gelap */
+            background-color: #081c10 !important;
             border-bottom: none !important;
             border-left: 3px solid transparent;
             transition: all 0.2s ease;
@@ -192,7 +191,6 @@
             line-height: 1.3 !important;
         }
 
-        /* LATAR BERUBAH HIJAU KETIKA SUB-MENU DIKLIK/HOVER */
         .dropdown-menu li a:hover,
         .dropdown-menu li a:active {
             background-color: #00a859 !important;
@@ -256,6 +254,93 @@
             flex: 1;
             border-left: 2px solid #e2e8f0;
             padding-left: 22px;
+        }
+
+        /* FITUR TOMBOL GARIS 3 (HAMBURGER) UNTUK MODE HP */
+        .mobile-header-bar {
+            display: none;
+            background-color: #081c10;
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 24px;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            border-left: 4px solid #00a859;
+        }
+
+        .mobile-header-title {
+            color: #ffffff;
+            font-size: 13.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .mobile-menu-btn {
+            background-color: transparent;
+            border: 1.5px solid #00a859;
+            border-radius: 6px;
+            padding: 6px 10px;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+        }
+
+        .mobile-menu-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
+        }
+
+        .mobile-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #081c10;
+            border: 2px solid #00a859;
+            border-radius: 8px;
+            margin-top: 6px;
+            z-index: 9999;
+            list-style: none;
+            padding: 8px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .mobile-dropdown-menu.show {
+            display: block;
+        }
+
+        .mobile-dropdown-menu .menu-category {
+            padding: 8px 16px 4px 16px;
+            font-size: 11px;
+            font-weight: 800;
+            color: #00ff88;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-top: 1px solid #164229;
+        }
+
+        .mobile-dropdown-menu .menu-category:first-child {
+            border-top: none;
+        }
+
+        .mobile-dropdown-menu li a {
+            display: block;
+            padding: 8px 16px 8px 24px;
+            color: #ffffff;
+            font-size: 12.5px;
+            font-weight: 600;
+        }
+
+        .mobile-dropdown-menu li a:hover,
+        .mobile-dropdown-menu li a:active {
+            background-color: #00a859;
+            color: #ffffff;
         }
 
         /* SECTION HEADER FORMAL & BOLD */
@@ -586,6 +671,10 @@
 
         /* MEDIA QUERIES MOBILE & TABLET */
         @media screen and (max-width: 868px) {
+            .mobile-header-bar {
+                display: flex !important;
+            }
+
             .top-bar {
                 font-size: 11px;
                 text-align: center;
@@ -723,14 +812,14 @@
         </div>
     </header>
 
-    <!-- NAVIGASI UTAMA DENGAN DROPDOWN KLIK -->
+    <!-- NAVIGASI UTAMA (LANGSUNG MENGARAH KE HALAMAN PERTAMA DARI MASING-MASING KATEGORI) -->
     <nav class="nav-bar">
         <div class="nav-container">
             <ul class="nav-menu">
                 <li><a href="index.html">Beranda</a></li>
                 
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Profil TWA Punti Kayu &#9662;</a>
+                    <a href="profiltwa.html">Profil TWA Punti Kayu &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="profiltwa.html">Profil Kawasan</a></li>
                         <li><a href="pejabat.html">Profil Pejabat</a></li>
@@ -739,7 +828,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Keanekaragaman Hayati &#9662;</a>
+                    <a href="kehati.html">Keanekaragaman Hayati &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="kehati.html">Flora</a></li>
                         <li><a href="fauna.html">Fauna</a></li>
@@ -750,7 +839,7 @@
                 <li><a href="wisata.html">Objek wisata</a></li>
 
                 <li class="dropdown active">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Kegiatan &#9662;</a>
+                    <a href="insitu.html">Kegiatan &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="insitu.html">Insitu</a></li>
                         <li><a href="eksitu.html">Eksitu</a></li>
@@ -773,6 +862,26 @@
         
         <!-- AREA KONTEN KIRI -->
         <div class="content-area">
+
+            <!-- BAR SUB-MENU GARIS 3 HANYA MUNCUL DI HP -->
+            <div class="mobile-header-bar">
+                <span class="mobile-header-title">Menu Kegiatan</span>
+                <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu(event)">
+                    <!-- IKON GARIS 3 -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </button>
+
+                <!-- DROPDOWN SUB-MENU LENGKAP KHUSUS HP -->
+                <ul class="mobile-dropdown-menu" id="mobileDropdown">
+                    
+
+                    <div class="menu-category">Kegiatan</div>
+                    <li><a href="insitu.html">Insitu</a></li>
+                    <li><a href="eksitu.html">Eksitu</a></li>
+                </ul>
+            </div>
 
             <div class="section-header">Laporan Kegiatan Insitu Dalam Kawasan</div>
 
@@ -891,40 +1000,21 @@
 
     <!-- SCRIPT JAVASCRIPT UTAMA -->
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // --- 1. KONTROL DROPDOWN KETIKA DIKLIK (ON-CLICK) ---
-        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+    // --- SCRIPT GARIS 3 HP ---
+    function toggleMobileMenu(event) {
+        event.stopPropagation();
+        const menu = document.getElementById("mobileDropdown");
+        menu.classList.toggle("show");
+    }
 
-        dropdownToggles.forEach(function (toggle) {
-            toggle.addEventListener("click", function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                const parentLi = this.parentElement;
-
-                // Tutup dropdown lain yang terbuka
-                document.querySelectorAll(".dropdown").forEach(function (dropdown) {
-                    if (dropdown !== parentLi) {
-                        dropdown.classList.remove("show");
-                    }
-                });
-
-                // Buka atau tutup dropdown yang diklik
-                parentLi.classList.toggle("show");
-            });
-        });
-
-        // Tutup dropdown saat klik luar area navigasi
-        document.addEventListener("click", function (e) {
-            if (!e.target.closest(".nav-bar")) {
-                document.querySelectorAll(".dropdown").forEach(function (dropdown) {
-                    dropdown.classList.remove("show");
-                });
-            }
-        });
+    document.addEventListener("click", function (e) {
+        const menu = document.getElementById("mobileDropdown");
+        if (menu && !e.target.closest(".mobile-header-bar")) {
+            menu.classList.remove("show");
+        }
     });
 
-    // --- 2. SCRIPT POPUP MODAL FOTO ---
+    // --- SCRIPT POPUP MODAL FOTO ---
     function bukaModalFoto(imgUrl, judul, meta, deskripsi) {
         document.getElementById('detailModalImg').src = imgUrl;
         document.getElementById('detailTitle').textContent = judul;
