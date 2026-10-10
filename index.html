@@ -105,7 +105,7 @@
             margin-top: 2px;
         }
 
-        /* 3. NAVIGASI UTAMA RESPONSIVE */
+        /* 3. NAVIGASI UTAMA */
         .nav-bar { 
             background-color: #081c10; 
             position: sticky;
@@ -139,6 +139,7 @@
             align-items: center;
             height: 48px;
             color: #ffffff; 
+            background-color: #081c10;
             padding: 0 16px; 
             font-size: 13px; 
             font-weight: 700; 
@@ -147,14 +148,15 @@
             cursor: pointer;
         }
 
-        .nav-menu li a:hover, .nav-menu li.active a { 
+        .nav-menu li a:hover, 
+        .nav-menu li.active > a { 
             color: #ffffff; 
             background-color: #00a859;
             border-bottom: 3px solid #00ff88; 
             text-decoration: none; 
         }
 
-        /* STYLING DROPDOWN MENU PAS SELEBAR TOMBOL NAV INDUK */
+        /* STYLING DROPDOWN HOVER UNTUK DESKTOP */
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -171,8 +173,7 @@
             padding: 4px 0;
         }
 
-        /* TAMPILKAN DROPDOWN KETIKA KELAS .SHOW AKTIF */
-        .dropdown.show .dropdown-menu {
+        .dropdown:hover .dropdown-menu {
             display: block;
         }
 
@@ -182,6 +183,7 @@
             font-size: 12px !important;
             font-weight: 600 !important;
             color: #e2e8f0 !important;
+            background-color: #081c10 !important;
             border-bottom: none !important;
             border-left: 3px solid transparent;
             transition: all 0.2s ease;
@@ -202,7 +204,7 @@
             border-radius: 6px;
             color: #ffffff !important;
             font-size: 12.5px !important;
-            background-color: rgba(0, 168, 89, 0.15);
+            background-color: rgba(0, 168, 89, 0.15) !important;
         }
 
         .nav-prs a:hover {
@@ -211,83 +213,74 @@
             border-color: #00a859 !important;
         }
 
-        /* BANNER HERO HIGH CONTRAST */
-        .hero-banner {
-            position: relative;
-            width: 100%;
-            height: 420px;
-            background: linear-gradient(rgba(8, 28, 16, 0.65), rgba(8, 28, 16, 0.88)), 
-                        url('images/puntikayu.JPG') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* 4. HERO INFO BAR (TEKS & TOMBOL DI ATAS VIDEO HERO) */
+        .hero-info-bar {
+            background-color: #081c10;
+            border-bottom: 3px solid #00a859;
+            padding: 22px 20px;
             text-align: center;
-            color: #ffffff;
-            padding: 0 20px;
         }
 
-        .hero-content {
-            max-width: 820px;
-            animation: fadeInDown 0.8s ease-out;
+        .hero-info-container {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .hero-title {
-            font-size: 36px;
+        .hero-info-bar h2 {
+            font-size: 22px;
             font-weight: 800;
             color: #ffffff;
-            line-height: 1.25;
             margin-bottom: 14px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            line-height: 1.3;
+            letter-spacing: -0.2px;
         }
 
-        .hero-title span {
+        .hero-info-bar h2 span {
             color: #00ff88;
         }
 
-        .hero-actions {
+        .hero-buttons {
             display: flex;
             gap: 12px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .btn-primary {
+        .btn-hero {
             background-color: #00a859;
-            color: #ffffff;
-            padding: 11px 24px;
+            color: #ffffff !important;
+            padding: 9px 20px;
             border-radius: 6px;
-            font-size: 13.5px;
             font-weight: 700;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 12px rgba(0, 168, 89, 0.4);
+            font-size: 13px;
+            transition: all 0.2s ease;
+            border: 1px solid #00a859;
         }
 
-        .btn-primary:hover {
-            background-color: #008844;
-            color: #ffffff;
+        .btn-hero:hover {
+            background-color: #007a40;
+            border-color: #007a40;
             text-decoration: none;
             transform: translateY(-2px);
         }
 
-        .btn-outline {
-            background-color: rgba(255, 255, 255, 0.15);
-            border: 1.5px solid rgba(255, 255, 255, 0.7);
-            color: #ffffff;
-            padding: 11px 24px;
-            border-radius: 6px;
-            font-size: 13.5px;
-            font-weight: 700;
-            backdrop-filter: blur(4px);
-            transition: all 0.25s ease;
+        /* 5. HERO BANNER VIDEO TERANG TANPA OVERLAY */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            background-color: #000000;
+            overflow: hidden;
+            display: block;
+            border-bottom: 4px solid #00a859;
         }
 
-        .btn-outline:hover {
-            background-color: #ffffff;
-            color: #081c10;
-            text-decoration: none;
-            transform: translateY(-2px);
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* SECTION STATISTIK KONTRASTING */
@@ -352,6 +345,93 @@
             flex: 1;
             border-left: 2px solid #e2e8f0;
             padding-left: 22px;
+        }
+
+        /* FITUR TOMBOL GARIS 3 (HAMBURGER) UNTUK MODE HP */
+        .mobile-header-bar {
+            display: none;
+            background-color: #081c10;
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 24px;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            border-left: 4px solid #00a859;
+        }
+
+        .mobile-header-title {
+            color: #ffffff;
+            font-size: 13.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .mobile-menu-btn {
+            background-color: transparent;
+            border: 1.5px solid #00a859;
+            border-radius: 6px;
+            padding: 6px 10px;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+        }
+
+        .mobile-menu-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
+        }
+
+        .mobile-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #081c10;
+            border: 2px solid #00a859;
+            border-radius: 8px;
+            margin-top: 6px;
+            z-index: 9999;
+            list-style: none;
+            padding: 8px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .mobile-dropdown-menu.show {
+            display: block;
+        }
+
+        .mobile-dropdown-menu .menu-category {
+            padding: 8px 16px 4px 16px;
+            font-size: 11px;
+            font-weight: 800;
+            color: #00ff88;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-top: 1px solid #164229;
+        }
+
+        .mobile-dropdown-menu .menu-category:first-child {
+            border-top: none;
+        }
+
+        .mobile-dropdown-menu li a {
+            display: block;
+            padding: 8px 16px 8px 24px;
+            color: #ffffff;
+            font-size: 12.5px;
+            font-weight: 600;
+        }
+
+        .mobile-dropdown-menu li a:hover,
+        .mobile-dropdown-menu li a:active {
+            background-color: #00a859;
+            color: #ffffff;
         }
 
         /* SECTION HEADER DENGAN AKSEN HIJAU KEMENHUT */
@@ -621,30 +701,18 @@
             transform: translateY(0);
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ========================================================= */
-        /* MEDIA QUERIES PENYESUAIAN TAMPILAN UNTUK HP / TABLET     */
-        /* ========================================================= */
-
+        /* MEDIA QUERIES UNTUK HP / TABLET */
         @media screen and (max-width: 868px) {
-            /* TOP BAR DI HP */
+            .mobile-header-bar {
+                display: flex !important;
+            }
+
             .top-bar {
                 font-size: 11px;
                 text-align: center;
                 padding: 6px 12px;
             }
 
-            /* HEADER VERTIKAL DI HP */
             .header-container {
                 flex-direction: column;
                 text-align: center;
@@ -671,7 +739,6 @@
                 font-size: 10.5px;
             }
 
-            /* NAVIGASI BISA DI-SCROLL HORIZONTAL DI HP */
             .nav-container {
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
@@ -689,21 +756,32 @@
                 font-size: 12px;
             }
 
-            /* HERO BANNER DI HP */
+            .hero-info-bar {
+                padding: 16px 12px;
+            }
+
+            .hero-info-bar h2 {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+
+            .btn-hero {
+                padding: 6px 14px;
+                font-size: 11px;
+            }
+
+            /* KHUSUS HP: VIDEO RATIO PROPORSIONAL FULL FRAME */
             .hero-banner {
                 height: auto;
-                padding: 50px 16px;
+                aspect-ratio: 16 / 9;
+                max-height: 320px;
+                background-color: #040e08;
             }
 
-            .hero-title {
-                font-size: 22px;
+            .hero-video {
+                object-fit: contain;
             }
 
-            .hero-desc {
-                font-size: 13px;
-            }
-
-            /* STATISTIK BERUBAH KE GRID / VERTIKAL DI HP */
             .stats-container {
                 flex-wrap: wrap;
                 gap: 16px;
@@ -714,7 +792,6 @@
                 border-right: none;
             }
 
-            /* LAYOUT KONTEN UTAMA VERTIKAL */
             .main-container {
                 flex-direction: column;
                 padding: 16px;
@@ -739,12 +816,24 @@
         }
 
         @media screen and (max-width: 480px) {
-            .stat-item {
-                flex: 1 1 100%;
+            .hero-info-bar h2 {
+                font-size: 12.5px;
+                line-height: 1.3;
+                margin-bottom: 8px;
             }
 
-            .hero-title {
-                font-size: 20px;
+            .btn-hero {
+                padding: 5px 10px;
+                font-size: 10.5px;
+            }
+
+            .hero-banner {
+                aspect-ratio: 16 / 9;
+                max-height: 240px;
+            }
+
+            .stat-item {
+                flex: 1 1 100%;
             }
 
             table.data-table {
@@ -768,9 +857,7 @@
     <header class="header-main">
         <div class="header-container">
             <div class="header-logo-wrapper">
-                <!-- Logo 1: Kementerian Kehutanan -->
                 <img src="images/kemeteriankehutanan.png" alt="Logo Kementerian Kehutanan" class="header-logo" onerror="this.onerror=null; this.src='kemeteriankehutanan.png';">
-                <!-- Logo 2: BKSDA -->
                 <img src="images/logobksda.png" alt="Logo BKSDA" class="header-logo" onerror="this.onerror=null; this.src='logobksda.jpeg';">
             </div>
             <div class="header-title">
@@ -781,14 +868,14 @@
         </div>
     </header>
 
-    <!-- NAVIGASI UTAMA DENGAN DROPDOWN KLIK -->
+    <!-- NAVIGASI UTAMA -->
     <nav class="nav-bar">
         <div class="nav-container">
             <ul class="nav-menu">
                 <li class="active"><a href="index.html">Beranda</a></li>
                 
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Profil TWA Punti Kayu &#9662;</a>
+                    <a href="profiltwa.html">Profil TWA Punti Kayu &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="profiltwa.html">Profil Kawasan</a></li>
                         <li><a href="pejabat.html">Profil Pejabat</a></li>
@@ -797,7 +884,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Keanekaragaman Hayati &#9662;</a>
+                    <a href="kehati.html">Keanekaragaman Hayati &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="kehati.html">Flora</a></li>
                         <li><a href="fauna.html">Fauna</a></li>
@@ -808,7 +895,7 @@
                 <li><a href="wisata.html">Objek wisata</a></li>
 
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Kegiatan &#9662;</a>
+                    <a href="insitu.html">Kegiatan &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="insitu.html">Insitu</a></li>
                         <li><a href="eksitu.html">Eksitu</a></li>
@@ -821,17 +908,24 @@
         </div>
     </nav>
 
-    <!-- BANNER HERO HOOK MEMIKAT -->
-    <div class="hero-banner">
-        <div class="hero-content">
-            <h1 class="hero-title">Ayo Berkunjung ke TWA Punti Kayu sambil menghirup udara segar di tengah<br><span>KOTA PALEMBANG</span></h1>
-            
-            <div class="hero-actions">
-                <a href="profiltwa.html" class="btn-primary">Jelajahi Profil Kawasan</a>
-                <a href="kehati.html" class="btn-outline">Keanekaragaman Hayati</a>
+    <!-- TEKS UCAPAN & TOMBOL DI ATAS VIDEO HERO -->
+    <div class="hero-info-bar">
+        <div class="hero-info-container">
+            <h2>Ayo Berkunjung ke TWA Punti Kayu sambil menghirup udara segar di tengah <span>KOTA PALEMBANG</span></h2>
+            <div class="hero-buttons">
+                <a href="profiltwa.html" class="btn-hero">Jelajahi Profil Kawasan</a>
+                <a href="kehati.html" class="btn-hero">Keanekaragaman Hayati</a>
             </div>
         </div>
     </div>
+
+    <!-- BANNER HERO VIDEO TANPA OVERLAY GELAP -->
+    <section class="hero-banner">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="videos/1009.mp4" type="video/mp4">
+            Browser Anda tidak mendukung pemutaran video.
+        </video>
+    </section>
 
     <!-- STATISTIK UTAMA DATA VALID BKSDA -->
     <div class="stats-bar">
@@ -861,6 +955,34 @@
         <!-- AREA KONTEN KIRI -->
         <div class="content-area">
 
+            <!-- BAR SUB-MENU GARIS 3 HANYA MUNCUL DI HP -->
+            <div class="mobile-header-bar">
+                <span class="mobile-header-title">Menu Navigasi HP</span>
+                <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu(event)">
+                    <!-- IKON GARIS 3 -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </button>
+
+                <!-- DROPDOWN SUB-MENU LENGKAP KHUSUS HP -->
+                <ul class="mobile-dropdown-menu" id="mobileDropdown">
+                    <div class="menu-category">Profil TWA Punti Kayu</div>
+                    <li><a href="profiltwa.html">Profil Kawasan</a></li>
+                    <li><a href="pejabat.html">Profil Pejabat</a></li>
+                    <li><a href="struktur.html">Struktur Organisasi</a></li>
+
+                    <div class="menu-category">Keanekaragaman Hayati</div>
+                    <li><a href="kehati.html">Flora</a></li>
+                    <li><a href="fauna.html">Fauna</a></li>
+                    <li><a href="poster.html">Poster Satwa Dilindungi</a></li>
+
+                    <div class="menu-category">Kegiatan</div>
+                    <li><a href="insitu.html">Insitu</a></li>
+                    <li><a href="eksitu.html">Eksitu</a></li>
+                </ul>
+            </div>
+
             <!-- FOKUS TWA PUNTI KAYU -->
             <div class="section-header reveal">Taman Wisata Alam (TWA) Punti Kayu</div>
             <div class="grid-two reveal">
@@ -876,11 +998,10 @@
                 </div>
             </div>
 
-            <!-- SLIDER DOKUMENTASI VISUAL BERJALAN OTOMATIS KE KIRI -->
+            <!-- SLIDER DOKUMENTASI VISUAL -->
             <div class="section-header reveal">Dokumentasi Visual Kawasan</div>
             <div class="slider-container reveal">
                 <div class="slider-track">
-                    <!-- SET PERTAMA -->
                     <div class="slider-item">
                         <img src="images/puntikayu.JPG" alt="Lanskap Hutan Pinus">
                         <div class="slider-caption">Tegakan Hutan Pinus</div>
@@ -897,8 +1018,7 @@
                         <img src="images/twa.jpeg" alt="Fasilitas Wisata Alam">
                         <div class="slider-caption">Lingkungan Asri</div>
                     </div>
-
-                    <!-- DUPLIKASI SET UNTUK CONTINUOUS LOOP -->
+                    <!-- DUPLIKASI UNTUK CONTINUOUS LOOP -->
                     <div class="slider-item">
                         <img src="images/puntikayu.JPG" alt="Lanskap Hutan Pinus">
                         <div class="slider-caption">Tegakan Hutan Pinus</div>
@@ -1001,10 +1121,22 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT UNTUK ANIMASI SCROLL REVEAL DAN DROPDOWN ON CLICK -->
+    <!-- SCRIPT JAVASCRIPT ANIMASI & MENU HP -->
     <script>
+        function toggleMobileMenu(event) {
+            event.stopPropagation();
+            const menu = document.getElementById("mobileDropdown");
+            menu.classList.toggle("show");
+        }
+
+        document.addEventListener("click", function (e) {
+            const menu = document.getElementById("mobileDropdown");
+            if (menu && !e.target.closest(".mobile-header-bar")) {
+                menu.classList.remove("show");
+            }
+        });
+
         document.addEventListener("DOMContentLoaded", function () {
-            // 1. ANIMASI SCROLL REVEAL
             const reveals = document.querySelectorAll(".reveal");
 
             function revealOnScroll() {
@@ -1021,37 +1153,6 @@
 
             window.addEventListener("scroll", revealOnScroll);
             revealOnScroll();
-
-            // 2. KONTROL DROPDOWN KETIKA DIKLIK (MOBILE & DESKTOP)
-            const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-
-            dropdownToggles.forEach(function (toggle) {
-                toggle.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    const parentLi = this.parentElement;
-
-                    // Tutup dropdown lain yang sedang terbuka
-                    document.querySelectorAll(".dropdown").forEach(function (dropdown) {
-                        if (dropdown !== parentLi) {
-                            dropdown.classList.remove("show");
-                        }
-                    });
-
-                    // Buka atau tutup dropdown yang diklik
-                    parentLi.classList.toggle("show");
-                });
-            });
-
-            // Tutup dropdown saat pengguna mengklik di luar area navigasi
-            document.addEventListener("click", function (e) {
-                if (!e.target.closest(".nav-bar")) {
-                    document.querySelectorAll(".dropdown").forEach(function (dropdown) {
-                        dropdown.classList.remove("show");
-                    });
-                }
-            });
         });
     </script>
 </body>

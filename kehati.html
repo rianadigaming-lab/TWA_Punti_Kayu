@@ -157,7 +157,7 @@
             text-decoration: none; 
         }
 
-        /* STYLING DROPDOWN MENU PAS SELEBAR TOMBOL NAV INDUK */
+        /* STYLING DROPDOWN MENU DESKTOP HOVER */
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -174,8 +174,7 @@
             padding: 4px 0;
         }
 
-        /* TAMPILKAN DROPDOWN SAAT DIKLIK (.SHOW) */
-        .dropdown.show .dropdown-menu {
+        .dropdown:hover .dropdown-menu {
             display: block;
         }
 
@@ -185,7 +184,7 @@
             font-size: 12px !important;
             font-weight: 600 !important;
             color: #e2e8f0 !important;
-            background-color: #081c10 !important; /* Latar Awal Gelap */
+            background-color: #081c10 !important;
             border-bottom: none !important;
             border-left: 3px solid transparent;
             transition: all 0.2s ease;
@@ -193,7 +192,6 @@
             line-height: 1.3 !important;
         }
 
-        /* LATAR BERUBAH HIJAU KETIKA SUB-MENU DIKLIK/HOVER */
         .dropdown-menu li a:hover,
         .dropdown-menu li a:active {
             background-color: #00a859 !important;
@@ -242,155 +240,82 @@
             text-shadow: 0 1px 4px rgba(0,0,0,0.8);
         }
 
-        /* SLIDER SHOWCASE */
-        .orchid-slider-container {
-            position: relative;
+        /* STYLING SLIDER OTOMATIS BERANDA STYLE (INFINITE SCROLL KE KIRI) */
+        .slider-container {
             max-width: 1100px;
             margin: 20px auto 0 auto;
-            border-radius: 10px;
+            width: 100%;
             overflow: hidden;
-            box-shadow: 0 8px 24px rgba(8, 28, 16, 0.2);
+            position: relative;
+            border-radius: 10px;
             border: 2px solid #00a859;
             background-color: #081c10;
+            box-shadow: 0 8px 24px rgba(8, 28, 16, 0.2);
         }
 
         .slider-track {
             display: flex;
-            width: 100%;
-            height: 320px;
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            width: max-content;
+            animation: slideLeft 25s linear infinite;
         }
 
-        .slide-item {
-            min-width: 100%;
-            height: 100%;
+        .slider-container:hover .slider-track {
+            animation-play-state: paused;
+        }
+
+        .slider-item {
             position: relative;
+            width: 280px;
+            height: 200px;
+            margin-right: 12px;
             flex-shrink: 0;
-            display: flex;
-            align-items: flex-end;
+            overflow: hidden;
+            border-radius: 6px;
         }
 
-        .slide-item img {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .slider-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 1;
+            transition: transform 0.4s ease;
         }
 
-        .slide-overlay {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            padding: 20px 24px;
-            background: linear-gradient(to top, rgba(8, 28, 16, 0.95) 0%, rgba(8, 28, 16, 0.55) 60%, transparent 100%);
+        .slider-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .slider-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(8, 28, 16, 0.95));
             color: #ffffff;
+            padding: 12px 12px 10px 12px;
         }
 
-        .slide-badge {
-            display: inline-block;
-            background-color: #00a859;
-            color: #ffffff;
-            font-size: 10.5px;
-            font-weight: 800;
-            padding: 3px 8px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-
-        .slide-title-group {
-            display: flex;
-            align-items: baseline;
-            gap: 10px;
-            margin-bottom: 2px;
-            flex-wrap: wrap;
-        }
-
-        .slide-title {
-            font-size: 20px;
-            font-weight: 800;
-            color: #ffffff;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.8);
-        }
-
-        .slide-indo-name {
+        .slider-caption h4 {
             font-size: 13.5px;
-            font-weight: 700;
-            color: #00ff88;
-        }
-
-        .slide-latin {
-            font-size: 12.5px;
-            font-style: italic;
-            color: #cbd5e1;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .slide-desc {
-            font-size: 12px;
-            color: #e2e8f0;
-            max-width: 800px;
-            line-height: 1.45;
-        }
-
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            background-color: rgba(8, 28, 16, 0.65);
-            color: #ffffff;
-            border: 1.5px solid #00a859;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
             font-weight: 800;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            user-select: none;
-        }
-
-        .slider-btn:hover {
-            background-color: #00a859;
             color: #ffffff;
-            transform: translateY(-50%) scale(1.1);
+            line-height: 1.2;
         }
 
-        .slider-btn.prev { left: 14px; }
-        .slider-btn.next { right: 14px; }
-
-        .slider-dots {
-            position: absolute;
-            bottom: 10px;
-            right: 18px;
-            z-index: 10;
-            display: flex;
-            gap: 6px;
+        .slider-caption p {
+            font-size: 11px;
+            font-style: italic;
+            color: #00ff88;
+            font-weight: 600;
+            margin-top: 2px;
         }
 
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.4);
-            border: 1px solid #00a859;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot.active {
-            background-color: #00ff88;
-            width: 20px;
-            border-radius: 10px;
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         /* WADAH KONTEN UTAMA */
@@ -415,6 +340,93 @@
             flex: 1;
             border-left: 2px solid #e2e8f0;
             padding-left: 20px;
+        }
+
+        /* FITUR TOMBOL GARIS 3 (HAMBURGER) UNTUK MODE HP */
+        .mobile-header-bar {
+            display: none;
+            background-color: #081c10;
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 24px;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            border-left: 4px solid #00a859;
+        }
+
+        .mobile-header-title {
+            color: #ffffff;
+            font-size: 13.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .mobile-menu-btn {
+            background-color: transparent;
+            border: 1.5px solid #00a859;
+            border-radius: 6px;
+            padding: 6px 10px;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+        }
+
+        .mobile-menu-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
+        }
+
+        .mobile-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #081c10;
+            border: 2px solid #00a859;
+            border-radius: 8px;
+            margin-top: 6px;
+            z-index: 9999;
+            list-style: none;
+            padding: 8px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .mobile-dropdown-menu.show {
+            display: block;
+        }
+
+        .mobile-dropdown-menu .menu-category {
+            padding: 8px 16px 4px 16px;
+            font-size: 11px;
+            font-weight: 800;
+            color: #00ff88;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-top: 1px solid #164229;
+        }
+
+        .mobile-dropdown-menu .menu-category:first-child {
+            border-top: none;
+        }
+
+        .mobile-dropdown-menu li a {
+            display: block;
+            padding: 8px 16px 8px 24px;
+            color: #ffffff;
+            font-size: 12.5px;
+            font-weight: 600;
+        }
+
+        .mobile-dropdown-menu li a:hover,
+        .mobile-dropdown-menu li a:active {
+            background-color: #00a859;
+            color: #ffffff;
         }
 
         .section-header {
@@ -999,6 +1011,10 @@
 
         /* MEDIA QUERIES MOBILE & TABLET */
         @media screen and (max-width: 868px) {
+            .mobile-header-bar {
+                display: flex !important;
+            }
+
             .top-bar {
                 font-size: 11px;
                 text-align: center;
@@ -1137,14 +1153,14 @@
         </div>
     </header>
 
-    <!-- NAVIGASI UTAMA DENGAN DROPDOWN KLIK -->
+    <!-- NAVIGASI UTAMA -->
     <nav class="nav-bar">
         <div class="nav-container">
             <ul class="nav-menu">
                 <li><a href="index.html">Beranda</a></li>
                 
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Profil TWA Punti Kayu &#9662;</a>
+                    <a href="profiltwa.html">Profil TWA Punti Kayu &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="profiltwa.html">Profil Kawasan</a></li>
                         <li><a href="pejabat.html">Profil Pejabat</a></li>
@@ -1153,7 +1169,7 @@
                 </li>
 
                 <li class="dropdown active">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Keanekaragaman Hayati &#9662;</a>
+                    <a href="kehati.html">Keanekaragaman Hayati &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="kehati.html">Flora</a></li>
                         <li><a href="fauna.html">Fauna</a></li>
@@ -1164,7 +1180,7 @@
                 <li><a href="wisata.html">Objek wisata</a></li>
 
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Kegiatan &#9662;</a>
+                    <a href="insitu.html">Kegiatan &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="insitu.html">Insitu</a></li>
                         <li><a href="eksitu.html">Eksitu</a></li>
@@ -1183,89 +1199,149 @@
         <p>Katalog Tumbuhan & Spesies Anggrek Eksotik di Green House TWA Punti Kayu</p>
     </div>
 
-    <!-- HERO SHOWCASE SLIDER -->
-    <div class="orchid-slider-container" id="heroSlider">
-        <div class="slider-track" id="sliderTrack">
-            <!-- SLIDE 1 -->
-            <div class="slide-item">
-                <img src="anggrek/DendrobiumSakdaBeauty.jpeg" alt="Anggrek Dendrobium Sakda Beauty">
-                <div class="slide-overlay">
-                    <span class="slide-badge">Koleksi Prioritas</span>
-                    <div class="slide-title-group">
-                        <h3 class="slide-title">Dendrobium Sakda Beauty</h3>
-                        <span class="slide-indo-name">(Anggrek Dendrobium Sakda Anggun)</span>
-                    </div>
-                    <p class="slide-latin">Dendrobium hybrid 'Sakda Beauty'</p>
-                    <p class="slide-desc">Perpaduan warna putih keunguan kontras yang anggun dengan ketahanan mekar yang lama, menjadi daya tarik utama koleksi Green House TWA Punti Kayu.</p>
+    <!-- SLIDER SHOWCASE ANGGREK AUTOMATIC INFINITE LOOP KE KIRI (BERANDA STYLE) -->
+    <div class="slider-container">
+        <div class="slider-track">
+            
+            <div class="slider-item">
+                <img src="anggrek/DendrobiumSakdaBeauty.jpeg" alt="Dendrobium Sakda Beauty">
+                <div class="slider-caption">
+                    <h4>Dendrobium Sakda Beauty</h4>
+                    <p>Dendrobium hybrid</p>
                 </div>
             </div>
 
-            <!-- SLIDE 2 -->
-            <div class="slide-item">
-                <img src="anggrek/DendrobiumSonia.jpeg" alt="Anggrek Dendrobium Sonia">
-                <div class="slide-overlay">
-                    <span class="slide-badge">Favorit Pengunjung</span>
-                    <div class="slide-title-group">
-                        <h3 class="slide-title">Dendrobium Sonia</h3>
-                        <span class="slide-indo-name">(Anggrek Dendrobium Sonia Ungu)</span>
-                    </div>
-                    <p class="slide-latin">Dendrobium Sonia 'Earsakul'</p>
-                    <p class="slide-desc">Salah satu varietas Dendrobium paling populer dengan kelopak warna fuchsia/magenta menyala dan batang kokoh simetris.</p>
+            <div class="slider-item">
+                <img src="anggrek/DendrobiumSonia.jpeg" alt="Dendrobium Sonia">
+                <div class="slider-caption">
+                    <h4>Dendrobium Sonia</h4>
+                    <p>Dendrobium Sonia 'Earsakul'</p>
                 </div>
             </div>
 
-            <!-- SLIDE 3 -->
-            <div class="slide-item">
-                <img src="anggrek/OrchidVandaFreya Beauty.jpeg" alt="Anggrek Vanda Freya Beauty">
-                <div class="slide-overlay">
-                    <span class="slide-badge">Hibrida Unggulan</span>
-                    <div class="slide-title-group">
-                        <h3 class="slide-title">Orchid Vanda Freya Beauty</h3>
-                        <span class="slide-indo-name">(Anggrek Vanda Freya Cantik)</span>
-                    </div>
-                    <p class="slide-latin">Vanda Freya Beauty hybrid</p>
-                    <p class="slide-desc">Tumbuhan monopodial dengan kelopak lebar penuh corak bergaris eksotis dan sistem akar udara tebal penyerap kelembapan udara.</p>
+            <div class="slider-item">
+                <img src="anggrek/OrchidVandaFreya Beauty.jpeg" alt="Vanda Freya Beauty">
+                <div class="slider-caption">
+                    <h4>Vanda Freya Beauty</h4>
+                    <p>Vanda Freya Beauty hybrid</p>
                 </div>
             </div>
 
-            <!-- SLIDE 4 -->
-            <div class="slide-item">
-                <img src="anggrek/PhalaenopsisBigLipHarlequin.jpeg" alt="Anggrek Bulan Bibir Besar Harlequin">
-                <div class="slide-overlay">
-                    <span class="slide-badge">Eksotik & Langka</span>
-                    <div class="slide-title-group">
-                        <h3 class="slide-title">Phalaenopsis Big Lip Harlequin</h3>
-                        <span class="slide-indo-name">(Anggrek Bulan Bibir Lebar Harlequin)</span>
-                    </div>
-                    <p class="slide-latin">Phalaenopsis hybrid var. Big Lip</p>
-                    <p class="slide-desc">Memiliki labellum (bibir) berukuran ekstra besar menyerupai kelopak utama dengan corak bintik Harlequin yang sangat artistik.</p>
+            <div class="slider-item">
+                <img src="anggrek/PhalaenopsisBigLipHarlequin.jpeg" alt="Phalaenopsis Big Lip Harlequin">
+                <div class="slider-caption">
+                    <h4>Phal. Big Lip Harlequin</h4>
+                    <p>Phalaenopsis hybrid var. Big Lip</p>
                 </div>
             </div>
 
-            <!-- SLIDE 5 -->
-            <div class="slide-item">
-                <img src="anggrek/VandachostylisCrownfoxMagic.jpeg" alt="Anggrek Vandachostylis Crownfox Magic">
-                <div class="slide-overlay">
-                    <span class="slide-badge">Spesies Unik</span>
-                    <div class="slide-title-group">
-                        <h3 class="slide-title">Vandachostylis Crownfox Magic</h3>
-                        <span class="slide-indo-name">(Anggrek Kerabat Ekor Tupai Keunguan)</span>
-                    </div>
-                    <p class="slide-latin">Vandachostylis Crownfox Magic</p>
-                    <p class="slide-desc">Hasil persilangan antar-genus (Vanda x Rhynchostylis) yang memancarkan gugusan bunga ungu kebiruan rapat beraroma harum manis.</p>
+            <div class="slider-item">
+                <img src="anggrek/Phalaenopsishybrid.jpeg" alt="Phalaenopsis Hybrid">
+                <div class="slider-caption">
+                    <h4>Phalaenopsis Hybrid</h4>
+                    <p>Phalaenopsis spp.</p>
                 </div>
             </div>
+
+            <div class="slider-item">
+                <img src="anggrek/VandachostylisCrownfoxMagic.jpeg" alt="Vandachostylis Crownfox Magic">
+                <div class="slider-caption">
+                    <h4>Vandachostylis Crownfox</h4>
+                    <p>Vandachostylis hybrid</p>
+                </div>
+            </div>
+
+            <div class="slider-item">
+                <img src="anggrek/VandaDrDellaSuantioLee.jpeg" alt="Vanda Dr. Della Suantio Lee">
+                <div class="slider-caption">
+                    <h4>Vanda Dr. Della Suantio Lee</h4>
+                    <p>Vanda Dr. Della Suantio Lee</p>
+                </div>
+            </div>
+
+            <!-- DUPLIKASI UNTUK CONTINUOUS INFINITE LOOP SCROLLING -->
+            <div class="slider-item">
+                <img src="anggrek/DendrobiumSakdaBeauty.jpeg" alt="Dendrobium Sakda Beauty">
+                <div class="slider-caption">
+                    <h4>Dendrobium Sakda Beauty</h4>
+                    <p>Dendrobium hybrid</p>
+                </div>
+            </div>
+
+            <div class="slider-item">
+                <img src="anggrek/DendrobiumSonia.jpeg" alt="Dendrobium Sonia">
+                <div class="slider-caption">
+                    <h4>Dendrobium Sonia</h4>
+                    <p>Dendrobium Sonia 'Earsakul'</p>
+                </div>
+            </div>
+
+            <div class="slider-item">
+                <img src="anggrek/OrchidVandaFreya Beauty.jpeg" alt="Vanda Freya Beauty">
+                <div class="slider-caption">
+                    <h4>Vanda Freya Beauty</h4>
+                    <p>Vanda Freya Beauty hybrid</p>
+                </div>
+            </div>
+
+            <div class="slider-item">
+                <img src="anggrek/PhalaenopsisBigLipHarlequin.jpeg" alt="Phalaenopsis Big Lip Harlequin">
+                <div class="slider-caption">
+                    <h4>Phal. Big Lip Harlequin</h4>
+                    <p>Phalaenopsis hybrid var. Big Lip</p>
+                </div>
+            </div>
+
+            <div class="slider-item">
+                <img src="anggrek/Phalaenopsishybrid.jpeg" alt="Phalaenopsis Hybrid">
+                <div class="slider-caption">
+                    <h4>Phalaenopsis Hybrid</h4>
+                    <p>Phalaenopsis spp.</p>
+                </div>
+            </div>
+
+            <div class="slider-item">
+                <img src="anggrek/VandachostylisCrownfoxMagic.jpeg" alt="Vandachostylis Crownfox Magic">
+                <div class="slider-caption">
+                    <h4>Vandachostylis Crownfox</h4>
+                    <p>Vandachostylis hybrid</p>
+                </div>
+            </div>
+
+            <div class="slider-item">
+                <img src="anggrek/VandaDrDellaSuantioLee.jpeg" alt="Vanda Dr. Della Suantio Lee">
+                <div class="slider-caption">
+                    <h4>Vanda Dr. Della Suantio Lee</h4>
+                    <p>Vanda Dr. Della Suantio Lee</p>
+                </div>
+            </div>
+
         </div>
-
-        <div class="slider-btn prev" id="slidePrev">&#10094;</div>
-        <div class="slider-btn next" id="slideNext">&#10095;</div>
-        <div class="slider-dots" id="sliderDots"></div>
     </div>
 
     <!-- WADAH KONTEN UTAMA -->
     <div class="main-container">
         
         <div class="content-area">
+
+            <!-- BAR SUB-MENU GARIS 3 HANYA MUNCUL DI HP -->
+            <div class="mobile-header-bar">
+                <span class="mobile-header-title">Menu Keanekaragaman Hayati</span>
+                <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu(event)">
+                    <!-- IKON GARIS 3 -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </button>
+
+                <!-- DROPDOWN SUB-MENU LENGKAP KHUSUS HP -->
+                <ul class="mobile-dropdown-menu" id="mobileDropdown">
+                    <div class="menu-category">Keanekaragaman Hayati</div>
+                    <li><a href="kehati.html">Flora</a></li>
+                    <li><a href="fauna.html">Fauna</a></li>
+                    <li><a href="poster.html">Poster Satwa Dilindungi</a></li>
+                </ul>
+            </div>
 
             <!-- STATISTIK SINGKAT KEHATI -->
             <div class="kehati-stats-grid">
@@ -1547,7 +1623,7 @@
             <!-- FLORA -->
             <div class="section-header">Keanekaragaman Flora Kawasan</div>
             <p class="article-text">
-                Berdasarkan data inventarisasi resmi Balai Konservasi Sumber Daya Alam (BKSDA) Sumatera Selatan, kawasan TWA Punti Kayu menyimpan kekayaan flora sebanyak <strong>71 jenis pohon yang terbagi dalam 27 famili</strong>[cite: 23]. Vegetasi utama kawasan didominasi oleh tegakan <strong>Hutan Pinus (<em>Pinus merkusii</em>)</strong> yang membentuk bentang alam hijau khas di tengah Kota Palembang[cite: 23]. Famili flora dominan yang tumbuh subur di kawasan ini meliputi <strong>Fabaceae (6 jenis), Myrtaceae (6 jenis), Euphorbiaceae (3 jenis), Verbenaceae (3 jenis), dan Sapindaceae (3 jenis)</strong>[cite: 23].
+                Berdasarkan data inventarisasi resmi Balai Konservasi Sumber Daya Alam (BKSDA) Sumatera Selatan, kawasan TWA Punti Kayu menyimpan kekayaan flora sebanyak <strong>71 jenis pohon yang terbagi dalam 27 famili</strong>. Vegetasi utama kawasan didominasi oleh tegakan <strong>Hutan Pinus (<em>Pinus merkusii</em>)</strong> yang membentuk bentang alam hijau khas di tengah Kota Palembang. Famili flora dominan yang tumbuh subur di kawasan ini meliputi <strong>Fabaceae (6 jenis), Myrtaceae (6 jenis), Euphorbiaceae (3 jenis), Verbenaceae (3 jenis), dan Sapindaceae (3 jenis)</strong>.
             </p>
 
             <table class="data-table">
@@ -1569,7 +1645,7 @@
                         </td>
                         <td>
                             <span class="badge-status badge-dominant">Vegetasi Utama (Dominan)</span><br>
-                            Spesies peneduh utama yang membentuk bentang kanopi lanskap TWA Punti Kayu serta penyerap karbon dioksida utama kota[cite: 23].
+                            Spesies peneduh utama yang membentuk bentang kanopi lanskap TWA Punti Kayu serta penyerap karbon dioksida utama kota.
                         </td>
                     </tr>
                     <tr>
@@ -1581,7 +1657,7 @@
                         </td>
                         <td>
                             <span class="badge-status badge-dominant">Tanaman Pelindung Utama</span><br>
-                            Tumbuhan kayu keras yang tumbuh rapat di sekitar zona pembatas kawasan dan jalur treking[cite: 23].
+                            Tumbuhan kayu keras yang tumbuh rapat di sekitar zona pembatas kawasan dan jalur treking.
                         </td>
                     </tr>
                 </tbody>
@@ -1602,7 +1678,7 @@
             <div class="widget">
                 <div class="widget-title">PEMANTAUAN EKOSISTEM</div>
                 <p style="font-size: 12px; color: #334155; line-height: 1.55; font-weight: 600;">
-                    Keanekaragaman hayati dan konservasi anggrek TWA Punti Kayu dipantau secara berkala oleh tim Pengendali Ekosistem Hutan (PEH) BKSDA Sumsel[cite: 23].
+                    Keanekaragaman hayati dan konservasi anggrek TWA Punti Kayu dipantau secara berkala oleh tim Pengendali Ekosistem Hutan (PEH) BKSDA Sumsel.
                 </p>
             </div>
 
@@ -1622,15 +1698,15 @@
         <div class="footer-container">
             <div class="footer-col">
                 <h5>BKSDA Sumatera Selatan</h5>
-                <p>Balai Konservasi Sumber Daya Alam Sumatera Selatan bertugas mengelola kawasan konservasi dan keanekaragaman hayati di wilayah Sumatera Selatan[cite: 23].</p>
+                <p>Balai Konservasi Sumber Daya Alam Sumatera Selatan bertugas mengelola kawasan konservasi dan keanekaragaman hayati di wilayah Sumatera Selatan.</p>
             </div>
             <div class="footer-col">
                 <h5>Alamat Kantor</h5>
-                <p>Jl. Kolonel H. Burlian KM. 6 No. 79, Kota Palembang, Sumatera Selatan<br>Telepon/Fax: (0711) 410948[cite: 23]</p>
+                <p>Jl. Kolonel H. Burlian KM. 6 No. 79, Kota Palembang, Sumatera Selatan<br>Telepon/Fax: (0711) 410948</p>
             </div>
         </div>
         <div class="footer-bottom">
-            Hak Cipta &copy; 2026 Balai Konservasi Sumber Daya Alam (BKSDA) Sumatera Selatan — Pengelola Kawasan TWA Punti Kayu[cite: 23]
+            Hak Cipta &copy; 2026 Balai Konservasi Sumber Daya Alam (BKSDA) Sumatera Selatan — Pengelola Kawasan TWA Punti Kayu
         </div>
     </footer>
 
@@ -1668,8 +1744,14 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT UTAMA: DROPDOWN KLIK, SLIDER & MODAL INTERAKTIF -->
+    <!-- JAVASCRIPT UTAMA: MENU HP & MODAL INTERAKTIF -->
     <script>
+        function toggleMobileMenu(event) {
+            event.stopPropagation();
+            const menu = document.getElementById("mobileDropdown");
+            menu.classList.toggle("show");
+        }
+
         function tutupModalOuter(e) {
             const modal = document.getElementById("detailModal");
             if (e.target === modal || e.target.id === "closeDetailModal") {
@@ -1677,104 +1759,16 @@
             }
         }
 
+        document.addEventListener("click", function (e) {
+            const menu = document.getElementById("mobileDropdown");
+            if (menu && !e.target.closest(".mobile-header-bar")) {
+                menu.classList.remove("show");
+            }
+        });
+
         document.addEventListener("DOMContentLoaded", function () {
-            
-            // --- 1. KONTROL DROPDOWN KETIKA DIKLIK (ON-CLICK) ---
-            const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
-            dropdownToggles.forEach(function (toggle) {
-                toggle.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    const parentLi = this.parentElement;
-
-                    // Tutup dropdown lain yang terbuka
-                    document.querySelectorAll(".dropdown").forEach(function (dropdown) {
-                        if (dropdown !== parentLi) {
-                            dropdown.classList.remove("show");
-                        }
-                    });
-
-                    // Buka atau tutup dropdown yang diklik
-                    parentLi.classList.toggle("show");
-                });
-            });
-
-            // Tutup dropdown saat klik luar area navigasi
-            document.addEventListener("click", function (e) {
-                if (!e.target.closest(".nav-bar")) {
-                    document.querySelectorAll(".dropdown").forEach(function (dropdown) {
-                        dropdown.classList.remove("show");
-                    });
-                }
-            });
-
-
-            // --- 2. JAVASCRIPT SLIDER SHOWCASE ---
-            const sliderTrack = document.getElementById("sliderTrack");
-            const slides = document.querySelectorAll(".slide-item");
-            const prevBtn = document.getElementById("slidePrev");
-            const nextBtn = document.getElementById("slideNext");
-            const dotsContainer = document.getElementById("sliderDots");
-            const heroSlider = document.getElementById("heroSlider");
-            
-            let currentIndex = 0;
-            let slideInterval;
-            const totalSlides = slides.length;
-
-            slides.forEach((_, index) => {
-                const dot = document.createElement("div");
-                dot.classList.add("dot");
-                if (index === 0) dot.classList.add("active");
-                dot.addEventListener("click", () => goToSlide(index));
-                dotsContainer.appendChild(dot);
-            });
-
-            const dots = document.querySelectorAll(".dot");
-
-            function updateSliderPosition() {
-                sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
-                dots.forEach((dot, idx) => {
-                    dot.classList.toggle("active", idx === currentIndex);
-                });
-            }
-
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                updateSliderPosition();
-            }
-
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                updateSliderPosition();
-            }
-
-            function goToSlide(index) {
-                currentIndex = index;
-                updateSliderPosition();
-            }
-
-            if (nextBtn) nextBtn.addEventListener("click", nextSlide);
-            if (prevBtn) prevBtn.addEventListener("click", prevSlide);
-
-            function startAutoplay() {
-                slideInterval = setInterval(nextSlide, 4000);
-            }
-
-            function stopAutoplay() {
-                clearInterval(slideInterval);
-            }
-
-            startAutoplay();
-
-            if (heroSlider) {
-                heroSlider.addEventListener("mouseenter", stopAutoplay);
-                heroSlider.addEventListener("mouseleave", startAutoplay);
-            }
-
-
-            // --- 3. JAVASCRIPT MODAL DETAIL POP-UP ---
+            // JAVASCRIPT MODAL DETAIL POP-UP
             const modal = document.getElementById("detailModal");
             const modalImg = document.getElementById("detailModalImg");
             const modalTitle = document.getElementById("detailTitle");
