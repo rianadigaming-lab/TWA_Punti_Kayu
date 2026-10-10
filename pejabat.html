@@ -104,7 +104,7 @@
             margin-top: 2px;
         }
 
-        /* 3. NAVIGASI UTAMA RESPONSIVE */
+        /* 3. NAVIGASI UTAMA */
         .nav-bar { 
             background-color: #081c10; 
             position: sticky; 
@@ -155,7 +155,7 @@
             text-decoration: none; 
         }
 
-        /* STYLING DROPDOWN MENU PAS SELEBAR TOMBOL NAV INDUK */
+        /* STYLING DROPDOWN DESKTOP HOVER */
         .dropdown-menu { 
             display: none; 
             position: absolute; 
@@ -172,8 +172,7 @@
             padding: 4px 0; 
         }
 
-        /* TAMPILKAN DROPDOWN SAAT DIKLIK (.SHOW) */
-        .dropdown.show .dropdown-menu { 
+        .dropdown:hover .dropdown-menu { 
             display: block; 
         }
 
@@ -183,7 +182,7 @@
             font-size: 12px !important; 
             font-weight: 600 !important; 
             color: #e2e8f0 !important; 
-            background-color: #081c10 !important; /* Latar Awal Gelap */
+            background-color: #081c10 !important;
             border-bottom: none !important; 
             border-left: 3px solid transparent;
             transition: all 0.2s ease;
@@ -191,9 +190,7 @@
             line-height: 1.3 !important;
         }
 
-        /* LATAR BERUBAH HIJAU KETIKA SUB-MENU DIKLIK/HOVER */
-        .dropdown-menu li a:hover,
-        .dropdown-menu li a:active { 
+        .dropdown-menu li a:hover { 
             background-color: #00a859 !important; 
             color: #ffffff !important; 
             border-left: 3px solid #00ff88 !important;
@@ -217,7 +214,7 @@
 
         /* BANNER PAGE */
         .page-banner { 
-            background: linear-gradient(rgba(8, 28, 16, 0.75), rgba(8, 28, 16, 0.9)), url('profil.png') center/cover no-repeat; 
+            background: linear-gradient(rgba(8, 28, 16, 0.75), rgba(8, 28, 16, 0.9)), url('images/profil.png') center/cover no-repeat; 
             border-bottom: 4px solid #00a859; 
             padding: 50px 20px; 
             color: #ffffff; 
@@ -238,6 +235,85 @@
             border-radius: 10px; 
             padding: 36px; 
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); 
+        }
+
+        /* FITUR TOMBOL GARIS 3 (HAMBURGER) UNTUK MODE HP */
+        .mobile-header-bar {
+            display: none; /* Sembunyi secara bawaan di Laptop/Desktop */
+            background-color: #081c10;
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 24px;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            border-left: 4px solid #00a859;
+        }
+
+        .mobile-header-title {
+            color: #ffffff;
+            font-size: 13.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .mobile-menu-btn {
+            background-color: transparent;
+            border: 1.5px solid #00a859;
+            border-radius: 6px;
+            padding: 6px 10px;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+        }
+
+        .mobile-menu-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
+        }
+
+        /* POPUP SUB-MENU GARIS 3 MODE HP */
+        .mobile-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #081c10;
+            border: 2px solid #00a859;
+            border-radius: 8px;
+            margin-top: 6px;
+            z-index: 9999;
+            list-style: none;
+            padding: 8px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .mobile-dropdown-menu.show {
+            display: block;
+        }
+
+        .mobile-dropdown-menu li a {
+            display: block;
+            padding: 10px 16px;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 700;
+            border-bottom: 1px solid #164229;
+        }
+
+        .mobile-dropdown-menu li:last-child a {
+            border-bottom: none;
+        }
+
+        .mobile-dropdown-menu li a:hover,
+        .mobile-dropdown-menu li a:active {
+            background-color: #00a859;
+            color: #ffffff;
         }
         
         /* LAYOUT PROFIL TUNGGAL */
@@ -393,6 +469,11 @@
 
         /* MEDIA QUERIES PENYESUAIAN TAMPILAN UNTUK HP / TABLET */
         @media screen and (max-width: 868px) {
+            /* TAMPILKAN BAR SUB-MENU GARIS 3 DI HP */
+            .mobile-header-bar {
+                display: flex !important;
+            }
+
             .top-bar {
                 font-size: 11px;
                 text-align: center;
@@ -501,14 +582,14 @@
         </div>
     </header>
 
-    <!-- NAVIGASI UTAMA DENGAN DROPDOWN KLIK -->
+    <!-- NAVIGASI UTAMA (PROFIL LANGSUNG MENGARAH KE PROFILTWA.HTML) -->
     <nav class="nav-bar">
         <div class="nav-container">
             <ul class="nav-menu">
                 <li><a href="index.html">Beranda</a></li>
                 
                 <li class="dropdown active">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Profil TWA Punti Kayu &#9662;</a>
+                    <a href="profiltwa.html">Profil TWA Punti Kayu &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="profiltwa.html">Profil Kawasan</a></li>
                         <li><a href="pejabat.html">Profil Pejabat</a></li>
@@ -517,7 +598,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Keanekaragaman Hayati &#9662;</a>
+                    <a href="kehati.html">Keanekaragaman Hayati &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="kehati.html">Flora</a></li>
                         <li><a href="fauna.html">Fauna</a></li>
@@ -528,7 +609,7 @@
                 <li><a href="wisata.html">Objek wisata</a></li>
 
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Kegiatan &#9662;</a>
+                    <a href="insitu.html">Kegiatan &#9662;</a>
                     <ul class="dropdown-menu">
                         <li><a href="insitu.html">Insitu</a></li>
                         <li><a href="eksitu.html">Eksitu</a></li>
@@ -548,24 +629,43 @@
 
     <!-- WADAH KONTEN UTAMA -->
     <div class="main-container">
+
+        <!-- BAR SUB-MENU GARIS 3 HANYA MUNCUL DI HP -->
+        <div class="mobile-header-bar">
+            <span class="mobile-header-title">Menu Profil</span>
+            <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu(event)">
+                <!-- IKON GARIS 3 -->
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </button>
+
+            <!-- DROPDOWN SUB-MENU KHUSUS HP -->
+            <ul class="mobile-dropdown-menu" id="mobileDropdown">
+                <li><a href="profiltwa.html">Profil Kawasan</a></li>
+                <li><a href="pejabat.html">Profil Pejabat</a></li>
+                <li><a href="struktur.html">Struktur Organisasi</a></li>
+            </ul>
+        </div>
+
         <div class="leader-layout">
             <!-- DESKRIPSI LENGKAP & DIPERTEGAS -->
             <div class="leader-text-box">
                 <h2>Pimpinan Pengelola Kawasan</h2>
                 <p>
-                    Pelaksanaan operasional harian, perlindungan kawasan hutan, serta pelayanan publik di Taman Wisata Alam Punti Kayu dipimpin langsung oleh <strong>Kepala Resor KSDA Wilayah I Palembang</strong> di bawah naungan Balai Konservasi Sumber Daya Alam Sumatera Selatan[cite: 22].
+                    Pelaksanaan operasional harian, perlindungan kawasan hutan, serta pelayanan publik di Taman Wisata Alam Punti Kayu dipimpin langsung oleh <strong>Kepala Resor KSDA Wilayah I Palembang</strong> di bawah naungan Balai Konservasi Sumber Daya Alam Sumatera Selatan[cite: 20].
                 </p>
                 <p>
-                    Tugas pokok dan fungsi operasional Resor KSDA Wilayah I Palembang meliputi[cite: 22]:
+                    Tugas pokok dan fungsi operasional Resor KSDA Wilayah I Palembang meliputi[cite: 20]:
                 </p>
                 <ul>
-                    <li>Pelaksanaan patroli rutin pengamanan hutan dan penegakan hukum lingkungan di dalam kawasan TWA Punti Kayu[cite: 22].</li>
-                    <li>Pengawasan tata kelola eduwisata, sarana prasarana rekreasi, serta aktivitas penelitian ilmiah[cite: 22].</li>
-                    <li>Penanganan konflik ruang antara manusia dan satwa liar, evakuasi, hingga translokasi satwa dilindungi di wilayah Palembang[cite: 22].</li>
-                    <li>Sosialisasi regulasi perlindungan keanekaragaman hayati dan pembinaan lembaga konservasi eksitu[cite: 22].</li>
+                    <li>Pelaksanaan patroli rutin pengamanan hutan dan penegakan hukum lingkungan di dalam kawasan TWA Punti Kayu[cite: 20].</li>
+                    <li>Pengawasan tata kelola eduwisata, sarana prasarana rekreasi, serta aktivitas penelitian ilmiah[cite: 20].</li>
+                    <li>Penanganan konflik ruang antara manusia dan satwa liar, evakuasi, hingga translokasi satwa dilindungi di wilayah Palembang[cite: 20].</li>
+                    <li>Sosialisasi regulasi perlindungan keanekaragaman hayati dan pembinaan lembaga konservasi eksitu[cite: 20].</li>
                 </ul>
                 <p>
-                    <strong>Petunjuk:</strong> Silakan klik pada foto atau kartu pejabat di samping untuk melihat rincian biodata kepegawaian, jabatan fungsional POLHUT, riwayat pendidikan, serta rekam jejak lapangan beliau[cite: 22].
+                    <strong>Petunjuk:</strong> Silakan klik pada foto atau kartu pejabat di samping untuk melihat rincian biodata kepegawaian, jabatan fungsional POLHUT, riwayat pendidikan, serta rekam jejak lapangan beliau[cite: 20].
                 </p>
             </div>
 
@@ -573,7 +673,7 @@
             <div class="leader-single-card">
                 <a href="detail-pejabat-resor.html" class="card-pejabat-link">
                     <div class="card-pejabat">
-                        <img src="images/kepalaresor.jpeg" alt="Foto Anjas Tuberlani, S.H." onerror="this.onerror=null; this.src='profil.png';">
+                        <img src="images/kepalaresor.jpeg" alt="Foto Anjas Tuberlani, S.H." onerror="this.onerror=null; this.src='images/profil.png';">
                         <div class="info">
                             <h3>Anjas Tuberlani, S.H.</h3>
                             <p>Kepala Resor KSDA Wilayah I Palembang</p>
@@ -589,51 +689,32 @@
         <div class="footer-container">
             <div class="footer-col">
                 <h5>BKSDA Sumatera Selatan</h5>
-                <p>Balai Konservasi Sumber Daya Alam Sumatera Selatan bertugas mengelola kawasan konservasi dan keanekaragaman hayati di wilayah Sumatera Selatan[cite: 22].</p>
+                <p>Balai Konservasi Sumber Daya Alam Sumatera Selatan bertugas mengelola kawasan konservasi dan keanekaragaman hayati di wilayah Sumatera Selatan[cite: 20].</p>
             </div>
             <div class="footer-col">
                 <h5>Alamat Kantor</h5>
-                <p>Jl. Kolonel H. Burlian KM. 6 No. 79, Kota Palembang, Sumatera Selatan<br>Telepon/Fax: (0711) 410948[cite: 22]</p>
+                <p>Jl. Kolonel H. Burlian KM. 6 No. 79, Kota Palembang, Sumatera Selatan<br>Telepon/Fax: (0711) 410948[cite: 20]</p>
             </div>
         </div>
         <div class="footer-bottom">
-            Hak Cipta &copy; 2026 Balai Konservasi Sumber Daya Alam (BKSDA) Sumatera Selatan — Pengelola Kawasan TWA Punti Kayu[cite: 22]
+            Hak Cipta &copy; 2026 Balai Konservasi Sumber Daya Alam (BKSDA) Sumatera Selatan — Pengelola Kawasan TWA Punti Kayu[cite: 20]
         </div>
     </footer>
 
-    <!-- SCRIPT JAVASCRIPT UTAMA -->
+    <!-- SCRIPT JAVASCRIPT GARIS 3 HP -->
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // --- KONTROL DROPDOWN KETIKA DIKLIK (ON-CLICK) ---
-        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+    function toggleMobileMenu(event) {
+        event.stopPropagation();
+        const menu = document.getElementById("mobileDropdown");
+        menu.classList.toggle("show");
+    }
 
-        dropdownToggles.forEach(function (toggle) {
-            toggle.addEventListener("click", function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                const parentLi = this.parentElement;
-
-                // Tutup dropdown lain yang sedang terbuka
-                document.querySelectorAll(".dropdown").forEach(function (dropdown) {
-                    if (dropdown !== parentLi) {
-                        dropdown.classList.remove("show");
-                    }
-                });
-
-                // Buka atau tutup dropdown yang diklik
-                parentLi.classList.toggle("show");
-            });
-        });
-
-        // Tutup dropdown saat klik luar area navigasi
-        document.addEventListener("click", function (e) {
-            if (!e.target.closest(".nav-bar")) {
-                document.querySelectorAll(".dropdown").forEach(function (dropdown) {
-                    dropdown.classList.remove("show");
-                });
-            }
-        });
+    // Tutup dropdown mobile saat mengklik di luar area
+    document.addEventListener("click", function (e) {
+        const menu = document.getElementById("mobileDropdown");
+        if (menu && !e.target.closest(".mobile-header-bar")) {
+            menu.classList.remove("show");
+        }
     });
     </script>
 
