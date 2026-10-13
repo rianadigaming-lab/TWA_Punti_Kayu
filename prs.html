@@ -6,77 +6,66 @@
     <title>
       Beranda PRS - Pusat Rehabilitasi Satwa Punti Kayu | BKSDA Sumsel
     </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
     <style>
+      :root {
+        --forest: #081c10;
+        --green: #00a859;
+        --green-dark: #056b3d;
+        --mint: #eaf8ef;
+        --ink: #0f172a;
+        --muted: #5b6b63;
+        --line: #dbe7df;
+        --bg: #f0f4f2;
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
+
       html {
         scroll-behavior: smooth;
+        scroll-padding-top: 75px;
       }
+
       body {
-        font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-        background-color: #f0f4f2;
-        color: #0f172a;
-        line-height: 1.6;
+        font-family:
+          "Plus Jakarta Sans",
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: var(--bg);
+        color: var(--ink);
         font-size: 14px;
+        line-height: 1.7;
+        overflow-x: hidden;
       }
+
       a {
-        color: #00a859;
         text-decoration: none;
-        font-weight: 600;
+        color: inherit;
       }
-      a:hover {
-        color: #007a40;
-        text-decoration: underline;
-      }
-      .top-bar {
-        background-color: #081c10;
-        color: #ffffff;
+
+      /* =========================================
+         HEADER & TOPBAR
+      ========================================= */
+      .topbar {
+        background: #081c10;
+        color: #fff;
         padding: 6px 20px;
         font-size: 12px;
         font-weight: 600;
+        letter-spacing: 0.3px;
       }
-      .header-main {
-        background-color: #ffffff;
-        border-bottom: 3px solid #00a859;
-        padding: 14px 20px;
-      }
-      .header-container {
-        max-width: 1100px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-      }
-      .header-logo {
-        height: 55px;
-        width: auto;
-      }
-      .header-title h1 {
-        font-size: 16.5px;
-        font-weight: 800;
-        color: #0f172a;
-        text-transform: uppercase;
-      }
-      .header-title h2 {
-        font-size: 13.5px;
-        font-weight: 700;
-        color: #00a859;
-        text-transform: uppercase;
-      }
-      .header-title p {
-        font-size: 11.5px;
-        color: #334155;
-      }
-      /* 2. HEADER MAIN RESPONSIVE */
+
       .header-main {
         background-color: #ffffff;
         border-bottom: 3px solid #00a859;
@@ -128,56 +117,152 @@
         margin-top: 2px;
       }
 
-      .nav-bar {
-        background-color: #081c10;
+      /* =========================================
+         NAVIGASI
+      ========================================= */
+      .nav {
         position: sticky;
         top: 0;
         z-index: 1000;
+        background: #081c10;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
-      .nav-container {
+
+      .nav-inner {
         max-width: 1100px;
         margin: 0 auto;
+        padding: 0;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: center;
+        gap: 0;
       }
-      .nav-menu {
+
+      .nav-links {
         list-style: none;
         display: flex;
         align-items: center;
-        height: 48px;
+        justify-content: center;
+        flex-wrap: nowrap;
         gap: 4px;
+        min-width: 0;
       }
-      .nav-menu li a {
+
+      .nav-links li {
+        position: relative;
+        white-space: nowrap;
+      }
+
+      .nav-links a {
         display: flex;
         align-items: center;
+        justify-content: center;
         height: 48px;
-        color: #ffffff;
+        color: #fff;
+        background: #081c10;
         padding: 0 16px;
         font-size: 13px;
         font-weight: 700;
-        transition: all 0.2s ease;
+        border-bottom: 3px solid transparent;
+        transition: all 0.2s;
+        white-space: nowrap;
       }
-      .nav-menu li a:hover,
-      .nav-menu li.active > a {
-        background-color: #00a859;
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #fff;
+        background: #00a859;
         border-bottom: 3px solid #00ff88;
-        text-decoration: none;
       }
-      .btn-back-twa {
-        background-color: #e11d48;
-        color: #ffffff !important;
-        padding: 6px 14px;
+
+      .back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        height: 32px;
+        padding: 0 14px;
+        border: 1.5px solid #00a859;
         border-radius: 6px;
-        font-size: 12px;
+        color: #fff;
+        font-size: 12.5px;
         font-weight: 700;
-        margin-right: 16px;
+        background: rgba(0, 168, 89, 0.15);
+        white-space: nowrap;
+        transition: all 0.2s;
       }
-      .btn-back-twa:hover {
-        background-color: #be123c !important;
-        text-decoration: none !important;
+
+      .back:hover {
+        background: #00a859;
+        border-color: #00a859;
+        color: #fff;
       }
+
+      /* =========================================
+         HERO SECTION (BACKGROUND DARI INFORMASIREHABILITASI)
+      ========================================= */
+      .hero {
+        background:
+          linear-gradient(110deg, #062c1be8, #087b4cb0),
+          url("prs/pelepasliaranmerakhijau.jpeg") center 43% / cover;
+        min-height: 320px;
+        display: flex;
+        align-items: center;
+        color: white;
+        padding: 45px 6%;
+      }
+
+      .hero-inner {
+        max-width: 1100px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        background: #ffffff20;
+        border: 1px solid #ffffff65;
+        border-radius: 30px;
+        padding: 6px 12px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .hero h2 {
+        font-size: clamp(27px, 4vw, 42px);
+        line-height: 1.25;
+        max-width: 750px;
+        margin: 15px 0 12px;
+      }
+
+      .hero p {
+        max-width: 720px;
+        color: #e6f5eb;
+        font-size: 14px;
+      }
+
+      .hero-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 11px 19px;
+        background: white;
+        color: var(--forest);
+        border-radius: 7px;
+        font-size: 12px;
+        font-weight: 800;
+        transition: 0.2s;
+      }
+
+      .hero-button:hover {
+        background: var(--mint);
+        transform: translateY(-2px);
+      }
+
+      /* =========================================
+         KONTEN UTAMA
+      ========================================= */
       .main-container {
         max-width: 1100px;
         margin: 28px auto;
@@ -187,16 +272,20 @@
         padding: 26px;
         display: flex;
         gap: 26px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
       }
+
       .content-area {
         flex: 3;
         min-width: 0;
       }
+
       .sidebar-area {
         flex: 1;
         border-left: 2px solid #e2e8f0;
         padding-left: 22px;
       }
+
       .section-header {
         background-color: #f0fdf4;
         border-left: 5px solid #00a859;
@@ -210,6 +299,7 @@
         border: 1px solid #dcfce7;
         border-left: 5px solid #00a859;
       }
+
       .card-box {
         border: 1px solid #cbd5e1;
         border-radius: 8px;
@@ -217,23 +307,27 @@
         background-color: #ffffff;
         margin-bottom: 16px;
       }
+
       .card-box h4 {
         color: #00a859;
         font-size: 15px;
         font-weight: 800;
         margin-bottom: 8px;
       }
+
       .grid-two {
         display: flex;
         gap: 16px;
         margin-bottom: 20px;
       }
+
       .widget {
         margin-bottom: 24px;
         border: 1px solid #e2e8f0;
         border-radius: 8px;
         padding: 12px;
       }
+
       .widget-title {
         background-color: #081c10;
         color: #ffffff;
@@ -243,6 +337,8 @@
         margin-bottom: 12px;
         border-radius: 5px;
       }
+
+      /* FOOTER */
       .footer-main {
         background-color: #081c10;
         color: #ffffff;
@@ -251,6 +347,7 @@
         margin-top: 40px;
         font-size: 13px;
       }
+
       .footer-container {
         max-width: 1100px;
         margin: 0 auto;
@@ -258,6 +355,7 @@
         display: flex;
         justify-content: space-between;
       }
+
       .footer-bottom {
         max-width: 1100px;
         margin: 22px auto 0;
@@ -267,26 +365,155 @@
         font-size: 11.5px;
         color: #94a3b8;
       }
-      @media (max-width: 768px) {
-        .nav-container,
-        .main-container,
-        .grid-two,
-        .footer-container {
+
+      /* =========================================
+         RESPONSIVE TABLET & MOBILE
+      ========================================= */
+      @media screen and (max-width: 868px) {
+        .topbar {
+          font-size: 11px;
+          text-align: center;
+          padding: 6px 12px;
+        }
+
+        .header-main {
+          padding: 14px 20px;
+        }
+
+        .header-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+        }
+
+        .header-logo-wrapper {
+          justify-content: center;
+        }
+
+        .header-logo {
+          height: 48px;
+        }
+
+        .header-title h1 {
+          font-size: 14px;
+        }
+
+        .header-title h2 {
+          font-size: 12px;
+        }
+
+        .header-title p {
+          font-size: 10.5px;
+        }
+
+        .nav-inner {
+          overflow-x: auto;
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch;
+          justify-content: flex-start;
+          padding: 0;
+          gap: 0;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+          flex-shrink: 0;
+          padding: 0 10px;
+        }
+
+        .nav-links a {
+          height: 44px;
+          padding: 0 12px;
+          font-size: 12px;
+        }
+
+        .back {
+          margin: 0 10px 0 0;
+          font-size: 11px;
+        }
+
+        .hero {
+          min-height: 270px;
+          padding: 35px 20px;
+        }
+
+        .main-container {
+          flex-direction: column;
+          padding: 16px;
+          margin: 16px auto;
+        }
+
+        .grid-two {
           flex-direction: column;
         }
+
         .sidebar-area {
           border-left: none;
           border-top: 2px solid #e2e8f0;
           padding-left: 0;
           padding-top: 20px;
         }
+
+        .footer-container {
+          flex-direction: column;
+          gap: 18px;
+        }
+      }
+
+      @media screen and (max-width: 560px) {
+        .header-title h1 {
+          font-size: 12px;
+          line-height: 1.4;
+        }
+
+        .header-title h2 {
+          font-size: 11px;
+        }
+
+        .header-title p {
+          font-size: 10px;
+          line-height: 1.5;
+        }
+
+        .nav-links {
+          gap: 2px;
+          padding: 0 6px;
+        }
+
+        .nav-links a {
+          height: 42px;
+          padding: 0 10px;
+          font-size: 11px;
+        }
+
+        .back {
+          height: 30px;
+          padding: 0 10px;
+          font-size: 10px;
+        }
+
+        .hero {
+          min-height: 290px;
+          padding: 30px 16px;
+        }
+
+        .hero h2 {
+          font-size: 24px;
+        }
+
+        .hero p {
+          font-size: 12.5px;
+        }
       }
     </style>
   </head>
+
   <body>
-    <div class="top-bar">
-      Kementerian Kehutanan Republik Indonesia — Ditjen KSDAE
+    <!-- INFORMASI INSTANSI -->
+    <div class="topbar">
+      Kementerian Kehutanan Republik Indonesia · Ditjen KSDAE
     </div>
+
     <!-- HEADER INSTANSI -->
     <header class="header-main">
       <div class="header-container">
@@ -321,24 +548,44 @@
       </div>
     </header>
 
-    <nav class="nav-bar">
-      <div class="nav-container">
-        <ul class="nav-menu">
-          <li class="active"><a href="prs.html">Beranda PRS</a></li>
+    <!-- NAVIGASI PRS -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <ul class="nav-links">
+          <li><a class="active" href="prs.html">Beranda PRS</a></li>
           <li>
             <a href="informasirehabilitasi.html">Informasi Rehabilitasi</a>
           </li>
           <li><a href="datasatwaprs.html">Data Satwa PRS</a></li>
-          <li><a href="kegiatanedukasi.html">Kegiatan & Edukasi</a></li>
+          <li><a href="kegiatanedukasi.html">Kegiatan &amp; Edukasi</a></li>
           <li><a href="dokumentasi.html">Dokumentasi</a></li>
         </ul>
-        <a href="index.html" class="btn-back-twa"
-          >&larr; Kembali ke TWA Punti Kayu</a
-        >
+
+        <a href="index.html" class="back"> &larr; Kembali ke TWA Punti Kayu </a>
       </div>
     </nav>
 
-    <div class="main-container">
+    <!-- HERO SECTION LENGKAP DENGAN BACKGROUND GAMBAR -->
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="eyebrow">Pusat Rehabilitasi Satwa</span>
+
+        <h2>Penyelamatan & Pemulihan Satwa Liar Punti Kayu</h2>
+
+        <p>
+          Mewujudkan perlindungan dan kelestarian satwa liar dilindungi melalui
+          proses karantina, perawatan medis terstandar, hingga siap untuk
+          dilepasliarkan kembali ke habitat alaminya.
+        </p>
+
+        <a href="#konten-utama" class="hero-button">
+          Pelajari Profil PRS ↓
+        </a>
+      </div>
+    </section>
+
+    <!-- WADAH KONTEN UTAMA -->
+    <div class="main-container" id="konten-utama">
       <div class="content-area">
         <div class="section-header">Selamat Datang di PRS Punti Kayu</div>
         <div class="card-box">
@@ -353,7 +600,7 @@
 
         <div class="grid-two">
           <div class="card-box" style="flex: 1">
-            <h4>Visi & Misi</h4>
+            <h4>Visi &amp; Misi</h4>
             <p>
               Mewujudkan kelestarian satwa liar dilindungi melalui tahapan
               rehabilitasi yang terstandar medis serta mengembalikan sifat alami
@@ -383,6 +630,7 @@
       </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="footer-main">
       <div class="footer-container">
         <div>

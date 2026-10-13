@@ -3,40 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kegiatan & Edukasi - PRS Punti Kayu</title>
+    <title>Kegiatan & Edukasi - Pusat Rehabilitasi Satwa Punti Kayu</title>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
     <style>
+      :root {
+        --forest: #081c10;
+        --green: #00a859;
+        --green-dark: #056b3d;
+        --mint: #eaf8ef;
+        --ink: #0f172a;
+        --muted: #5b6b63;
+        --line: #dbe7df;
+        --bg: #f0f4f2;
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 75px;
+      }
+
       body {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        background-color: #f0f4f2;
-        color: #0f172a;
-        line-height: 1.6;
+        font-family:
+          "Plus Jakarta Sans",
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: var(--bg);
+        color: var(--ink);
         font-size: 14px;
+        line-height: 1.7;
+        overflow-x: hidden;
       }
+
       a {
-        color: #00a859;
         text-decoration: none;
-        font-weight: 600;
+        color: inherit;
       }
-      .top-bar {
-        background-color: #081c10;
-        color: #ffffff;
+
+      /* =========================================
+         HEADER & TOPBAR — SAMA DENGAN INFORMASIREHABILITASI.HTML
+      ========================================= */
+      .topbar {
+        background: #081c10;
+        color: #fff;
         padding: 6px 20px;
         font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
       }
+
       .header-main {
         background-color: #ffffff;
         border-bottom: 3px solid #00a859;
         padding: 14px 20px;
       }
+
       .header-container {
         max-width: 1100px;
         margin: 0 auto;
@@ -44,64 +77,128 @@
         align-items: center;
         gap: 16px;
       }
-      .header-logo {
-        height: 55px;
-        width: auto;
+
+      .header-logo-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
       }
+
+      .header-logo {
+        width: auto;
+        height: 55px;
+        object-fit: contain;
+      }
+
       .header-title h1 {
         font-size: 16.5px;
         font-weight: 800;
+        color: #0f172a;
         text-transform: uppercase;
+        letter-spacing: -0.2px;
+        line-height: 1.25;
       }
+
       .header-title h2 {
         font-size: 13.5px;
         font-weight: 700;
         color: #00a859;
         text-transform: uppercase;
+        margin-top: 2px;
       }
-      .nav-bar {
-        background-color: #081c10;
+
+      .header-title p {
+        font-size: 11.5px;
+        color: #334155;
+        font-weight: 600;
+        margin-top: 2px;
+      }
+
+      /* =========================================
+         NAVIGASI — SAMA DENGAN INFORMASIREHABILITASI.HTML
+      ========================================= */
+      .nav {
         position: sticky;
         top: 0;
         z-index: 1000;
+        background: #081c10;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
-      .nav-container {
+
+      .nav-inner {
         max-width: 1100px;
         margin: 0 auto;
+        padding: 0;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: center;
+        gap: 0;
       }
-      .nav-menu {
+
+      .nav-links {
         list-style: none;
         display: flex;
         align-items: center;
-        height: 48px;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 4px;
+        min-width: 0;
       }
-      .nav-menu li a {
+
+      .nav-links li {
+        position: relative;
+        white-space: nowrap;
+      }
+
+      .nav-links a {
         display: flex;
         align-items: center;
+        justify-content: center;
         height: 48px;
-        color: #ffffff;
+        color: #fff;
+        background: #081c10;
         padding: 0 16px;
         font-size: 13px;
         font-weight: 700;
+        border-bottom: 3px solid transparent;
+        transition: all 0.2s;
+        white-space: nowrap;
       }
-      .nav-menu li a:hover,
-      .nav-menu li.active > a {
-        background-color: #00a859;
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #fff;
+        background: #00a859;
         border-bottom: 3px solid #00ff88;
-        text-decoration: none;
       }
-      .btn-back-twa {
-        background-color: #e11d48;
-        color: #ffffff !important;
-        padding: 6px 14px;
+
+      .back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        height: 32px;
+        padding: 0 14px;
+        border: 1.5px solid #00a859;
         border-radius: 6px;
-        font-size: 12px;
+        color: #fff;
+        font-size: 12.5px;
         font-weight: 700;
-        margin-right: 16px;
+        background: rgba(0, 168, 89, 0.15);
+        white-space: nowrap;
+        transition: all 0.2s;
       }
+
+      .back:hover {
+        background: #00a859;
+        border-color: #00a859;
+        color: #fff;
+      }
+
+      /* =========================================
+         KONTEN UTAMA
+      ========================================= */
       .main-container {
         max-width: 1100px;
         margin: 28px auto;
@@ -109,40 +206,64 @@
         border: 1px solid #cbd5e1;
         border-radius: 10px;
         padding: 26px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
       }
+
       .section-header {
         background-color: #f0fdf4;
         border-left: 5px solid #00a859;
         padding: 10px 16px;
         font-size: 14.5px;
         font-weight: 800;
+        color: #0f172a;
         margin-bottom: 16px;
         text-transform: uppercase;
         border-radius: 0 6px 6px 0;
         border: 1px solid #dcfce7;
+        border-left: 5px solid #00a859;
       }
+
+      .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-top: 12px;
+        margin-bottom: 24px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+      }
+
       table.data-table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 12px;
-        margin-bottom: 24px;
         font-size: 13px;
+        min-width: 650px;
       }
+
       table.data-table th {
         background-color: #081c10;
         color: #ffffff;
         padding: 11px 12px;
         text-align: left;
         font-weight: 700;
+        border-bottom: 2px solid #00a859;
       }
+
       table.data-table td {
         padding: 10px 12px;
-        border: 1px solid #cbd5e1;
+        border-bottom: 1px solid #e2e8f0;
+        border-right: 1px solid #e2e8f0;
         color: #0f172a;
       }
+
       table.data-table tr:nth-child(even) {
         background-color: #f8fafc;
       }
+
+      table.data-table tr:hover {
+        background-color: #f0fdf4;
+      }
+
       .card-box {
         border: 1px solid #cbd5e1;
         border-radius: 8px;
@@ -150,107 +271,259 @@
         background-color: #ffffff;
         margin-bottom: 16px;
       }
+
       .card-box h4 {
         color: #00a859;
         font-size: 15px;
         font-weight: 800;
         margin-bottom: 8px;
       }
+
+      .card-box p {
+        font-size: 13px;
+        color: #334155;
+        line-height: 1.6;
+      }
+
+      /* FOOTER */
       .footer-main {
         background-color: #081c10;
         color: #ffffff;
         border-top: 4px solid #00a859;
-        padding: 20px 0;
+        padding: 28px 0 14px 0;
         margin-top: 40px;
+        font-size: 13px;
+      }
+
+      .footer-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer-bottom {
+        max-width: 1100px;
+        margin: 22px auto 0;
+        padding-top: 14px;
+        border-top: 1px solid #164229;
         text-align: center;
         font-size: 11.5px;
         color: #94a3b8;
       }
+
+      /* =========================================
+         RESPONSIVE TABLET & MOBILE
+      ========================================= */
+      @media screen and (max-width: 868px) {
+        .topbar {
+          font-size: 11px;
+          text-align: center;
+          padding: 6px 12px;
+        }
+
+        .header-main {
+          padding: 14px 20px;
+        }
+
+        .header-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+        }
+
+        .header-logo-wrapper {
+          justify-content: center;
+        }
+
+        .header-logo {
+          height: 48px;
+        }
+
+        .header-title h1 {
+          font-size: 14px;
+        }
+
+        .header-title h2 {
+          font-size: 12px;
+        }
+
+        .header-title p {
+          font-size: 10.5px;
+        }
+
+        .nav-inner {
+          overflow-x: auto;
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch;
+          justify-content: flex-start;
+          padding: 0;
+          gap: 0;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+          flex-shrink: 0;
+          padding: 0 10px;
+        }
+
+        .nav-links a {
+          height: 44px;
+          padding: 0 12px;
+          font-size: 12px;
+        }
+
+        .back {
+          margin: 0 10px 0 0;
+          font-size: 11px;
+        }
+
+        .main-container {
+          padding: 16px;
+          margin: 16px auto;
+        }
+
+        .footer-container {
+          flex-direction: column;
+          gap: 18px;
+        }
+      }
+
+      @media screen and (max-width: 560px) {
+        .header-title h1 {
+          font-size: 12px;
+          line-height: 1.4;
+        }
+
+        .header-title h2 {
+          font-size: 11px;
+        }
+
+        .header-title p {
+          font-size: 10px;
+          line-height: 1.5;
+        }
+
+        .nav-links {
+          gap: 2px;
+          padding: 0 6px;
+        }
+
+        .nav-links a {
+          height: 42px;
+          padding: 0 10px;
+          font-size: 11px;
+        }
+
+        .back {
+          height: 30px;
+          padding: 0 10px;
+          font-size: 10px;
+        }
+      }
     </style>
   </head>
+
   <body>
-    <div class="top-bar">
-      Kementerian Kehutanan Republik Indonesia — Ditjen KSDAE
+    <!-- INFORMASI INSTANSI -->
+    <div class="topbar">
+      Kementerian Kehutanan Republik Indonesia · Ditjen KSDAE
     </div>
+
+    <!-- HEADER INSTANSI -->
     <header class="header-main">
       <div class="header-container">
-        <img
-          src="images/kemeteriankehutanan.png"
-          alt="Logo"
-          class="header-logo"
-          onerror="this.src = 'kemeteriankehutanan.png'"
-        />
-        <img
-          src="images/logobksda.png"
-          alt="Logo"
-          class="header-logo"
-          onerror="this.src = 'logobksda.jpeg'"
-        />
+        <div class="header-logo-wrapper">
+          <img
+            src="images/kemeteriankehutanan.png"
+            alt="Logo Kementerian Kehutanan"
+            class="header-logo"
+            onerror="
+              this.onerror = null;
+              this.src = 'kemeteriankehutanan.png';
+            "
+          />
+          <img
+            src="images/logobksda.png"
+            alt="Logo BKSDA"
+            class="header-logo"
+            onerror="
+              this.onerror = null;
+              this.src = 'logobksda.jpeg';
+            "
+          />
+        </div>
         <div class="header-title">
-          <h1>Pusat Rehabilitasi Satwa (PRS) Punti Kayu</h1>
-          <h2>Balai Konservasi Sumber Daya Alam Sumatera Selatan</h2>
+          <h1>Balai Konservasi Sumber Daya Alam Sumatera Selatan</h1>
+          <h2>Sistem Informasi Taman Wisata Alam Punti Kayu Palembang</h2>
+          <p>
+            Jl. Kolonel H. Burlian KM. 6 No. 79, Palembang, Sumatera Selatan |
+            Email: bksdasumsel@kemenhut.go.id
+          </p>
         </div>
       </div>
     </header>
 
-    <nav class="nav-bar">
-      <div class="nav-container">
-        <ul class="nav-menu">
+    <!-- NAVIGASI PRS -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <ul class="nav-links">
           <li><a href="prs.html">Beranda PRS</a></li>
           <li>
             <a href="informasirehabilitasi.html">Informasi Rehabilitasi</a>
           </li>
           <li><a href="datasatwaprs.html">Data Satwa PRS</a></li>
-          <li class="active">
-            <a href="kegiatanedukasi.html">Kegiatan & Edukasi</a>
-          </li>
+          <li><a class="active" href="kegiatanedukasi.html">Kegiatan &amp; Edukasi</a></li>
           <li><a href="dokumentasi.html">Dokumentasi</a></li>
         </ul>
-        <a href="index.html" class="btn-back-twa"
-          >&larr; Kembali ke TWA Punti Kayu</a
-        >
+
+        <a href="index.html" class="back"> &larr; Kembali ke TWA Punti Kayu </a>
       </div>
     </nav>
 
+    <!-- WADAH KONTEN UTAMA -->
     <div class="main-container">
       <div class="section-header">
-        Jadwal Pemberian Pakan & Perawatan Medis Satwa
+        Jadwal Pemberian Pakan &amp; Perawatan Medis Satwa
       </div>
 
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Kelompok Satwa</th>
-            <th>Jadwal Pakan</th>
-            <th>Jenis Pakan / Nutrisi</th>
-            <th>Jadwal Vaksinasi & Obat</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Primata (Owa/Kera)</strong></td>
-            <td>08:30 WIB & 15:30 WIB</td>
-            <td>Buah segar, biji-bijian, dedaunan, ulat hongkong</td>
-            <td>Obat cacing per 3 bulan, Vitamin imun rutin tiap minggu</td>
-          </tr>
-          <tr>
-            <td><strong>Aves / Raptor (Elang)</strong></td>
-            <td>10:00 WIB & 16:00 WIB</td>
-            <td>Daging segar, tikus putih (feeders), ikan segar</td>
-            <td>Vaksinasi Rabies/Newcastle, Suplemen tulang/kalsium</td>
-          </tr>
-          <tr>
-            <td><strong>Reptil (Buaya/Ular)</strong></td>
-            <td>3 Hari Sekali (14:00 WIB)</td>
-            <td>Ikan utuh, daging unggeus segar</td>
-            <td>Pembersihan parasit eksternal & kontrol luka berkala</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Kelompok Satwa</th>
+              <th>Jadwal Pakan</th>
+              <th>Jenis Pakan / Nutrisi</th>
+              <th>Jadwal Vaksinasi &amp; Obat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Primata (Owa/Kera)</strong></td>
+              <td>08:30 WIB &amp; 15:30 WIB</td>
+              <td>Buah segar, biji-bijian, dedaunan, ulat hongkong</td>
+              <td>Obat cacing per 3 bulan, Vitamin imun rutin tiap minggu</td>
+            </tr>
+            <tr>
+              <td><strong>Aves / Raptor (Elang)</strong></td>
+              <td>10:00 WIB &amp; 16:00 WIB</td>
+              <td>Daging segar, tikus putih (feeders), ikan segar</td>
+              <td>Vaksinasi Rabies/Newcastle, Suplemen tulang/kalsium</td>
+            </tr>
+            <tr>
+              <td><strong>Reptil (Buaya/Ular)</strong></td>
+              <td>3 Hari Sekali (14:00 WIB)</td>
+              <td>Ikan utuh, daging unggas segar</td>
+              <td>Pembersihan parasit eksternal &amp; kontrol luka berkala</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <div class="section-header">Kegiatan Edukasi Konservasi Satwa</div>
       <div class="card-box">
-        <h4>Edukasi Perlindungan Satwa Bagi Sekolah & Mahasiswa</h4>
+        <h4>Edukasi Perlindungan Satwa Bagi Sekolah &amp; Mahasiswa</h4>
         <p>
           PRS Punti Kayu menyediakan ruang edukasi terbatas untuk sosialisasi
           perundang-undangan perlindungan satwa liar, bahaya perdagangan satwa
@@ -260,9 +533,20 @@
       </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="footer-main">
-      Hak Cipta &copy; 2026 BKSDA Sumatera Selatan — Pusat Rehabilitasi Satwa
-      Punti Kayu
+      <div class="footer-container">
+        <div>
+          <h5 style="color: #00ff88; margin-bottom: 8px">PRS TWA Punti Kayu</h5>
+          <p style="color: #cbd5e1; font-size: 12px">
+            Unit Pengelolaan Rehabilitasi Satwa BKSDA Sumatera Selatan.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        Hak Cipta &copy; 2026 BKSDA Sumatera Selatan — Pusat Rehabilitasi Satwa
+        Punti Kayu
+      </div>
     </footer>
   </body>
 </html>

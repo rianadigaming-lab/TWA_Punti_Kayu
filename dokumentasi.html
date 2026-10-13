@@ -3,40 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dokumentasi Kegiatan - PRS Punti Kayu</title>
+    <title>Dokumentasi Kegiatan - Pusat Rehabilitasi Satwa Punti Kayu</title>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
     <style>
+      :root {
+        --forest: #081c10;
+        --green: #00a859;
+        --green-dark: #056b3d;
+        --mint: #eaf8ef;
+        --ink: #0f172a;
+        --muted: #5b6b63;
+        --line: #dbe7df;
+        --bg: #f0f4f2;
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 75px;
+      }
+
       body {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        background-color: #f0f4f2;
-        color: #0f172a;
-        line-height: 1.6;
+        font-family:
+          "Plus Jakarta Sans",
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: var(--bg);
+        color: var(--ink);
         font-size: 14px;
+        line-height: 1.7;
+        overflow-x: hidden;
       }
+
       a {
-        color: #00a859;
         text-decoration: none;
-        font-weight: 600;
+        color: inherit;
       }
-      .top-bar {
-        background-color: #081c10;
-        color: #ffffff;
+
+      /* =========================================
+         HEADER & TOPBAR — SAMA DENGAN INFORMASIREHABILITASI.HTML
+      ========================================= */
+      .topbar {
+        background: #081c10;
+        color: #fff;
         padding: 6px 20px;
         font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
       }
+
       .header-main {
         background-color: #ffffff;
         border-bottom: 3px solid #00a859;
         padding: 14px 20px;
       }
+
       .header-container {
         max-width: 1100px;
         margin: 0 auto;
@@ -44,64 +77,128 @@
         align-items: center;
         gap: 16px;
       }
-      .header-logo {
-        height: 55px;
-        width: auto;
+
+      .header-logo-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
       }
+
+      .header-logo {
+        width: auto;
+        height: 55px;
+        object-fit: contain;
+      }
+
       .header-title h1 {
         font-size: 16.5px;
         font-weight: 800;
+        color: #0f172a;
         text-transform: uppercase;
+        letter-spacing: -0.2px;
+        line-height: 1.25;
       }
+
       .header-title h2 {
         font-size: 13.5px;
         font-weight: 700;
         color: #00a859;
         text-transform: uppercase;
+        margin-top: 2px;
       }
-      .nav-bar {
-        background-color: #081c10;
+
+      .header-title p {
+        font-size: 11.5px;
+        color: #334155;
+        font-weight: 600;
+        margin-top: 2px;
+      }
+
+      /* =========================================
+         NAVIGASI — SAMA DENGAN INFORMASIREHABILITASI.HTML
+      ========================================= */
+      .nav {
         position: sticky;
         top: 0;
         z-index: 1000;
+        background: #081c10;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
-      .nav-container {
+
+      .nav-inner {
         max-width: 1100px;
         margin: 0 auto;
+        padding: 0;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: center;
+        gap: 0;
       }
-      .nav-menu {
+
+      .nav-links {
         list-style: none;
         display: flex;
         align-items: center;
-        height: 48px;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 4px;
+        min-width: 0;
       }
-      .nav-menu li a {
+
+      .nav-links li {
+        position: relative;
+        white-space: nowrap;
+      }
+
+      .nav-links a {
         display: flex;
         align-items: center;
+        justify-content: center;
         height: 48px;
-        color: #ffffff;
+        color: #fff;
+        background: #081c10;
         padding: 0 16px;
         font-size: 13px;
         font-weight: 700;
+        border-bottom: 3px solid transparent;
+        transition: all 0.2s;
+        white-space: nowrap;
       }
-      .nav-menu li a:hover,
-      .nav-menu li.active > a {
-        background-color: #00a859;
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #fff;
+        background: #00a859;
         border-bottom: 3px solid #00ff88;
-        text-decoration: none;
       }
-      .btn-back-twa {
-        background-color: #e11d48;
-        color: #ffffff !important;
-        padding: 6px 14px;
+
+      .back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        height: 32px;
+        padding: 0 14px;
+        border: 1.5px solid #00a859;
         border-radius: 6px;
-        font-size: 12px;
+        color: #fff;
+        font-size: 12.5px;
         font-weight: 700;
-        margin-right: 16px;
+        background: rgba(0, 168, 89, 0.15);
+        white-space: nowrap;
+        transition: all 0.2s;
       }
+
+      .back:hover {
+        background: #00a859;
+        border-color: #00a859;
+        color: #fff;
+      }
+
+      /* =========================================
+         KONTEN UTAMA & GALERI
+      ========================================= */
       .main-container {
         max-width: 1100px;
         margin: 28px auto;
@@ -109,141 +206,549 @@
         border: 1px solid #cbd5e1;
         border-radius: 10px;
         padding: 26px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
       }
+
       .section-header {
         background-color: #f0fdf4;
         border-left: 5px solid #00a859;
         padding: 10px 16px;
         font-size: 14.5px;
         font-weight: 800;
+        color: #0f172a;
         margin-bottom: 16px;
+        margin-top: 10px;
         text-transform: uppercase;
         border-radius: 0 6px 6px 0;
         border: 1px solid #dcfce7;
+        border-left: 5px solid #00a859;
       }
+
       .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 16px;
-        margin-top: 16px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 14px;
+        margin-bottom: 28px;
       }
+
       .gallery-card {
         border: 1px solid #cbd5e1;
-        border-radius: 8px;
+        border-radius: 10px;
         overflow: hidden;
         background: #fff;
+        transition: all 0.25s ease;
       }
-      .gallery-card img {
+
+      .gallery-card:hover {
+        transform: translateY(-4px);
+        border-color: #00a859;
+        box-shadow: 0 8px 20px rgba(0, 168, 89, 0.12);
+      }
+
+      .img-wrapper {
+        position: relative;
         width: 100%;
-        height: 160px;
+        height: 180px;
+        background: #e2e8f0;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .img-wrapper img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
+        transition: transform 0.3s ease;
       }
+
+      .img-wrapper:hover img {
+        transform: scale(1.06);
+      }
+
       .gallery-card .caption {
-        padding: 10px 12px;
-        font-size: 12px;
-        font-weight: 700;
-        color: #0f172a;
+        padding: 12px 14px;
       }
+
+      .gallery-card .caption h4 {
+        font-size: 13px;
+        font-weight: 800;
+        color: #081c10;
+        margin-bottom: 4px;
+      }
+
+      .gallery-card .caption p {
+        font-size: 11.5px;
+        color: #5b6b63;
+        line-height: 1.5;
+      }
+
+      /* VIDEO CARD */
+      .video-card {
+        background: #081c10;
+        border-radius: 10px;
+        overflow: hidden;
+        color: #fff;
+        margin-top: 14px;
+      }
+
+      .video-card video {
+        width: 100%;
+        max-height: 480px;
+        display: block;
+        background: #000;
+      }
+
+      .video-caption {
+        padding: 16px;
+      }
+
+      .video-caption h4 {
+        font-size: 14px;
+        font-weight: 800;
+        margin-bottom: 4px;
+        color: #00ff88;
+      }
+
+      .video-caption p {
+        font-size: 12px;
+        color: #cbd5e1;
+      }
+
+      /* LIGHTBOX MODAL */
+      .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(2, 11, 7, 0.92);
+        z-index: 2000;
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal.open {
+        display: flex;
+      }
+
+      .modal-content {
+        position: relative;
+        max-width: 1000px;
+        max-height: 90vh;
+        text-align: center;
+      }
+
+      .modal-content img {
+        max-width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: 8px;
+        border: 2px solid #00a859;
+      }
+
+      .modal-caption {
+        color: #00ff88;
+        font-size: 13px;
+        font-weight: 700;
+        margin-top: 10px;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        background: transparent;
+        border: 0;
+        color: #fff;
+        font-size: 32px;
+        cursor: pointer;
+      }
+
+      /* FOOTER */
       .footer-main {
         background-color: #081c10;
         color: #ffffff;
         border-top: 4px solid #00a859;
-        padding: 20px 0;
+        padding: 28px 0 14px 0;
         margin-top: 40px;
+        font-size: 13px;
+      }
+
+      .footer-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer-bottom {
+        max-width: 1100px;
+        margin: 22px auto 0;
+        padding-top: 14px;
+        border-top: 1px solid #164229;
         text-align: center;
         font-size: 11.5px;
         color: #94a3b8;
       }
+
+      /* RESPONSIVE TABLET & MOBILE */
+      @media screen and (max-width: 868px) {
+        .topbar {
+          font-size: 11px;
+          text-align: center;
+          padding: 6px 12px;
+        }
+
+        .header-main {
+          padding: 14px 20px;
+        }
+
+        .header-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+        }
+
+        .header-logo-wrapper {
+          justify-content: center;
+        }
+
+        .header-logo {
+          height: 48px;
+        }
+
+        .header-title h1 {
+          font-size: 14px;
+        }
+
+        .header-title h2 {
+          font-size: 12px;
+        }
+
+        .header-title p {
+          font-size: 10.5px;
+        }
+
+        .nav-inner {
+          overflow-x: auto;
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch;
+          justify-content: flex-start;
+          padding: 0;
+          gap: 0;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+          flex-shrink: 0;
+          padding: 0 10px;
+        }
+
+        .nav-links a {
+          height: 44px;
+          padding: 0 12px;
+          font-size: 12px;
+        }
+
+        .back {
+          margin: 0 10px 0 0;
+          font-size: 11px;
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 14px;
+        }
+
+        .main-container {
+          padding: 16px;
+          margin: 16px auto;
+        }
+
+        .footer-container {
+          flex-direction: column;
+          gap: 18px;
+        }
+      }
+
+      @media screen and (max-width: 560px) {
+        .header-title h1 {
+          font-size: 12px;
+          line-height: 1.4;
+        }
+
+        .header-title h2 {
+          font-size: 11px;
+        }
+
+        .header-title p {
+          font-size: 10px;
+          line-height: 1.5;
+        }
+
+        .nav-links {
+          gap: 2px;
+          padding: 0 6px;
+        }
+
+        .nav-links a {
+          height: 42px;
+          padding: 0 10px;
+          font-size: 11px;
+        }
+
+        .back {
+          height: 30px;
+          padding: 0 10px;
+          font-size: 10px;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
+
   <body>
-    <div class="top-bar">
-      Kementerian Kehutanan Republik Indonesia — Ditjen KSDAE
+    <!-- INFORMASI INSTANSI -->
+    <div class="topbar">
+      Kementerian Kehutanan Republik Indonesia · Ditjen KSDAE
     </div>
+
+    <!-- HEADER INSTANSI -->
     <header class="header-main">
       <div class="header-container">
-        <img
-          src="images/kemeteriankehutanan.png"
-          alt="Logo"
-          class="header-logo"
-          onerror="this.src = 'kemeteriankehutanan.png'"
-        />
-        <img
-          src="images/logobksda.png"
-          alt="Logo"
-          class="header-logo"
-          onerror="this.src = 'logobksda.jpeg'"
-        />
+        <div class="header-logo-wrapper">
+          <img
+            src="images/kemeteriankehutanan.png"
+            alt="Logo Kementerian Kehutanan"
+            class="header-logo"
+            onerror="
+              this.onerror = null;
+              this.src = 'kemeteriankehutanan.png';
+            "
+          />
+          <img
+            src="images/logobksda.png"
+            alt="Logo BKSDA"
+            class="header-logo"
+            onerror="
+              this.onerror = null;
+              this.src = 'logobksda.jpeg';
+            "
+          />
+        </div>
         <div class="header-title">
-          <h1>Pusat Rehabilitasi Satwa (PRS) Punti Kayu</h1>
-          <h2>Balai Konservasi Sumber Daya Alam Sumatera Selatan</h2>
+          <h1>Balai Konservasi Sumber Daya Alam Sumatera Selatan</h1>
+          <h2>Sistem Informasi Taman Wisata Alam Punti Kayu Palembang</h2>
+          <p>
+            Jl. Kolonel H. Burlian KM. 6 No. 79, Palembang, Sumatera Selatan |
+            Email: bksdasumsel@kemenhut.go.id
+          </p>
         </div>
       </div>
     </header>
 
-    <nav class="nav-bar">
-      <div class="nav-container">
-        <ul class="nav-menu">
+    <!-- NAVIGASI PRS -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <ul class="nav-links">
           <li><a href="prs.html">Beranda PRS</a></li>
           <li>
             <a href="informasirehabilitasi.html">Informasi Rehabilitasi</a>
           </li>
           <li><a href="datasatwaprs.html">Data Satwa PRS</a></li>
-          <li><a href="kegiatanedukasi.html">Kegiatan & Edukasi</a></li>
-          <li class="active"><a href="dokumentasi.html">Dokumentasi</a></li>
+          <li><a href="kegiatanedukasi.html">Kegiatan &amp; Edukasi</a></li>
+          <li><a class="active" href="dokumentasi.html">Dokumentasi</a></li>
         </ul>
-        <a href="index.html" class="btn-back-twa"
-          >&larr; Kembali ke TWA Punti Kayu</a
-        >
+
+        <a href="index.html" class="back"> &larr; Kembali ke TWA Punti Kayu </a>
       </div>
     </nav>
 
+    <!-- WADAH KONTEN UTAMA -->
     <div class="main-container">
-      <div class="section-header">Dokumentasi Visual Kegiatan PRS</div>
-      <p style="margin-bottom: 16px">
-        Galeri foto penanganan, perawatan kesehatan medis, serta kegiatan
-        operasional medis tim PRS BKSDA Sumatera Selatan:
-      </p>
-
+      
+      <!-- KATEGORI 1: PENERIMAAN & EVAKUASI -->
+      <div class="section-header">1. Dokumentasi Penerimaan &amp; Evakuasi Satwa</div>
       <div class="gallery-grid">
         <div class="gallery-card">
-          <img
-            src="images/profil.png"
-            alt="Pemeriksaan Kesehatan Satwa"
-            onerror="this.src = 'images/twa.jpeg'"
-          />
-          <div class="caption">Pemeriksaan Kesehatan Medis Satwa</div>
+          <div class="img-wrapper" onclick="openModal('prs/evakuasitrenggiling.jpeg', 'Evakuasi Trenggiling')">
+            <img src="prs/evakuasitrenggiling.jpeg" alt="Evakuasi Trenggiling" loading="lazy" />
+          </div>
+          <div class="caption">
+            <h4>Evakuasi Trenggiling</h4>
+            <p>Penyelamatan dan evakuasi trenggiling serahan masyarakat oleh petugas BKSDA.</p>
+          </div>
         </div>
+
         <div class="gallery-card">
-          <img
-            src="images/puntikayu.JPG"
-            alt="Pemberian Pakan Imun"
-            onerror="this.src = 'images/pinus.png'"
-          />
-          <div class="caption">Pemberian Pakan & Nutrisi Terjadwal</div>
+          <div class="img-wrapper" onclick="openModal('prs/penerimaankucinghutankuwuk.jpeg', 'Penerimaan Kucing Hutan')">
+            <img src="prs/penerimaankucinghutankuwuk.jpeg" alt="Penerimaan Kucing Hutan Kuwuk" loading="lazy" />
+          </div>
+          <div class="caption">
+            <h4>Penerimaan Kucing Hutan (Kuwuk)</h4>
+            <p>Penerimaan barang bukti/serahan satwa kucing kuwuk di pos klinik medis.</p>
+          </div>
         </div>
+
         <div class="gallery-card">
-          <img
-            src="images/twa.jpeg"
-            alt="Fasilitas Kandang Karantina"
-            onerror="this.src = 'images/profil.png'"
-          />
-          <div class="caption">Fasilitas Kandang Rehabilitasi</div>
+          <div class="img-wrapper" onclick="openModal('prs/penerimaansiamang.jpeg', 'Penerimaan Siamang')">
+            <img src="prs/penerimaansiamang.jpeg" alt="Penerimaan Siamang" loading="lazy" />
+          </div>
+          <div class="caption">
+            <h4>Penerimaan Siamang</h4>
+            <p>Pemeriksaan awal fisik dan identifikasi usia saat siamang baru diserahkan.</p>
+          </div>
         </div>
+      </div>
+
+      <!-- KATEGORI 2: PERAWATAN MEDIS SATWA -->
+      <div class="section-header">2. Dokumentasi Perawatan &amp; Tindakan Medis</div>
+      <div class="gallery-grid">
         <div class="gallery-card">
-          <img
-            src="images/pinus.png"
-            alt="Persiapan Pelepasliaran"
-            onerror="this.src = 'images/puntikayu.JPG'"
-          />
-          <div class="caption">Persiapan Pelepasliaran ke Habitat Alami</div>
+          <div class="img-wrapper" onclick="openModal('prs/perawatansiamang.jpeg', 'Perawatan Siamang')">
+            <img src="prs/perawatansiamang.jpeg" alt="Perawatan Siamang" loading="lazy" />
+          </div>
+          <div class="caption">
+            <h4>Perawatan Medis Siamang</h4>
+            <p>Pemberian pakan nutrisi &amp; pengawasan kondisi fisik berkala oleh dokter hewan.</p>
+          </div>
         </div>
+
+        <div class="gallery-card">
+          <div class="img-wrapper" onclick="openModal('prs/perawatanelang.jpeg', 'Perawatan Elang')">
+            <img src="prs/perawatanelang.jpeg" alt="Perawatan Elang" loading="lazy" />
+          </div>
+          <div class="caption">
+            <h4>Perawatan Satwa Elang</h4>
+            <p>Pemeriksaan kesehatan sayap dan respon insting berburu di kandang karantina.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="img-wrapper" onclick="openModal('prs/perawatantrenggiling.jpeg', 'Perawatan Trenggiling')">
+            <img src="prs/perawatantrenggiling.jpeg" alt="Perawatan Trenggiling" loading="lazy" />
+          </div>
+          <div class="caption">
+            <h4>Perawatan Trenggiling</h4>
+            <p>Pemenuhan pakan alami khusus pakan serangga dan sterilisasi tempat istirahat.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- KATEGORI 3: PEMELIHARAAN SATWA -->
+      <div class="section-header">3. Dokumentasi Pemeliharaan Harian Kandang</div>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <div class="img-wrapper" onclick="openModal('prs/pemeliharaanberuangmadu.jpeg', 'Pemeliharaan Beruang Madu')">
+            <img src="prs/pemeliharaanberuangmadu.jpeg" alt="Pemeliharaan Beruang Madu" loading="lazy" />
+          </div>
+          <div class="caption">
+            <h4>Pemeliharaan Beruang Madu</h4>
+            <p>Pemberian pakan buah, suplemen madu, serta kebersihan lingkungan kandang.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="img-wrapper" onclick="openModal('prs/pemeliharaanburungkakatua.jpeg', 'Pemeliharaan Burung Kakatua')">
+            <img src="prs/pemeliharaanburungkakatua.jpeg" alt="Pemeliharaan Burung Kakatua" loading="lazy" />
+          </div>
+          <div class="caption">
+            <h4>Pemeliharaan Burung Kakatua</h4>
+            <p>Observasi bulu dan pemenuhan nutrisi biji-bijian segar harian.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="img-wrapper" onclick="openModal('prs/pemeliharaanlutung.jpeg', 'Pemeliharaan Lutung')">
+            <img src="prs/pemeliharaanlutung.jpeg" alt="Pemeliharaan Lutung" loading="lazy" />
+          </div>
+          <div class="caption">
+            <h4>Pemeliharaan Lutung</h4>
+            <p>Proses adaptasi pakan dedaunan serta interaksi sosial sesama primata.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- KATEGORI 4: PELEPASLIARAN -->
+      <div class="section-header">4. Dokumentasi Pelepasliaran (Release) Satwa</div>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <div class="img-wrapper" onclick="openModal('prs/pelepasliaranmerakhijau.jpeg', 'Pelepasliaran Merak Hijau')">
+            <img src="prs/pelepasliaranmerakhijau.jpeg" alt="Pelepasliaran Merak Hijau" loading="lazy" />
+          </div>
+          <div class="caption">
+            <h4>Pelepasliaran Merak Hijau</h4>
+            <p>Pelepasan kembali merak hijau ke habitat alaminya setelah lulus evaluasi perilaku.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header">5. Video Dokumentasi Pelepasliaran Satwa</div>
+      <div class="video-card">
+        <video controls preload="metadata" playsinline>
+          <source src="prs/pelepasliaranmerakhijau.mp4" type="video/mp4" />
+          Browser Anda tidak mendukung pemutaran video.
+        </video>
+        <div class="video-caption">
+          <h4>Video Pelepasliaran Merak Hijau</h4>
+          <p>Dokumentasi detik-detik pelepasan merak hijau kembali ke kawasan hutan habitat alaminya.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LIGHTBOX MODAL FULLSCREEN -->
+    <div class="modal" id="imgModal" onclick="closeModal()">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <button type="button" class="modal-close" onclick="closeModal()">&times;</button>
+        <img id="modalImg" src="" alt="Pratinjau Gambar" />
+        <div class="modal-caption" id="modalCaption"></div>
       </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="footer-main">
-      Hak Cipta &copy; 2026 BKSDA Sumatera Selatan — Pusat Rehabilitasi Satwa
-      Punti Kayu
+      <div class="footer-container">
+        <div>
+          <h5 style="color: #00ff88; margin-bottom: 8px">PRS TWA Punti Kayu</h5>
+          <p style="color: #cbd5e1; font-size: 12px">
+            Unit Pengelolaan Rehabilitasi Satwa BKSDA Sumatera Selatan.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        Hak Cipta &copy; 2026 BKSDA Sumatera Selatan — Pusat Rehabilitasi Satwa
+        Punti Kayu
+      </div>
     </footer>
+
+    <script>
+      function openModal(src, caption) {
+        const modal = document.getElementById("imgModal");
+        const modalImg = document.getElementById("modalImg");
+        const modalCaption = document.getElementById("modalCaption");
+
+        modalImg.src = src;
+        modalCaption.textContent = caption;
+        modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("imgModal");
+        modal.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+    </script>
   </body>
 </html>
