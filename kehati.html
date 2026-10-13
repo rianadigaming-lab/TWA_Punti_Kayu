@@ -72,7 +72,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-right: 18px;
+         
             flex-shrink: 0;
         }
 
@@ -459,7 +459,7 @@
             line-height: 1.65;
         }
 
-        /* STYLING KOLASE GREEN HOUSE ANGGREK */
+        /* STYLING GENERAL KOLASE GRID BOX */
         .orchid-greenhouse-box {
             background-color: #f8fafc;
             border: 1px solid #cbd5e1;
@@ -514,7 +514,7 @@
         .orchid-img-box {
             width: 100%;
             height: 175px;
-            background-color: #f1f5f9;
+            background-color: #081c10;
             position: relative;
             overflow: hidden;
         }
@@ -713,80 +713,6 @@
             font-weight: 700;
         }
 
-        /* TABEL DATA */
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 24px;
-            font-size: 13px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-        }
-
-        .data-table th {
-            background-color: #081c10;
-            color: #ffffff;
-            text-align: left;
-            padding: 11px 12px;
-            font-weight: 800;
-            border: 1px solid #081c10;
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 0.3px;
-        }
-
-        .data-table td {
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            color: #0f172a;
-            vertical-align: middle;
-            font-weight: 500;
-        }
-
-        .data-table tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
-
-        .species-name {
-            font-weight: 800;
-            color: #081c10;
-            font-size: 13.5px;
-            display: block;
-        }
-
-        .species-latin {
-            font-style: italic;
-            color: #00a859;
-            font-weight: 700;
-            font-size: 12.5px;
-        }
-
-        .badge-status {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 10.5px;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 4px;
-        }
-
-        .badge-dominant {
-            background-color: #dcfce7;
-            color: #166534;
-            border: 1px solid #86efac;
-        }
-
-        .species-img {
-            width: 95px;
-            height: 72px;
-            object-fit: cover;
-            border-radius: 6px;
-            border: 1px solid #cbd5e1;
-            display: block;
-            background-color: #e2e8f0;
-            cursor: pointer;
-        }
-
         /* SIDEBAR WIDGET */
         .widget {
             margin-bottom: 24px;
@@ -896,8 +822,8 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(8, 28, 16, 0.92);
-            backdrop-filter: blur(5px);
+            background-color: rgba(8, 28, 16, 0.94);
+            backdrop-filter: blur(6px);
             align-items: center;
             justify-content: center;
             padding: 24px;
@@ -913,7 +839,7 @@
         .detail-modal-card {
             position: relative;
             background-color: #ffffff;
-            max-width: 1100px;
+            max-width: 1050px;
             width: 100%;
             border-radius: 12px;
             overflow: hidden;
@@ -921,28 +847,30 @@
             border: 3px solid #00a859;
             display: flex;
             flex-direction: row;
-            height: 88vh;
-            max-height: 850px;
+            height: 85vh;
+            max-height: 750px;
         }
 
         .detail-modal-img-box {
-            width: 50%;
-            background-color: #081c10;
+            width: 58%;
+            background-color: #040e08;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
         .detail-modal-img-box img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* MENAMPILKAN DOKUMENTASI UTUH PENUH */
+            background-color: #040e08;
         }
 
         .detail-modal-content {
-            width: 50%;
-            padding: 32px;
+            width: 42%;
+            padding: 24px;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
@@ -952,7 +880,7 @@
         .detail-modal-close {
             position: absolute;
             top: 20px;
-            right: 30px;
+            right: 25px;
             color: #ffffff;
             font-size: 32px;
             font-weight: bold;
@@ -967,37 +895,37 @@
         }
 
         .detail-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
             color: #081c10;
             line-height: 1.25;
         }
 
         .detail-indo {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             color: #00a859;
         }
 
         .detail-latin {
-            font-size: 14px;
+            font-size: 13.5px;
             font-style: italic;
             color: #64748b;
             font-weight: 600;
         }
 
         .detail-info-list {
-            margin-top: 10px;
-            font-size: 13px;
+            margin-top: 6px;
+            font-size: 12.5px;
             color: #334155;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
 
         .detail-info-item {
             background-color: #f8fafc;
-            padding: 10px 14px;
+            padding: 8px 12px;
             border-radius: 6px;
             border-left: 4px solid #00a859;
         }
@@ -1006,7 +934,7 @@
             color: #0f172a;
             display: block;
             margin-bottom: 2px;
-            font-size: 13.5px;
+            font-size: 12.5px;
         }
 
         /* MEDIA QUERIES MOBILE & TABLET */
@@ -1343,23 +1271,165 @@
                 </ul>
             </div>
 
-            <!-- STATISTIK SINGKAT KEHATI -->
-            <div class="kehati-stats-grid">
-                <div class="kehati-stat-card">
-                    <div class="kehati-stat-number">71 Jenis</div>
-                    <div class="kehati-stat-label">Flora & Pohon Teridentifikasi</div>
+           
+
+            <!-- BAGIAN 1: KOLASE FLORA KAWASAN HASIL DOKUMENTASI (BARU) -->
+            <div class="orchid-greenhouse-box">
+                <div class="orchid-header">
+                    <h3>Keanekaragaman Flora Kawasan TWA Punti Kayu</h3>
+                    <p>Klik pada salah satu kartu flora untuk melihat dokumentasi foto lanskap utuh serta informasi taksonomi lengkap.</p>
                 </div>
-                <div class="kehati-stat-card">
-                    <div class="kehati-stat-number">27 Famili</div>
-                    <div class="kehati-stat-label">Keanekaragaman Famili Tumbuhan</div>
-                </div>
-                <div class="kehati-stat-card">
-                    <div class="kehati-stat-number">9 Varietas</div>
-                    <div class="kehati-stat-label">Koleksi Anggrek Green House</div>
+
+                <div class="orchid-grid">
+                    
+                    <!-- FLORA 1: BERINGIN -->
+                    <div class="orchid-card" 
+                         data-title="Buah & Pohon Beringin"
+                         data-indo="Pohon Beringin"
+                         data-latin="Ficus benjamina"
+                         data-family="Moraceae (Suku nangka-nangkaan)"
+                         data-growth="Pohon kayu besar rindang dengan akar gantung"
+                         data-roots="Akar tunggang tebal & akar gantung penopang"
+                         data-desc="Pohon peneduh raksasa penyedia pakan utama alami bagi burung dan primata kawasan TWA Punti Kayu. Buah kecilnya menjadi sumber nutrisi keanekaragaman satwa."
+                         data-img="flora/buahberingin.jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">01</span>
+                            <img src="flora/buahberingin.jpeg" alt="Buah Beringin" onerror="this.onerror=null; this.src='images/profil.png';">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Pohon Beringin</h4>
+                            <span class="indo-name-sub">Buah & Pohon Beringin</span>
+                            <span class="latin-name">Ficus benjamina</span>
+                            <span class="type-badge">Pohon Kayu / Moraceae</span>
+                            <p class="desc-preview">Peneduh raksasa penyedia pakan alami pakan burung & primata.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                    <!-- FLORA 2: RAMBUSA -->
+                    <div class="orchid-card" 
+                         data-title="Rambusa / Ceplukan Blitar"
+                         data-indo="Buah Rambusa"
+                         data-latin="Passiflora foetida"
+                         data-family="Passifloraceae"
+                         data-growth="Tumbuhan merambat / Liana berbulu halus"
+                         data-roots="Akar serabut menjalar tebal"
+                         data-desc="Tumbuhan merambat liar berbuah manis eksotik yang dibungkus selaput jaring alami. Tumbuh subur di vegetasi semak terbuka TWA Punti Kayu."
+                         data-img="flora/buahrambusa.jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">02</span>
+                            <img src="flora/buahrambusa.jpeg" alt="Buah Rambusa" onerror="this.onerror=null; this.src='images/profil.png';">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Buah Rambusa</h4>
+                            <span class="indo-name-sub">Rambusa / Ceplukan Blitar</span>
+                            <span class="latin-name">Passiflora foetida</span>
+                            <span class="type-badge">Tumbuhan Merambat</span>
+                            <p class="desc-preview">Tumbuhan merambat berbuah unik terbungkus jaring alami.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                    <!-- FLORA 3: BUNGAN POHON SIMPUR -->
+                    <div class="orchid-card" 
+                         data-title="Pohon Simpur"
+                         data-indo="Bunga & Pohon Simpur Air"
+                         data-latin="Dillenia indica"
+                         data-family="Dilleniaceae"
+                         data-growth="Pohon sedang berdaun besar bergerigi"
+                         data-roots="Akar kokoh penyerap air alami"
+                         data-desc="Spesies flora khas hutan hujan tropis dengan bunga putih/kuning besar yang mekar megah. Buahnya menjadi tempat berlindung dan pakan herpetofauna."
+                         data-img="flora/bungapohonsimpur.jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">03</span>
+                            <img src="flora/bungapohonsimpur.jpeg" alt="Bunga Pohon Simpur" onerror="this.onerror=null; this.src='images/profil.png';">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Bunga Pohon Simpur</h4>
+                            <span class="indo-name-sub">Simpur / Dillenia</span>
+                            <span class="latin-name">Dillenia indica</span>
+                            <span class="type-badge">Flora Hutan / Dilleniaceae</span>
+                            <p class="desc-preview">Bunga tropis berukuran besar khas tajuk hutan hujan.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                    <!-- FLORA 4: HORSFIELDIA CRASSIFOLIA -->
+                    <div class="orchid-card" 
+                         data-title="Perupuk / Horsfieldia"
+                         data-indo="Pohon Perupuk Daun Tebal"
+                         data-latin="Horsfieldia crassifolia"
+                         data-family="Myristicaceae (Suku pala-palaan)"
+                         data-growth="Pohon kanopi hutan kayu keras"
+                         data-roots="Akar banir kokoh penyangga tanah"
+                         data-desc="Pohon kayu hutan berdaun tebal berdaging yang berkerabat dengan pala hutan. Berfungsi penting menjaga struktur stabilitas tanah kawasan rawa TWA."
+                         data-img="flora/Horsfieldiacrassifolia.jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">04</span>
+                            <img src="flora/Horsfieldiacrassifolia.jpeg" alt="Horsfieldia crassifolia" onerror="this.onerror=null; this.src='images/profil.png';">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Perupuk / Horsfieldia</h4>
+                            <span class="indo-name-sub">Perupuk Daun Tebal</span>
+                            <span class="latin-name">Horsfieldia crassifolia</span>
+                            <span class="type-badge">Myristicaceae</span>
+                            <p class="desc-preview">Pohon kerabat pala hutan penjaga stabilitas tanah rawa.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                    <!-- FLORA 5: LUDWIGIA -->
+                    <div class="orchid-card" 
+                         data-title="Cengkeh Air / Ludwigia"
+                         data-indo="Tumbuhan Cengkeh Air"
+                         data-latin="Ludwigia octovalvis"
+                         data-family="Onagraceae"
+                         data-growth="Herba perairan rawa / Tumbuhan basah"
+                         data-roots="Akar serabut perairan basah"
+                         data-desc="Spesies tumbuhan herba perairan berseri kuning langsing yang tumbuh rapat di sepanjang alur rawa basah TWA Punti Kayu. Berperan menjaga penjernihan air alami."
+                         data-img="flora/Ludwigia .jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">05</span>
+                            <img src="flora/Ludwigia .jpeg" alt="Ludwigia octovalvis" onerror="this.onerror=null; this.src='images/profil.png';">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Cengkeh Air (Ludwigia)</h4>
+                            <span class="indo-name-sub">Tumbuhan Cengkeh Air</span>
+                            <span class="latin-name">Ludwigia octovalvis</span>
+                            <span class="type-badge">Herba Perairan</span>
+                            <p class="desc-preview">Flora tepi rawa pembawa kebersihan filter alami perairan.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
+                    <!-- FLORA 6: SOLANUM JAMAICENSE -->
+                    <div class="orchid-card" 
+                         data-title="Terung Hutan / Takokak Liar"
+                         data-indo="Terung Hutan Jamaika"
+                         data-latin="Solanum jamaicense"
+                         data-family="Solanaceae (Suku terung-terungan)"
+                         data-growth="Perdu berduri halus dengan buah membulat"
+                         data-roots="Akar tunggang bercabang"
+                         data-desc="Perdu liar berbuah bulat kecokelatan keemasan yang menjadi tumbuhan semak penghuni tepi alur jalan TWA Punti Kayu."
+                         data-img="flora/Solanumjamaicense.jpeg">
+                        <div class="orchid-img-box">
+                            <span class="orchid-number-badge">06</span>
+                            <img src="flora/Solanumjamaicense.jpeg" alt="Solanum jamaicense" onerror="this.onerror=null; this.src='images/profil.png';">
+                        </div>
+                        <div class="orchid-info">
+                            <h4>Terung Hutan</h4>
+                            <span class="indo-name-sub">Terung Hutan Jamaika</span>
+                            <span class="latin-name">Solanum jamaicense</span>
+                            <span class="type-badge">Perdu / Solanaceae</span>
+                            <p class="desc-preview">Perdu perdu berbuah bulat penghuni semak perkotaan.</p>
+                            <span class="click-hint-text">Tampilkan Informasi Lengkap</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- KOLASE FOTO ANGGREK -->
+            <!-- BAGIAN 2: KOLASE FOTO ANGGREK GREEN HOUSE -->
             <div class="orchid-greenhouse-box">
                 <div class="orchid-header">
                     <h3>Koleksi Flora Anggrek Green House TWA Punti Kayu</h3>
@@ -1620,49 +1690,6 @@
                 </div>
             </div>
 
-            <!-- FLORA -->
-            <div class="section-header">Keanekaragaman Flora Kawasan</div>
-            <p class="article-text">
-                Berdasarkan data inventarisasi resmi Balai Konservasi Sumber Daya Alam (BKSDA) Sumatera Selatan, kawasan TWA Punti Kayu menyimpan kekayaan flora sebanyak <strong>71 jenis pohon yang terbagi dalam 27 famili</strong>. Vegetasi utama kawasan didominasi oleh tegakan <strong>Hutan Pinus (<em>Pinus merkusii</em>)</strong> yang membentuk bentang alam hijau khas di tengah Kota Palembang. Famili flora dominan yang tumbuh subur di kawasan ini meliputi <strong>Fabaceae (6 jenis), Myrtaceae (6 jenis), Euphorbiaceae (3 jenis), Verbenaceae (3 jenis), dan Sapindaceae (3 jenis)</strong>.
-            </p>
-
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width: 6%;">No</th>
-                        <th style="width: 18%;">Dokumentasi</th>
-                        <th style="width: 28%;">Spesies & Nama Ilmiah</th>
-                        <th style="width: 48%;">Status & Spesifikasi Ekologis</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="text-align: center; font-weight: 800;">1</td>
-                        <td><img src="images/pinus.png" alt="Pinus Sumatera" class="species-img"></td>
-                        <td>
-                            <span class="species-name">Pinus Sumatera</span>
-                            <span class="species-latin">Pinus merkusii</span>
-                        </td>
-                        <td>
-                            <span class="badge-status badge-dominant">Vegetasi Utama (Dominan)</span><br>
-                            Spesies peneduh utama yang membentuk bentang kanopi lanskap TWA Punti Kayu serta penyerap karbon dioksida utama kota.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; font-weight: 800;">2</td>
-                        <td><img src="images/profil.png" alt="Mahoni" class="species-img"></td>
-                        <td>
-                            <span class="species-name">Mahoni</span>
-                            <span class="species-latin">Swietenia mahagoni</span>
-                        </td>
-                        <td>
-                            <span class="badge-status badge-dominant">Tanaman Pelindung Utama</span><br>
-                            Tumbuhan kayu keras yang tumbuh rapat di sekitar zona pembatas kawasan dan jalur treking.
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
         </div>
 
         <div class="sidebar-area">
@@ -1678,7 +1705,7 @@
             <div class="widget">
                 <div class="widget-title">PEMANTAUAN EKOSISTEM</div>
                 <p style="font-size: 12px; color: #334155; line-height: 1.55; font-weight: 600;">
-                    Keanekaragaman hayati dan konservasi anggrek TWA Punti Kayu dipantau secara berkala oleh tim Pengendali Ekosistem Hutan (PEH) BKSDA Sumsel.
+                    Keanekaragaman hayati dan konservasi flora/anggrek TWA Punti Kayu dipantau secara berkala oleh tim Pengendali Ekosistem Hutan (PEH) BKSDA Sumsel.
                 </p>
             </div>
 
@@ -1710,29 +1737,29 @@
         </div>
     </footer>
 
-    <!-- MODAL POPUP PREVIEW LIGHTBOX FOTO DETAIL -->
+    <!-- MODAL POPUP PREVIEW LIGHTBOX FOTO DETAIL FULL -->
     <div id="detailModal" class="detail-modal" onclick="tutupModalOuter(event)">
         <span id="closeDetailModal" class="detail-modal-close">&times;</span>
         
         <div class="detail-modal-card">
             <div class="detail-modal-img-box">
-                <img id="detailModalImg" src="" alt="Pratinjau Anggrek">
+                <img id="detailModalImg" src="" alt="Pratinjau Flora & Anggrek">
             </div>
             <div class="detail-modal-content">
-                <h3 id="detailTitle" class="detail-title">Nama Anggrek</h3>
+                <h3 id="detailTitle" class="detail-title">Nama Flora</h3>
                 <p id="detailIndo" class="detail-indo">Nama Indonesia</p>
                 <p id="detailLatin" class="detail-latin">Nama Ilmiah</p>
                 <div class="detail-info-list">
                     <div class="detail-info-item">
                         <strong>Famili Taksonomi</strong>
-                        <span id="detailFamily">Orchidaceae</span>
+                        <span id="detailFamily">Tumbuhan Kawasan</span>
                     </div>
                     <div class="detail-info-item">
                         <strong>Tipe Pertumbuhan</strong>
                         <span id="detailGrowth">-</span>
                     </div>
                     <div class="detail-info-item">
-                        <strong>Karakteristik Akar & Media</strong>
+                        <strong>Karakteristik Akar & Habitat</strong>
                         <span id="detailRoots">-</span>
                     </div>
                     <div class="detail-info-item">
@@ -1797,20 +1824,21 @@
                 });
             });
 
-            const otherImages = document.querySelectorAll(".barcode-card, .species-img");
+            const otherImages = document.querySelectorAll(".barcode-card");
             otherImages.forEach(item => {
                 item.addEventListener("click", function () {
-                    const img = this.querySelector("img") || this;
-                    const name = this.querySelector("h5") || this.alt || "Dokumentasi Flora";
+                    const img = this.querySelector("img");
+                    const name = this.querySelector("h5");
+                    const latin = this.querySelector("p");
 
                     modalImg.src = img.src;
-                    modalTitle.textContent = typeof name === 'string' ? name : name.textContent;
-                    modalIndo.textContent = "Flora Teridentifikasi TWA Punti Kayu";
-                    modalLatin.textContent = "Dokumentasi BKSDA Sumatera Selatan";
-                    modalFamily.textContent = "Tumbuhan / Flora Kawasan";
-                    modalGrowth.textContent = "Area Konservasi Hayati";
-                    modalRoots.textContent = "Sistem Perakaran Terawat";
-                    modalDesc.textContent = "Spesies tumbuhan terdaftar dalam inventarisasi keanekaragaman hayati Balai KSDA Sumatera Selatan.";
+                    modalTitle.textContent = name ? name.textContent : "Plang QR Code";
+                    modalIndo.textContent = "Plang Edukasi Pohon TWA Punti Kayu";
+                    modalLatin.textContent = latin ? latin.textContent : "Dokumentasi BKSDA Sumatera Selatan";
+                    modalFamily.textContent = "Spesies Pohon Terpilih";
+                    modalGrowth.textContent = "Area Konservasi Hayati TWA";
+                    modalRoots.textContent = "Barcode Informasi Digital";
+                    modalDesc.textContent = "Scan QR code menggunakan ponsel untuk mengakses rincian klasifikasi ilmiah dan manfaat ekologis spesies pohon di lokasi.";
 
                     modal.classList.add("show");
                 });
