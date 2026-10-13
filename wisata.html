@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Objek Wisata - TWA Punti Kayu Palembang - BKSDA Sumatera Selatan</title>
     
-    <!-- IMPORT FONT PLUS JAKARTA SANS & INTER -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS DASAR & RESET FONT */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -42,7 +40,6 @@
             text-decoration: underline;
         }
 
-        /* 1. TOP BAR RESPONSIVE */
         .top-bar {
             background-color: #081c10;
             color: #ffffff;
@@ -53,7 +50,6 @@
             text-align: left;
         }
 
-        /* 2. HEADER MAIN RESPONSIVE */
         .header-main {
             background-color: #ffffff;
             border-bottom: 3px solid #00a859;
@@ -105,7 +101,6 @@
             margin-top: 2px;
         }
 
-        /* 3. NAVIGASI UTAMA RESPONSIVE */
         .nav-bar { 
             background-color: #081c10; 
             position: sticky;
@@ -157,7 +152,6 @@
             text-decoration: none; 
         }
 
-        /* STYLING DROPDOWN MENU HOVER DESKTOP */
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -215,9 +209,9 @@
             border-color: #00a859 !important;
         }
 
-        /* BANNER PAGE WISATA */
         .page-banner {
-            background: linear-gradient(rgba(8, 28, 16, 0.75), rgba(8, 28, 16, 0.9)), url('pinus.png') center/cover no-repeat;
+            background: linear-gradient(rgba(8, 28, 16, 0.70), rgba(8, 28, 16, 0.85)), 
+                        url('wisata/gerbang.jpeg') center/cover no-repeat;
             border-bottom: 4px solid #00a859;
             padding: 55px 20px;
             color: #ffffff;
@@ -240,7 +234,6 @@
             text-shadow: 0 1px 4px rgba(0,0,0,0.8);
         }
 
-        /* WADAH KONTEN UTAMA */
         .main-container {
             max-width: 1100px;
             margin: 28px auto;
@@ -251,7 +244,6 @@
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
         }
 
-        /* FITUR TOMBOL GARIS 3 (HAMBURGER) UNTUK MODE HP */
         .mobile-header-bar {
             display: none;
             background-color: #081c10;
@@ -338,7 +330,6 @@
             color: #ffffff;
         }
 
-        /* SECTION HEADER FORMAL & BOLD */
         .section-header {
             background-color: #f0fdf4;
             border-left: 5px solid #00a859;
@@ -355,7 +346,6 @@
             border-bottom: 1px solid #dcfce7;
         }
 
-        /* GRID ATRAKSI WISATA */
         .wisata-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -386,6 +376,7 @@
             overflow: hidden;
             background-color: #f1f5f9;
             position: relative;
+            cursor: pointer;
         }
 
         .wisata-img-box img {
@@ -447,7 +438,67 @@
             border: 1px solid #bbf7d0;
         }
 
-        /* SECTION TIKET & FASILITAS */
+        .img-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(4, 14, 8, 0.92);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(6px);
+        }
+
+        .img-modal.show {
+            display: flex;
+        }
+
+        .img-modal-content {
+            position: relative;
+            max-width: 95vw;
+            max-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .img-modal-img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 2px solid #00a859;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            background-color: #ffffff;
+        }
+
+        .img-modal-caption {
+            margin-top: 12px;
+            color: #00ff88;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .img-modal-close {
+            position: absolute;
+            top: -42px;
+            right: 0;
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 800;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        .img-modal-close:hover {
+            color: #00ff88;
+        }
+
         .info-wisata-wrapper {
             display: flex;
             gap: 24px;
@@ -534,7 +585,6 @@
             top: 2px;
         }
 
-        /* FOOTER RESMI */
         .footer-main {
             background-color: #081c10;
             color: #ffffff;
@@ -582,7 +632,6 @@
             font-weight: 500;
         }
 
-        /* MEDIA QUERIES MOBILE & TABLET */
         @media screen and (max-width: 868px) {
             .mobile-header-bar {
                 display: flex !important;
@@ -703,7 +752,7 @@
         </div>
     </header>
 
-    <!-- NAVIGASI UTAMA DENGAN DESKTOP HOVER DAN LINK DROPDOWN PERTAMA -->
+    <!-- NAVIGASI UTAMA -->
     <nav class="nav-bar">
         <div class="nav-container">
             <ul class="nav-menu">
@@ -752,87 +801,164 @@
     <!-- WADAH KONTEN UTAMA -->
     <div class="main-container">
         
+        <!-- BAR SUB-MENU HANYA MUNCUL DI HP -->
+        <div class="mobile-header-bar">
+            <span class="mobile-header-title">Menu Navigasi</span>
+            <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu(event)">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </button>
+
+            <ul class="mobile-dropdown-menu" id="mobileDropdown">
+                <div class="menu-category">Profil TWA Punti Kayu</div>
+                <li><a href="profiltwa.html">Profil Kawasan</a></li>
+                <li><a href="pejabat.html">Profil Pejabat</a></li>
+                <li><a href="struktur.html">Struktur Organisasi</a></li>
+
+                <div class="menu-category">Keanekaragaman Hayati</div>
+                <li><a href="kehati.html">Flora</a></li>
+                <li><a href="fauna.html">Fauna</a></li>
+                <li><a href="poster.html">Poster Satwa Dilindungi</a></li>
+
+                <div class="menu-category">Kegiatan</div>
+                <li><a href="insitu.html">Insitu</a></li>
+                <li><a href="eksitu.html">Eksitu</a></li>
+            </ul>
+        </div>
 
         <div class="section-header">Daya Tarik & Wahana Wisata Utama</div>
 
-        <!-- GRID OBJEK WISATA -->
+        <!-- GRID 10 FOTO LENGKAP DARI FOLDER WISATA -->
         <div class="wisata-grid">
             
-            <!-- WISATA 1 -->
+            <!-- 1. GERBANG UTAMA -->
             <div class="wisata-card">
-                <div class="wisata-img-box">
-                    <img src="pinus.png" alt="Hutan Pinus Punti Kayu" onerror="this.onerror=null; this.src='bintangur.jpg';">
-                    <span class="wisata-badge">Favorit</span>
+                <div class="wisata-img-box" onclick="openImgModal('wisata/gerbang.jpeg', 'Gerbang Utama TWA Punti Kayu')">
+                    <img src="wisata/gerbang.jpeg" alt="Gerbang Utama TWA Punti Kayu" loading="lazy">
+                    <span class="wisata-badge">Akses Utama</span>
                 </div>
                 <div class="wisata-info">
-                    <h3>Jalur Treking Hutan Pinus</h3>
-                    <p>Nikmati suasana sejuk dan pemandangan tegakan pohon Pinus merkusii yang rindang di tengah hiruk-pikuk kota, cocok untuk olahraga jalan santai dan fotografi alam.</p>
-                    <span class="wisata-tag">Wisata Alam & Hutan</span>
+                    <h3>1. Gerbang Utama</h3>
+                    <p>Pintu masuk resmi kawasan Taman Wisata Alam Punti Kayu yang dilengkapi dengan pos tiket PNBP, pos keamanan POLHUT, dan petunjuk arah pengunjung.</p>
+                    <span class="wisata-tag">Fasilitas Masuk</span>
                 </div>
             </div>
 
-            <!-- WISATA 2 -->
+            <!-- 2. AULA PERTEMUAN -->
             <div class="wisata-card">
-                <div class="wisata-img-box">
-                    <img src="kukang.jpg" alt="Satwa dan Fauna Punti Kayu" onerror="this.onerror=null; this.src='tsl.jpg';">
+                <div class="wisata-img-box" onclick="openImgModal('wisata/aulapertemuan.jpeg', 'Aula Pertemuan Punti Kayu')">
+                    <img src="wisata/aulapertemuan.jpeg" alt="Aula Pertemuan Punti Kayu" loading="lazy">
+                    <span class="wisata-badge">Serbaguna</span>
+                </div>
+                <div class="wisata-info">
+                    <h3>2. Aula Pertemuan</h3>
+                    <p>Gedung aula terbuka serbaguna yang nyaman untuk acara sosialisasi, rapat dinas, diklat, hingga kegiatan gathering komunitas skala besar.</p>
+                    <span class="wisata-tag">Fasilitas Pertemuan</span>
+                </div>
+            </div>
+
+            <!-- 3. KAMPUNG INDIAN -->
+            <div class="wisata-card">
+                <div class="wisata-img-box" onclick="openImgModal('wisata/kampungindian.jpeg', 'Kampung Indian Punti Kayu')">
+                    <img src="wisata/kampungindian.jpeg" alt="Kampung Indian Punti Kayu" loading="lazy">
+                    <span class="wisata-badge">Spot Foto</span>
+                </div>
+                <div class="wisata-info">
+                    <h3>3. Kampung Indian</h3>
+                    <p>Wahana rekreasi bertema pemukiman unik dengan dekorasi saung tenda khas suku Indian di tengah naungan rindang hutan pinus.</p>
+                    <span class="wisata-tag">Wahana Tematik</span>
+                </div>
+            </div>
+
+            <!-- 4. TAMAN REKREASI ANAK -->
+            <div class="wisata-card">
+                <div class="wisata-img-box" onclick="openImgModal('wisata/temanrekreasianak.jpeg', 'Taman Rekreasi Anak Punti Kayu')">
+                    <img src="wisata/temanrekreasianak.jpeg" alt="Taman Rekreasi Anak Punti Kayu" loading="lazy">
+                    <span class="wisata-badge">Keluarga</span>
+                </div>
+                <div class="wisata-info">
+                    <h3>4. Taman Rekreasi Anak</h3>
+                    <p>Area permainan terbuka ramah anak yang dilengkapi fasilitas ayunan, perosotan, dan tempat bersantai bagi pengunjung keluarga.</p>
+                    <span class="wisata-tag">Rekreasi Anak</span>
+                </div>
+            </div>
+
+            <!-- 5. KOLAM RENANG -->
+            <div class="wisata-card">
+                <div class="wisata-img-box" onclick="openImgModal('wisata/kolamrenang.jpeg', 'Kolam Renang Punti Kayu')">
+                    <img src="wisata/kolamrenang.jpeg" alt="Kolam Renang Punti Kayu" loading="lazy">
+                    <span class="wisata-badge">Wahana Air</span>
+                </div>
+                <div class="wisata-info">
+                    <h3>5. Kolam Renang</h3>
+                    <p>Wahana pemandian dan kolam rekreasi air sejuk yang menjadi salah satu tujuan terfavorit bagi pengunjung saat hari libur.</p>
+                    <span class="wisata-tag">Rekreasi Air</span>
+                </div>
+            </div>
+
+            <!-- 6. GAZEBO SANTAI -->
+            <div class="wisata-card">
+                <div class="wisata-img-box" onclick="openImgModal('wisata/gazebo.jpeg', 'Gazebo Tempat Istirahat')">
+                    <img src="wisata/gazebo.jpeg" alt="Gazebo Tempat Istirahat" loading="lazy">
+                    <span class="wisata-badge">Istirahat</span>
+                </div>
+                <div class="wisata-info">
+                    <h3>6. Gazebo & Saung Santai</h3>
+                    <p>Pondokan kayu bersantai yang tersebar di sepanjang jalur hutan pinus sebagai tempat berkumpul dan makan bersama keluarga.</p>
+                    <span class="wisata-tag">Fasilitas Santai</span>
+                </div>
+            </div>
+
+            <!-- 7. JEMBATAN GANTUNG -->
+            <div class="wisata-card">
+                <div class="wisata-img-box" onclick="openImgModal('wisata/jembatangantung.jpeg', 'Jembatan Gantung Punti Kayu')">
+                    <img src="wisata/jembatangantung.jpeg" alt="Jembatan Gantung Punti Kayu" loading="lazy">
+                    <span class="wisata-badge">Ikonik</span>
+                </div>
+                <div class="wisata-info">
+                    <h3>7. Jembatan Gantung</h3>
+                    <p>Jembatan gantung kayu yang melintasi area danau buatan, menawarkan pemandangan estetis serta menjadi spot foto impian pengunjung.</p>
+                    <span class="wisata-tag">Spot Foto Populer</span>
+                </div>
+            </div>
+
+            <!-- 8. AREA REPLIKA -->
+            <div class="wisata-card">
+                <div class="wisata-img-box" onclick="openImgModal('wisata/areareplika.jpeg', 'Area Replika Landsekap')">
+                    <img src="wisata/areareplika.jpeg" alt="Area Replika Landsekap" loading="lazy">
                     <span class="wisata-badge">Edukasi</span>
                 </div>
                 <div class="wisata-info">
-                    <h3>Area Edukasi Satwa & Fauna</h3>
-                    <p>Mengenal lebih dekat berbagai jenis keanekaragaman hayati dan satwa yang dilindungi seperti Kera Ekor Panjang, Burung, serta program konservasi satwa BKSDA Sumsel.</p>
-                    <span class="wisata-tag">Edukasi Konservasi</span>
+                    <h3>8. Area Replika Landmark</h3>
+                    <p>Miniatur landmark dan replika bangunan ikonik dunia yang dirancang estetis di antara rindangnya pepohonan konservasi.</p>
+                    <span class="wisata-tag">Edukasi & Fotografi</span>
                 </div>
             </div>
 
-            <!-- WISATA 3 -->
+            <!-- 9. PANGGUNG PERTUNJUKAN -->
             <div class="wisata-card">
-                <div class="wisata-img-box">
-                    <img src="bintangur.jpg" alt="Pohon Ber-Barcode" onerror="this.onerror=null; this.src='pinus.png';">
-                    <span class="wisata-badge">Inovasi</span>
+                <div class="wisata-img-box" onclick="openImgModal('wisata/panggungpertunjukan.jpeg', 'Panggung Pertunjukan Pentas Seni')">
+                    <img src="wisata/panggungpertunjukan.jpeg" alt="Panggung Pertunjukan Pentas Seni" loading="lazy">
+                    <span class="wisata-badge">Pentas Seni</span>
                 </div>
                 <div class="wisata-info">
-                    <h3>Taman Edukasi Digital Flora</h3>
-                    <p>Jelajahi keanekaragaman flora dengan memindai QR Code barcode pada setiap pohon untuk mempelajari nama ilmiah, karakteristik, dan manfaat konservasinya.</p>
-                    <span class="wisata-tag">Smart Eduwisata</span>
+                    <h3>9. Panggung Pertunjukan</h3>
+                    <p>Fasilitas panggung terbuka tempat digelarnya pertunjukan musik alam, pentas seni budaya, serta acara hiburan edukasi lingkungan.</p>
+                    <span class="wisata-tag">Seni & Hiburan</span>
                 </div>
             </div>
 
-            <!-- WISATA 4 -->
+            <!-- 10. AREA OUTBOUND -->
             <div class="wisata-card">
-                <div class="wisata-img-box">
-                    <img src="bersih_bersih.jpg" alt="Area Outbound dan Camping" onerror="this.onerror=null; this.src='profil.png';">
+                <div class="wisata-img-box" onclick="openImgModal('wisata/outbound.jpeg', 'Area Outbound & Ground Camping')">
+                    <img src="wisata/outbound.jpeg" alt="Area Outbound & Ground Camping" loading="lazy">
                     <span class="wisata-badge">Outbound</span>
                 </div>
                 <div class="wisata-info">
-                    <h3>Area Outbound & Ground Camping</h3>
-                    <p>Fasilitas terbuka hijau yang luas untuk kegiatan gathering instansi, perkemahan pramuka/sekolah, serta aktivitas penguatan tim di alam terbuka.</p>
-                    <span class="wisata-tag">Perkemahan & Outbound</span>
-                </div>
-            </div>
-
-            <!-- WISATA 5 -->
-            <div class="wisata-card">
-                <div class="wisata-img-box">
-                    <img src="tsl.jpg" alt="Spot Foto Danau & Danau Buatan" onerror="this.onerror=null; this.src='kukang.jpg';">
-                    <span class="wisata-badge">Rekreasi</span>
-                </div>
-                <div class="wisata-info">
-                    <h3>Danau & Gazebo Santai</h3>
-                    <p>Area tempat beristirahat keluarga yang nyaman di tepi danau buatan lengkap dengan gazebo kayu, jembatan gantung, serta latar foto estetis.</p>
-                    <span class="wisata-tag">Rekreasi Keluarga</span>
-                </div>
-            </div>
-
-            <!-- WISATA 6 -->
-            <div class="wisata-card">
-                <div class="wisata-img-box">
-                    <img src="images/profil.png" alt="Pusat Informasi Konservasi" onerror="this.onerror=null; this.src='bintangur.jpg';">
-                    <span class="wisata-badge">Layanan</span>
-                </div>
-                <div class="wisata-info">
-                    <h3>Pusat Informasi Konservasi</h3>
-                    <p>Gedung pusat pustaka dan informasi tempat pengunjung dapat berkonsultasi mengenai penelitian lingkungan, kegiatan SIMAKSI, dan sejarah kawasan.</p>
-                    <span class="wisata-tag">Pusat Informasi</span>
+                    <h3>10. Area Outbound & Camping</h3>
+                    <p>Lapangan terbuka hijau yang luas untuk kegiatan ketangkasan outdoor, perkemahan pramuka/sekolah, dan team building instansi.</p>
+                    <span class="wisata-tag">Perkemahan & Ketangkasan</span>
                 </div>
             </div>
 
@@ -843,7 +969,6 @@
         <!-- INFO TIKET & FASILITAS -->
         <div class="info-wisata-wrapper">
             
-            <!-- TABEL TIKET -->
             <div class="tiket-box">
                 <h4>Tarif Tiket Masuk Kawasan (PNBP)</h4>
                 <table class="tiket-table">
@@ -857,8 +982,8 @@
                     <tbody>
                         <tr>
                             <td><strong>Wisatawan Nusantara</strong></td>
-                            <td>Rp 10.000 / orang</td>
-                            <td>Rp 12.500 / orang</td>
+                            <td>Rp 20.000 / orang</td>
+                            <td>Rp 25.000 / orang</td>
                         </tr>
                         <tr>
                             <td><strong>Wisatawan Mancanegara</strong></td>
@@ -867,8 +992,8 @@
                         </tr>
                         <tr>
                             <td><strong>Rombongan Pelajar / Mahasiswa</strong></td>
-                            <td>Rp 5.000 / orang</td>
-                            <td>Rp 7.500 / orang</td>
+                            <td>Rp 10.000 / orang</td>
+                            <td>Rp 15.000 / orang</td>
                         </tr>
                         <tr>
                             <td><strong>Kendaraan Roda 2 (Motor)</strong></td>
@@ -884,7 +1009,6 @@
                 </table>
             </div>
 
-            <!-- FASILITAS UMUM -->
             <div class="fasilitas-box">
                 <h4>Fasilitas Umum Kawasan</h4>
                 <ul class="fasilitas-list">
@@ -900,6 +1024,15 @@
 
         </div>
 
+    </div>
+
+    <!-- MODAL LIGHTBOX FULLSCREEN PERBESAR FOTO -->
+    <div id="imgModal" class="img-modal" onclick="closeImgModal(event)">
+        <div class="img-modal-content" onclick="event.stopPropagation()">
+            <span class="img-modal-close" onclick="closeImgModal(event)">&times;</span>
+            <img id="imgModalSrc" src="" alt="Perbesar Foto Wisata" class="img-modal-img">
+            <div id="imgModalCaption" class="img-modal-caption"></div>
+        </div>
     </div>
 
     <!-- FOOTER RESMI -->
@@ -919,7 +1052,6 @@
         </div>
     </footer>
 
-    <!-- SCRIPT JAVASCRIPT GARIS 3 HP -->
     <script>
     function toggleMobileMenu(event) {
         event.stopPropagation();
@@ -931,6 +1063,30 @@
         const menu = document.getElementById("mobileDropdown");
         if (menu && !e.target.closest(".mobile-header-bar")) {
             menu.classList.remove("show");
+        }
+    });
+
+    function openImgModal(src, caption) {
+        const modal = document.getElementById("imgModal");
+        const modalImg = document.getElementById("imgModalSrc");
+        const modalCaption = document.getElementById("imgModalCaption");
+        
+        modalImg.src = src;
+        modalCaption.textContent = caption;
+        modal.classList.add("show");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeImgModal(event) {
+        if (event) event.stopPropagation();
+        const modal = document.getElementById("imgModal");
+        modal.classList.remove("show");
+        document.body.style.overflow = "auto";
+    }
+
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape") {
+            closeImgModal();
         }
     });
     </script>
