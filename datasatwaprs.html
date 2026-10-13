@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Satwa PRS - PRS Punti Kayu</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: #f0f4f2;
+        color: #0f172a;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+      a {
+        color: #00a859;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .top-bar {
+        background-color: #081c10;
+        color: #ffffff;
+        padding: 6px 20px;
+        font-size: 12px;
+      }
+      .header-main {
+        background-color: #ffffff;
+        border-bottom: 3px solid #00a859;
+        padding: 14px 20px;
+      }
+      .header-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .header-logo {
+        height: 55px;
+        width: auto;
+      }
+      .header-title h1 {
+        font-size: 16.5px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      .header-title h2 {
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #00a859;
+        text-transform: uppercase;
+      }
+      .nav-bar {
+        background-color: #081c10;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-menu {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        height: 48px;
+      }
+      .nav-menu li a {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        color: #ffffff;
+        padding: 0 16px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .nav-menu li a:hover,
+      .nav-menu li.active > a {
+        background-color: #00a859;
+        border-bottom: 3px solid #00ff88;
+        text-decoration: none;
+      }
+      .btn-back-twa {
+        background-color: #e11d48;
+        color: #ffffff !important;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-right: 16px;
+      }
+      .main-container {
+        max-width: 1100px;
+        margin: 28px auto;
+        background-color: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        padding: 26px;
+      }
+      .section-header {
+        background-color: #f0fdf4;
+        border-left: 5px solid #00a859;
+        padding: 10px 16px;
+        font-size: 14.5px;
+        font-weight: 800;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        border-radius: 0 6px 6px 0;
+        border: 1px solid #dcfce7;
+      }
+      table.data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+        font-size: 13px;
+      }
+      table.data-table th {
+        background-color: #081c10;
+        color: #ffffff;
+        padding: 11px 12px;
+        text-align: left;
+        font-weight: 700;
+      }
+      table.data-table td {
+        padding: 10px 12px;
+        border: 1px solid #cbd5e1;
+        color: #0f172a;
+      }
+      table.data-table tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .badge {
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 700;
+        color: #fff;
+      }
+      .bg-green {
+        background-color: #16a34a;
+      }
+      .bg-yellow {
+        background-color: #d97706;
+      }
+      .footer-main {
+        background-color: #081c10;
+        color: #ffffff;
+        border-top: 4px solid #00a859;
+        padding: 20px 0;
+        margin-top: 40px;
+        text-align: center;
+        font-size: 11.5px;
+        color: #94a3b8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      Kementerian Kehutanan Republik Indonesia — Ditjen KSDAE
+    </div>
+    <header class="header-main">
+      <div class="header-container">
+        <img
+          src="images/kemeteriankehutanan.png"
+          alt="Logo"
+          class="header-logo"
+          onerror="this.src = 'kemeteriankehutanan.png'"
+        />
+        <img
+          src="images/logobksda.png"
+          alt="Logo"
+          class="header-logo"
+          onerror="this.src = 'logobksda.jpeg'"
+        />
+        <div class="header-title">
+          <h1>Pusat Rehabilitasi Satwa (PRS) Punti Kayu</h1>
+          <h2>Balai Konservasi Sumber Daya Alam Sumatera Selatan</h2>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav-bar">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li><a href="prs.html">Beranda PRS</a></li>
+          <li>
+            <a href="informasirehabilitasi.html">Informasi Rehabilitasi</a>
+          </li>
+          <li class="active"><a href="datasatwaprs.html">Data Satwa PRS</a></li>
+          <li><a href="kegiatanedukasi.html">Kegiatan & Edukasi</a></li>
+          <li><a href="dokumentasi.html">Dokumentasi</a></li>
+        </ul>
+        <a href="index.html" class="btn-back-twa"
+          >&larr; Kembali ke TWA Punti Kayu</a
+        >
+      </div>
+    </nav>
+
+    <div class="main-container">
+      <div class="section-header">
+        Data Inventarisasi Satwa Dalam Perawatan PRS
+      </div>
+      <p style="margin-bottom: 16px">
+        Tabel berikut memuat rekapitulasi satwa liar yang sedang menjalani
+        perawatan dan karantina di PRS Punti Kayu Palembang:
+      </p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Satwa</th>
+            <th>Nama Ilmiah</th>
+            <th>Jumlah</th>
+            <th>Asal Satwa</th>
+            <th>Tahap Rehabilitasi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Owa Ungko</td>
+            <td><em>Hylobates agilis</em></td>
+            <td>2 Ekor</td>
+            <td>Serahan Masyarakat</td>
+            <td><span class="badge bg-yellow">Rehabilitasi Perilaku</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Elang Brontok</td>
+            <td><em>Nisaetus cirrhatus</em></td>
+            <td>1 Ekor</td>
+            <td>Evakuasi Tim BKSDA</td>
+            <td><span class="badge bg-green">Karantina Medis</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Buaya Muara</td>
+            <td><em>Crocodylus porosus</em></td>
+            <td>1 Ekor</td>
+            <td>Tangkapan Konflik Satwa</td>
+            <td><span class="badge bg-yellow">Observasi Kesehatan</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Kukang Sunda</td>
+            <td><em>Nycticebus coucang</em></td>
+            <td>3 Ekor</td>
+            <td>Penertiban/Penyitaan</td>
+            <td><span class="badge bg-green">Kesiapan Rilis</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="footer-main">
+      Hak Cipta &copy; 2026 BKSDA Sumatera Selatan — Pusat Rehabilitasi Satwa
+      Punti Kayu
+    </footer>
+  </body>
+</html>

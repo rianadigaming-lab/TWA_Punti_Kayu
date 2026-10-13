@@ -1,0 +1,1603 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informasi Rehabilitasi Satwa | PRS Punti Kayu</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --forest: #081c10;
+        --green: #00a859;
+        --green-dark: #056b3d;
+        --mint: #eaf8ef;
+        --ink: #0f172a;
+        --muted: #5b6b63;
+        --line: #dbe7df;
+        --bg: #f0f4f2;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 75px;
+      }
+
+      body {
+        font-family:
+          "Plus Jakarta Sans",
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        font-size: 14px;
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      /* =========================================
+       HEADER — DISESUAIKAN DENGAN INDEX.HTML
+    ========================================= */
+      /* 2. HEADER MAIN RESPONSIVE */
+      .header-main {
+        background-color: #ffffff;
+        border-bottom: 3px solid #00a859;
+        padding: 14px 20px;
+      }
+
+      .header-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .header-logo-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+
+      .header-logo {
+        width: auto;
+        height: 55px;
+        object-fit: contain;
+      }
+
+      .header-title h1 {
+        font-size: 16.5px;
+        font-weight: 800;
+        color: #0f172a;
+        text-transform: uppercase;
+        letter-spacing: -0.2px;
+        line-height: 1.25;
+      }
+
+      .header-title h2 {
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #00a859;
+        text-transform: uppercase;
+        margin-top: 2px;
+      }
+
+      .header-title p {
+        font-size: 11.5px;
+        color: #334155;
+        font-weight: 600;
+        margin-top: 2px;
+      }
+
+      .topbar {
+        background: #081c10;
+        color: #fff;
+        padding: 6px 20px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+      }
+
+      .header {
+        background: #fff;
+        border-bottom: 3px solid #00a859;
+        padding: 14px 20px;
+      }
+
+      .header-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .header-logo-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+
+      .logo {
+        display: block;
+        height: 55px;
+        width: auto;
+        max-width: none;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .brand h1 {
+        font-size: 16.5px;
+        font-weight: 800;
+        color: #0f172a;
+        text-transform: uppercase;
+        letter-spacing: -0.2px;
+        line-height: 1.25;
+      }
+
+      .brand p {
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #00a859;
+        text-transform: uppercase;
+        margin-top: 2px;
+        line-height: 1.5;
+      }
+
+      /* NAVIGASI SAMA SEPERTI INDEX */
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: #081c10;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 4px;
+        min-width: 0;
+      }
+
+      .nav-links li {
+        position: relative;
+        white-space: nowrap;
+      }
+
+      .nav-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        color: #fff;
+        background: #081c10;
+        padding: 0 16px;
+        font-size: 13px;
+        font-weight: 700;
+        border-bottom: 3px solid transparent;
+        transition: all 0.2s;
+        white-space: nowrap;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #fff;
+        background: #00a859;
+        border-bottom: 3px solid #00ff88;
+      }
+
+      .back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        height: 32px;
+        padding: 0 14px;
+        border: 1.5px solid #00a859;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 12.5px;
+        font-weight: 700;
+        background: rgba(0, 168, 89, 0.15);
+        white-space: nowrap;
+        transition: all 0.2s;
+      }
+
+      .back:hover {
+        background: #00a859;
+        border-color: #00a859;
+        color: #fff;
+      }
+
+      /* =========================================
+       HERO
+    ========================================= */
+
+      .hero {
+        background:
+          linear-gradient(110deg, #062c1be8, #087b4cb0),
+          url("prs/pelepasliaranmerakhijau.jpeg") center 43% / cover;
+        min-height: 320px;
+        display: flex;
+        align-items: center;
+        color: white;
+        padding: 45px 6%;
+      }
+
+      .hero-inner {
+        max-width: 1200px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        background: #ffffff20;
+        border: 1px solid #ffffff65;
+        border-radius: 30px;
+        padding: 6px 12px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .hero h2 {
+        font-size: clamp(27px, 4vw, 42px);
+        line-height: 1.25;
+        max-width: 750px;
+        margin: 15px 0 12px;
+      }
+
+      .hero p {
+        max-width: 720px;
+        color: #e6f5eb;
+        font-size: 14px;
+      }
+
+      .hero-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 11px 19px;
+        background: white;
+        color: var(--forest);
+        border-radius: 7px;
+        font-size: 12px;
+        font-weight: 800;
+        transition: 0.2s;
+      }
+
+      .hero-button:hover {
+        background: var(--mint);
+        transform: translateY(-2px);
+      }
+
+      /* =========================================
+       KONTEN UTAMA
+    ========================================= */
+
+      main {
+        max-width: 1200px;
+        margin: 35px auto;
+        padding: 0 20px;
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 22px;
+        margin-bottom: 35px;
+      }
+
+      .intro-copy,
+      .fact-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 24px;
+        min-width: 0;
+      }
+
+      .kicker {
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .section-title {
+        font-size: clamp(21px, 2.5vw, 27px);
+        line-height: 1.4;
+        margin: 5px 0 10px;
+      }
+
+      .intro-copy p,
+      .fact-card p {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .fact-card {
+        background: var(--mint);
+        border-color: #ccebd7;
+      }
+
+      .fact-card strong {
+        display: block;
+        color: var(--forest);
+        font-size: 14px;
+        margin-bottom: 7px;
+      }
+
+      .fact-icon {
+        font-size: 26px;
+        margin-bottom: 8px;
+      }
+
+      /* RINGKASAN TAHAP */
+
+      .overview {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 13px;
+        margin: 24px 0 40px;
+      }
+
+      .overview-card {
+        display: block;
+        min-width: 0;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        padding: 18px 15px;
+        transition: 0.25s;
+      }
+
+      .overview-card:hover {
+        border-color: var(--green);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 22px #082b1b10;
+      }
+
+      .overview-number {
+        display: inline-flex;
+        width: 37px;
+        height: 37px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: var(--mint);
+        color: var(--green-dark);
+        font-size: 15px;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+
+      .overview-card h4 {
+        font-size: 12px;
+        margin-bottom: 5px;
+        color: var(--forest);
+      }
+
+      .overview-card p {
+        font-size: 11px;
+        color: var(--muted);
+      }
+
+      /* JUDUL BAGIAN */
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 35px 0 18px;
+      }
+
+      .section-heading p {
+        font-size: 12px;
+        color: var(--muted);
+        max-width: 480px;
+      }
+
+      /* KARTU TAHAP */
+
+      .steps {
+        display: grid;
+        gap: 22px;
+      }
+
+      .step {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 76px minmax(0, 1fr);
+        box-shadow: 0 5px 18px #0c3b1b08;
+        scroll-margin-top: 85px;
+      }
+
+      .step-number {
+        background: var(--mint);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 25px;
+        color: var(--green);
+        font-size: 25px;
+        font-weight: 800;
+      }
+
+      .step-content {
+        padding: 23px 24px;
+        min-width: 0;
+      }
+
+      .tag {
+        display: inline-block;
+        background: #edf8f1;
+        color: var(--green-dark);
+        border-radius: 5px;
+        padding: 5px 9px;
+        font-size: 10px;
+        font-weight: 800;
+        margin-bottom: 9px;
+      }
+
+      .step-content h3 {
+        color: var(--forest);
+        font-size: 19px;
+        margin-bottom: 8px;
+        line-height: 1.45;
+      }
+
+      .step-description {
+        font-size: 13px;
+        color: var(--muted);
+        max-width: 950px;
+      }
+
+      .media-heading {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 25px;
+        margin-bottom: 13px;
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--forest);
+      }
+
+      .media-heading::before {
+        content: "";
+        width: 4px;
+        height: 19px;
+        flex-shrink: 0;
+        border-radius: 5px;
+        background: var(--green);
+      }
+
+      /* GALERI FOTO */
+
+      .media-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 15px;
+      }
+
+      .media-card {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        background: #f8fbf9;
+        transition: 0.25s;
+      }
+
+      .media-card:hover {
+        border-color: #a4d9b7;
+        box-shadow: 0 7px 20px #082b1b10;
+      }
+
+      .media-thumb {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 205px;
+        border: 0;
+        padding: 0;
+        background: #dce9e0;
+        cursor: zoom-in;
+        overflow: hidden;
+      }
+
+      .media-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.35s;
+      }
+
+      .media-thumb:hover img {
+        transform: scale(1.06);
+      }
+
+      .zoom {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        background: #061b11dc;
+        color: white;
+        border-radius: 30px;
+        padding: 6px 10px;
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      .media-caption {
+        padding: 13px;
+      }
+
+      .media-caption h4 {
+        font-size: 12px;
+        line-height: 1.6;
+        margin-bottom: 5px;
+        color: var(--forest);
+      }
+
+      .media-caption p {
+        font-size: 11px;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .image-error {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 15px;
+        color: #42574a;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      /* VIDEO */
+
+      .video-card {
+        margin-top: 18px;
+        background: #071c12;
+        border-radius: 13px;
+        overflow: hidden;
+        color: white;
+      }
+
+      .video-card video {
+        display: block;
+        width: 100%;
+        max-height: 500px;
+        background: black;
+      }
+
+      .video-caption {
+        padding: 16px 18px;
+      }
+
+      .video-caption h4 {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .video-caption p {
+        font-size: 12px;
+        color: #d4e7db;
+      }
+
+      .note {
+        margin-top: 18px;
+        padding: 14px 16px;
+        border-left: 4px solid var(--green);
+        background: #f0faf3;
+        border-radius: 0 9px 9px 0;
+        font-size: 12px;
+        color: #355343;
+      }
+
+      /* FOOTER */
+
+      .footer {
+        margin-top: 45px;
+        background: var(--forest);
+        border-top: 4px solid var(--green);
+        color: #c4d8cb;
+        text-align: center;
+        padding: 24px 15px;
+        font-size: 11px;
+      }
+
+      /* MODAL FOTO */
+
+      .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(2, 11, 7, 0.94);
+        z-index: 2000;
+        padding: 25px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal.open {
+        display: flex;
+      }
+
+      .modal-content {
+        position: relative;
+        width: 100%;
+        max-width: 1100px;
+        max-height: 90vh;
+        text-align: center;
+      }
+
+      .modal-content img {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        max-height: 78vh;
+        object-fit: contain;
+        border-radius: 8px;
+      }
+
+      .modal-caption {
+        color: white;
+        text-align: center;
+        padding: 13px 35px 0;
+        font-size: 13px;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: -17px;
+        right: -17px;
+        border: 0;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background: white;
+        color: #123;
+        font-size: 26px;
+        cursor: pointer;
+        z-index: 2;
+      }
+
+      .modal-close:hover {
+        background: var(--mint);
+      }
+
+      /* =========================================
+       RESPONSIVE TABLET — HEADER IKUT INDEX
+    ========================================= */
+
+      @media screen and (max-width: 868px) {
+        .topbar {
+          font-size: 11px;
+          text-align: center;
+          padding: 6px 12px;
+        }
+
+        .header {
+          padding: 14px 20px;
+        }
+
+        .header-inner {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+        }
+
+        .header-logo-wrapper {
+          justify-content: center;
+        }
+
+        .logo {
+          height: 48px;
+        }
+
+        .brand h1 {
+          font-size: 14px;
+        }
+
+        .brand p {
+          font-size: 12px;
+        }
+
+        /* Navigasi bisa digeser horizontal seperti index */
+        .nav-inner {
+          overflow-x: auto;
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch;
+          justify-content: flex-start;
+          padding: 0;
+          gap: 0;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+          flex-shrink: 0;
+          padding: 0 10px;
+        }
+
+        .nav-links a {
+          height: 44px;
+          padding: 0 12px;
+          font-size: 12px;
+        }
+
+        .back {
+          margin: 0 10px 0 0;
+          font-size: 11px;
+        }
+
+        .intro {
+          grid-template-columns: 1fr;
+        }
+
+        .overview {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .media-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .hero {
+          min-height: 270px;
+        }
+      }
+
+      /* =========================================
+       RESPONSIVE HP
+    ========================================= */
+
+      @media screen and (max-width: 560px) {
+        .header {
+          padding: 12px 14px;
+        }
+
+        .header-inner {
+          gap: 9px;
+        }
+
+        .header-logo-wrapper {
+          gap: 10px;
+        }
+
+        .logo {
+          height: 42px;
+          max-width: 50px;
+        }
+
+        .brand h1 {
+          font-size: 12px;
+          line-height: 1.4;
+        }
+
+        .brand p {
+          font-size: 10px;
+          line-height: 1.5;
+        }
+
+        .nav-links {
+          gap: 2px;
+          padding: 0 6px;
+        }
+
+        .nav-links a {
+          height: 42px;
+          padding: 0 10px;
+          font-size: 11px;
+        }
+
+        .back {
+          height: 30px;
+          padding: 0 10px;
+          font-size: 10px;
+        }
+
+        .hero {
+          min-height: 290px;
+          padding: 35px 22px;
+        }
+
+        .hero h2 {
+          font-size: 27px;
+        }
+
+        .hero p {
+          font-size: 12px;
+        }
+
+        main {
+          padding: 0 13px;
+          margin-top: 20px;
+        }
+
+        .intro-copy,
+        .fact-card {
+          padding: 18px;
+        }
+
+        .overview {
+          gap: 9px;
+        }
+
+        .overview-card {
+          padding: 13px 11px;
+        }
+
+        .step {
+          grid-template-columns: 43px minmax(0, 1fr);
+        }
+
+        .step-number {
+          font-size: 18px;
+          padding-top: 20px;
+        }
+
+        .step-content {
+          padding: 17px 13px;
+        }
+
+        .step-content h3 {
+          font-size: 16px;
+        }
+
+        .step-description {
+          font-size: 12px;
+        }
+
+        .media-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .media-thumb {
+          height: 230px;
+        }
+
+        .section-heading {
+          display: block;
+        }
+
+        .section-heading p {
+          margin-top: 7px;
+        }
+
+        .modal {
+          padding: 18px;
+        }
+
+        .modal-close {
+          right: -5px;
+          top: -45px;
+        }
+      }
+
+      @media screen and (max-width: 360px) {
+        .brand h1 {
+          font-size: 11px;
+        }
+
+        .brand p {
+          font-size: 9px;
+        }
+
+        .logo {
+          height: 38px;
+          max-width: 44px;
+        }
+
+        .overview {
+          grid-template-columns: 1fr;
+        }
+
+        .step {
+          grid-template-columns: 34px minmax(0, 1fr);
+        }
+
+        .step-number {
+          font-size: 15px;
+        }
+
+        .step-content {
+          padding: 15px 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- INFORMASI INSTANSI -->
+    <div class="topbar">
+      Kementerian Kehutanan Republik Indonesia · Ditjen KSDAE
+    </div>
+
+    <!-- HEADER INSTANSI -->
+    <header class="header-main">
+      <div class="header-container">
+        <div class="header-logo-wrapper">
+          <img
+            src="images/kemeteriankehutanan.png"
+            alt="Logo Kementerian Kehutanan"
+            class="header-logo"
+            onerror="
+              this.onerror = null;
+              this.src = 'kemeteriankehutanan.png';
+            "
+          />
+          <img
+            src="images/logobksda.png"
+            alt="Logo BKSDA"
+            class="header-logo"
+            onerror="
+              this.onerror = null;
+              this.src = 'logobksda.jpeg';
+            "
+          />
+        </div>
+        <div class="header-title">
+          <h1>Balai Konservasi Sumber Daya Alam Sumatera Selatan</h1>
+          <h2>Sistem Informasi Taman Wisata Alam Punti Kayu Palembang</h2>
+          <p>
+            Jl. Kolonel H. Burlian KM. 6 No. 79, Palembang, Sumatera Selatan |
+            Email: bksdasumsel@kemenhut.go.id
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVIGASI -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <ul class="nav-links">
+          <li><a href="prs.html">Beranda PRS</a></li>
+
+          <li>
+            <a class="active" href="informasirehabilitasi.html">
+              Informasi Rehabilitasi
+            </a>
+          </li>
+
+          <li><a href="datasatwaprs.html">Data Satwa PRS</a></li>
+
+          <li><a href="kegiatanedukasi.html">Kegiatan &amp; Edukasi</a></li>
+
+          <li><a href="dokumentasi.html">Dokumentasi</a></li>
+        </ul>
+
+        <a href="index.html" class="back"> &larr; Kembali ke TWA Punti Kayu </a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="eyebrow">Pusat Rehabilitasi Satwa</span>
+
+        <h2>Dari Penyelamatan Menuju Kehidupan di Habitat yang Lebih Baik</h2>
+
+        <p>
+          Kenali perjalanan satwa liar mulai dari proses penerimaan dan
+          evakuasi, perawatan, pemeliharaan, hingga pelepasliaran. Setiap satwa
+          membutuhkan penanganan sesuai jenis dan kondisinya.
+        </p>
+
+        <a href="#tahapan" class="hero-button">
+          Jelajahi Tahapan Rehabilitasi ↓
+        </a>
+      </div>
+    </section>
+
+    <main>
+      <!-- PENGANTAR -->
+      <section class="intro">
+        <div class="intro-copy">
+          <div class="kicker">Mengenal prosesnya</div>
+
+          <h2 class="section-title">
+            Tahapan &amp; Prosedur Rehabilitasi Satwa
+          </h2>
+
+          <p>
+            Rehabilitasi satwa merupakan rangkaian penanganan untuk mendukung
+            pemulihan satwa liar. Prosesnya meliputi penerimaan dan evakuasi,
+            perawatan, pemeliharaan, serta pelepasliaran apabila kondisi dan
+            persyaratan konservasi memungkinkan. Dokumentasi berikut
+            memperlihatkan kegiatan berdasarkan foto dan video yang tersedia.
+          </p>
+        </div>
+
+        <aside class="fact-card">
+          <div class="fact-icon">🌿</div>
+
+          <strong>Prinsip Rehabilitasi Satwa</strong>
+
+          <p>
+            Penanganan memperhatikan keselamatan, kondisi kesehatan, kebutuhan
+            pakan, kebersihan lingkungan, dan perilaku alami satwa. Kontak
+            dengan manusia disesuaikan agar tidak mengganggu proses pemulihan.
+          </p>
+        </aside>
+      </section>
+
+      <!-- RINGKASAN EMPAT TAHAP -->
+      <section id="tahapan">
+        <div class="section-heading">
+          <div>
+            <div class="kicker">Alur rehabilitasi</div>
+            <h2 class="section-title">Empat Tahapan Utama</h2>
+          </div>
+
+          <p>
+            Klik salah satu tahapan untuk melihat informasi dan dokumentasi
+            kegiatannya.
+          </p>
+        </div>
+
+        <div class="overview">
+          <a href="#tahap1" class="overview-card">
+            <span class="overview-number">01</span>
+            <h4>Penerimaan &amp; Evakuasi</h4>
+            <p>Dokumentasi evakuasi dan penerimaan satwa.</p>
+          </a>
+
+          <a href="#tahap2" class="overview-card">
+            <span class="overview-number">02</span>
+            <h4>Perawatan Satwa</h4>
+            <p>Perawatan siamang, elang, dan trenggiling.</p>
+          </a>
+
+          <a href="#tahap3" class="overview-card">
+            <span class="overview-number">03</span>
+            <h4>Pemeliharaan Satwa</h4>
+            <p>Pemeliharaan beruang madu, kakatua, dan lutung.</p>
+          </a>
+
+          <a href="#tahap4" class="overview-card">
+            <span class="overview-number">04</span>
+            <h4>Pelepasliaran</h4>
+            <p>Dokumentasi pelepasliaran merak hijau.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- JUDUL DOKUMENTASI -->
+      <div class="section-heading">
+        <div>
+          <div class="kicker">Dokumentasi kegiatan</div>
+          <h2 class="section-title">Proses Rehabilitasi Satwa</h2>
+        </div>
+
+        <p>
+          Klik gambar untuk memperbesar foto. Video dapat diputar langsung
+          melalui halaman ini.
+        </p>
+      </div>
+
+      <section class="steps">
+        <!-- TAHAP 1: PENERIMAAN DAN EVAKUASI -->
+        <article class="step" id="tahap1">
+          <div class="step-number">01</div>
+
+          <div class="step-content">
+            <span class="tag">Penyelamatan awal</span>
+
+            <h3>Penerimaan &amp; Evakuasi Satwa</h3>
+
+            <p class="step-description">
+              Tahap awal dimulai dengan penerimaan atau evakuasi satwa yang
+              membutuhkan penanganan. Satwa dapat berasal dari penyerahan
+              masyarakat atau kegiatan penyelamatan oleh petugas. Informasi
+              mengenai asal-usul dan kondisi awal satwa membantu menentukan
+              penanganan selanjutnya.
+            </p>
+
+            <h4 class="media-heading">Dokumentasi Penerimaan dan Evakuasi</h4>
+
+            <div class="media-grid">
+              <!-- EVAKUASI TRENGGILING -->
+              <div class="media-card">
+                <button
+                  type="button"
+                  class="media-thumb"
+                  data-full="prs/evakuasitrenggiling.jpeg"
+                  data-caption="Evakuasi Trenggiling"
+                  aria-label="Perbesar foto evakuasi trenggiling"
+                >
+                  <img
+                    src="prs/evakuasitrenggiling.jpeg"
+                    alt="Evakuasi trenggiling"
+                    loading="lazy"
+                  />
+                  <span class="zoom">Lihat foto ↗</span>
+                </button>
+
+                <div class="media-caption">
+                  <h4>Evakuasi Trenggiling</h4>
+                  <p>
+                    Dokumentasi proses evakuasi trenggiling sebagai bagian dari
+                    penanganan awal satwa.
+                  </p>
+                </div>
+              </div>
+
+              <!-- PENERIMAAN KUCING HUTAN -->
+              <div class="media-card">
+                <button
+                  type="button"
+                  class="media-thumb"
+                  data-full="prs/penerimaankucinghutankuwuk.jpeg"
+                  data-caption="Penerimaan Kucing Hutan (Kuwuk)"
+                  aria-label="Perbesar foto penerimaan kucing hutan"
+                >
+                  <img
+                    src="prs/penerimaankucinghutankuwuk.jpeg"
+                    alt="Penerimaan kucing hutan atau kuwuk"
+                    loading="lazy"
+                  />
+                  <span class="zoom">Lihat foto ↗</span>
+                </button>
+
+                <div class="media-caption">
+                  <h4>Penerimaan Kucing Hutan (Kuwuk)</h4>
+                  <p>
+                    Dokumentasi penerimaan kucing hutan sebelum menjalani
+                    penanganan lebih lanjut.
+                  </p>
+                </div>
+              </div>
+
+              <!-- PENERIMAAN SIAMANG -->
+              <div class="media-card">
+                <button
+                  type="button"
+                  class="media-thumb"
+                  data-full="prs/penerimaansiamang.jpeg"
+                  data-caption="Penerimaan Siamang"
+                  aria-label="Perbesar foto penerimaan siamang"
+                >
+                  <img
+                    src="prs/penerimaansiamang.jpeg"
+                    alt="Penerimaan siamang"
+                    loading="lazy"
+                  />
+                  <span class="zoom">Lihat foto ↗</span>
+                </button>
+
+                <div class="media-caption">
+                  <h4>Penerimaan Siamang</h4>
+                  <p>
+                    Dokumentasi penerimaan siamang sebagai bagian dari proses
+                    penanganan awal.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- TAHAP 2: PERAWATAN -->
+        <article class="step" id="tahap2">
+          <div class="step-number">02</div>
+
+          <div class="step-content">
+            <span class="tag">Penanganan dan pemulihan</span>
+
+            <h3>Perawatan Satwa</h3>
+
+            <p class="step-description">
+              Perawatan dilakukan dengan memperhatikan kebutuhan dan kondisi
+              masing-masing satwa. Kegiatan dapat meliputi pengamatan kondisi
+              fisik, pemberian pakan sesuai kebutuhan, pemantauan perilaku,
+              serta penanganan oleh petugas yang berwenang.
+            </p>
+
+            <h4 class="media-heading">Dokumentasi Perawatan Satwa</h4>
+
+            <div class="media-grid">
+              <!-- PERAWATAN SIAMANG -->
+              <div class="media-card">
+                <button
+                  type="button"
+                  class="media-thumb"
+                  data-full="prs/perawatansiamang.jpeg"
+                  data-caption="Perawatan Siamang"
+                  aria-label="Perbesar foto perawatan siamang"
+                >
+                  <img
+                    src="prs/perawatansiamang.jpeg"
+                    alt="Perawatan siamang"
+                    loading="lazy"
+                  />
+                  <span class="zoom">Lihat foto ↗</span>
+                </button>
+
+                <div class="media-caption">
+                  <h4>Perawatan Siamang</h4>
+                  <p>
+                    Dokumentasi kegiatan perawatan siamang selama proses
+                    penanganan satwa.
+                  </p>
+                </div>
+              </div>
+
+              <!-- PERAWATAN ELANG -->
+              <div class="media-card">
+                <button
+                  type="button"
+                  class="media-thumb"
+                  data-full="prs/perawatanelang.jpeg"
+                  data-caption="Perawatan Elang"
+                  aria-label="Perbesar foto perawatan elang"
+                >
+                  <img
+                    src="prs/perawatanelang.jpeg"
+                    alt="Perawatan elang"
+                    loading="lazy"
+                  />
+                  <span class="zoom">Lihat foto ↗</span>
+                </button>
+
+                <div class="media-caption">
+                  <h4>Perawatan Elang</h4>
+                  <p>
+                    Dokumentasi kegiatan perawatan elang dengan memperhatikan
+                    kondisi dan kebutuhan satwa.
+                  </p>
+                </div>
+              </div>
+
+              <!-- PERAWATAN TRENGGILING -->
+              <div class="media-card">
+                <button
+                  type="button"
+                  class="media-thumb"
+                  data-full="prs/perawatantrenggiling.jpeg"
+                  data-caption="Perawatan Trenggiling"
+                  aria-label="Perbesar foto perawatan trenggiling"
+                >
+                  <img
+                    src="prs/perawatantrenggiling.jpeg"
+                    alt="Perawatan trenggiling"
+                    loading="lazy"
+                  />
+                  <span class="zoom">Lihat foto ↗</span>
+                </button>
+
+                <div class="media-caption">
+                  <h4>Perawatan Trenggiling</h4>
+                  <p>
+                    Dokumentasi perawatan trenggiling sesuai kebutuhan
+                    penanganannya.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- TAHAP 3: PEMELIHARAAN -->
+        <article class="step" id="tahap3">
+          <div class="step-number">03</div>
+
+          <div class="step-content">
+            <span class="tag">Pemeliharaan harian</span>
+
+            <h3>Pemeliharaan Satwa</h3>
+
+            <p class="step-description">
+              Pemeliharaan merupakan kegiatan untuk menjaga kebutuhan satwa
+              selama berada di fasilitas rehabilitasi. Kegiatan dapat mencakup
+              penyediaan pakan, menjaga kebersihan kandang, memantau kondisi
+              lingkungan, dan mengamati perilaku satwa sesuai karakteristik
+              spesiesnya.
+            </p>
+
+            <h4 class="media-heading">Dokumentasi Pemeliharaan Satwa</h4>
+
+            <div class="media-grid">
+              <!-- PEMELIHARAAN BERUANG MADU -->
+              <div class="media-card">
+                <button
+                  type="button"
+                  class="media-thumb"
+                  data-full="prs/pemeliharaanberuangmadu.jpeg"
+                  data-caption="Pemeliharaan Beruang Madu"
+                  aria-label="Perbesar foto pemeliharaan beruang madu"
+                >
+                  <img
+                    src="prs/pemeliharaanberuangmadu.jpeg"
+                    alt="Pemeliharaan beruang madu"
+                    loading="lazy"
+                  />
+                  <span class="zoom">Lihat foto ↗</span>
+                </button>
+
+                <div class="media-caption">
+                  <h4>Pemeliharaan Beruang Madu</h4>
+                  <p>
+                    Dokumentasi pemeliharaan beruang madu selama berada di
+                    fasilitas rehabilitasi.
+                  </p>
+                </div>
+              </div>
+
+              <!-- PEMELIHARAAN BURUNG KAKATUA -->
+              <div class="media-card">
+                <button
+                  type="button"
+                  class="media-thumb"
+                  data-full="prs/pemeliharaanburungkakatua.jpeg"
+                  data-caption="Pemeliharaan Burung Kakatua"
+                  aria-label="Perbesar foto pemeliharaan burung kakatua"
+                >
+                  <img
+                    src="prs/pemeliharaanburungkakatua.jpeg"
+                    alt="Pemeliharaan burung kakatua"
+                    loading="lazy"
+                  />
+                  <span class="zoom">Lihat foto ↗</span>
+                </button>
+
+                <div class="media-caption">
+                  <h4>Pemeliharaan Burung Kakatua</h4>
+                  <p>
+                    Dokumentasi pemeliharaan burung kakatua dan pemenuhan
+                    kebutuhannya.
+                  </p>
+                </div>
+              </div>
+
+              <!-- PEMELIHARAAN LUTUNG -->
+              <div class="media-card">
+                <button
+                  type="button"
+                  class="media-thumb"
+                  data-full="prs/pemeliharaanlutung.jpeg"
+                  data-caption="Pemeliharaan Lutung"
+                  aria-label="Perbesar foto pemeliharaan lutung"
+                >
+                  <img
+                    src="prs/pemeliharaanlutung.jpeg"
+                    alt="Pemeliharaan lutung"
+                    loading="lazy"
+                  />
+                  <span class="zoom">Lihat foto ↗</span>
+                </button>
+
+                <div class="media-caption">
+                  <h4>Pemeliharaan Lutung</h4>
+                  <p>
+                    Dokumentasi pemeliharaan lutung dengan memperhatikan
+                    kebutuhan satwa.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- TAHAP 4: PELEPASLIARAN -->
+        <article class="step" id="tahap4">
+          <div class="step-number">04</div>
+
+          <div class="step-content">
+            <span class="tag">Kembali ke habitat</span>
+
+            <h3>Pelepasliaran Satwa</h3>
+
+            <p class="step-description">
+              Pelepasliaran merupakan upaya mengembalikan satwa ke habitat yang
+              sesuai apabila kondisi satwa, kesiapan perilaku, dan persyaratan
+              konservasi memungkinkan. Penentuan lokasi serta pelaksanaan
+              pelepasliaran perlu mempertimbangkan keselamatan satwa dan kondisi
+              habitatnya.
+            </p>
+
+            <h4 class="media-heading">Foto Dokumentasi Pelepasliaran</h4>
+
+            <div class="media-grid">
+              <!-- FOTO PELEPASLIARAN MERAK HIJAU -->
+              <div class="media-card">
+                <button
+                  type="button"
+                  class="media-thumb"
+                  data-full="prs/pelepasliaranmerakhijau.jpeg"
+                  data-caption="Pelepasliaran Merak Hijau"
+                  aria-label="Perbesar foto pelepasliaran merak hijau"
+                >
+                  <img
+                    src="prs/pelepasliaranmerakhijau.jpeg"
+                    alt="Pelepasliaran merak hijau"
+                    loading="lazy"
+                  />
+                  <span class="zoom">Lihat foto ↗</span>
+                </button>
+
+                <div class="media-caption">
+                  <h4>Pelepasliaran Merak Hijau</h4>
+                  <p>
+                    Dokumentasi kegiatan pelepasliaran merak hijau yang tersedia
+                    pada folder PRS.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="media-heading">Video Dokumentasi Pelepasliaran</h4>
+
+            <div class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source
+                  src="prs/pelepasliaranmerakhijau.mp4"
+                  type="video/mp4"
+                />
+                Browser Anda tidak mendukung pemutaran video.
+              </video>
+
+              <div class="video-caption">
+                <h4>Video Pelepasliaran Merak Hijau</h4>
+                <p>
+                  Putar video untuk melihat dokumentasi kegiatan pelepasliaran
+                  satwa.
+                </p>
+              </div>
+            </div>
+
+            <div class="note">
+              <strong>Informasi:</strong>
+              Dokumentasi ditampilkan berdasarkan nama berkas yang digunakan
+              pada proyek. Pelaksanaan pelepasliaran ditentukan berdasarkan
+              penilaian dan ketentuan konservasi yang berlaku.
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      Hak Cipta &copy; 2026 BKSDA Sumatera Selatan · Pusat Rehabilitasi Satwa
+      Punti Kayu
+    </footer>
+
+    <!-- MODAL FOTO -->
+    <div
+      class="modal"
+      id="imageModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Pratinjau foto rehabilitasi satwa"
+      aria-hidden="true"
+    >
+      <div class="modal-content">
+        <button
+          type="button"
+          class="modal-close"
+          id="modalClose"
+          aria-label="Tutup foto"
+        >
+          &times;
+        </button>
+
+        <img id="modalImage" src="" alt="" />
+
+        <div class="modal-caption" id="modalCaption"></div>
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT GALERI FOTO -->
+    <script>
+      const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
+      const modalCaption = document.getElementById("modalCaption");
+      const modalClose = document.getElementById("modalClose");
+
+      let previousFocus = null;
+
+      // Menampilkan foto dalam ukuran besar
+      document.querySelectorAll(".media-thumb").forEach(function (button) {
+        button.addEventListener("click", function () {
+          previousFocus = document.activeElement;
+
+          modalImage.src = button.dataset.full;
+          modalImage.alt = button.dataset.caption || "Dokumentasi satwa";
+
+          modalCaption.textContent =
+            button.dataset.caption || "Dokumentasi rehabilitasi satwa";
+
+          modal.classList.add("open");
+          modal.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+
+          modalClose.focus();
+        });
+      });
+
+      // Menutup foto
+      function closeModal() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+
+        modalImage.src = "";
+        document.body.style.overflow = "";
+
+        if (previousFocus) {
+          previousFocus.focus();
+        }
+      }
+
+      modalClose.addEventListener("click", closeModal);
+
+      // Menutup modal ketika area gelap diklik
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Menutup modal menggunakan tombol Escape
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("open")) {
+          closeModal();
+        }
+      });
+    </script>
+  </body>
+</html>
